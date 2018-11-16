@@ -24,22 +24,43 @@ body {
     padding: 20px;
 }
 
+.header a {
+    color: white;
+    text-align: right;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.logo-nav {
+    display: flex;
+    align-items: flex-end;
+}
+
+.logo {
+    display: inline-block;
+}
+
 .logo img {
     width: 230px;
 }
 
-.menu {
-    text-align: right;
-    font-weight: bold;
-}
-
-.menu a {
-    color: white;
-    text-decoration: none;
+.nav {
+    display: inline-block;
+    margin-left: 32px;
 }
 
 .lang {
+    display: inline-block;
     color: white;
+    font-weight: bold;
+}
+
+.lang a {
+    color: white;
+    text-align: right;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .lang a:hover {
@@ -47,8 +68,7 @@ body {
 }
 
 .nav ul {
-    background-color: rgba(0, 0, 0, 0.5);
-    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.35);
     list-style: none;
     font-size: 0px;
 }
