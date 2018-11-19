@@ -6,3 +6,17 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.news {
+   display:block;
+  background-color: black;
+    height: 300px;
+    width: 100%;
+}
+.footer {
+    background-color: #001534;
+    width: 100%;
+    padding-top: 40px;
+    color: white;
+    
+}
+
