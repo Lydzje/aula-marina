@@ -6,12 +6,29 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.content-news {
+    margin-top: 20px;
+}
 .news {
    display:block;
-  background-color: black;
+  background-color:red;
     height: 300px;
     width: 100%;
+    
 }
+.textNews {
+    display: inline-block;
+    background: linear-gradient(
+	to right,
+	rgba(0, 0, 0, 0.3),
+	rgba(0, 0, 0, 0)
+    );
+    padding: 0px 40px;
+    color: white;
+    font-size: 32px;
+}
+   
 .footer {
     background-color: #001534;
     width: 100%;
