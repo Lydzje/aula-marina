@@ -1,0 +1,229 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+.wrapper-species-of-the-month {
+    width: 100%;
+    height: 100%;
+    background-image: url("../res/dustin-haney-435483-unsplash.jpg  ");
+    background-repeat: no-repeat;
+    background-size: cover;   
+    
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.header a {
+    color: white;
+    text-align: right;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.logo-nav {
+    display: flex;
+    align-items: flex-end;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.logo img {
+    width: 230px;
+}
+
+.nav {
+    display: inline-block;
+    margin-left: 32px;
+}
+
+.lang {
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+}
+
+.lang a {
+    color: white;
+    text-align: right;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.lang a:hover {
+    text-decoration: underline;
+}
+
+.nav ul {
+    background-color: rgba(0, 0, 0, 0.35);
+    list-style: none;
+    font-size: 0px;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 15px;
+    font-size: 16px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.2s;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+.recent-species{
+    background-color: rgba(0,0, 0, 0.8);
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-left: 50px;
+    margin-top: 30px;
+    
+}
+
+.recent-species-img img{
+    display: inline-block;
+    width:40%;
+    
+    
+}
+.description-img{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 80%;
+    direction: rtl;
+}
+.description-img p{
+    margin-bottom: 16px;
+   
+}
+
+.lasted-species{
+    background-color: rgba(0,0, 0, 0.8);
+    width: 90%;
+    height: 20%;
+    margin-left: 50px;
+    margin-top: 40 px;
+}
+.specie-box{
+    background-color: rgba(0,0, 0, 0.8);
+    padding: 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+
+
+
+
+
+
+footer{
+    background-color: #001534;
+    width: 100%;
+    padding-top: 80px;
+    position: absolute;
+    top: 100%;
+    color: white;
+}
+.footer {
+    background-color: #001534;
+    width: 100%;
+    padding-top: 80px;
+    top: 100%;
+    color: white;
+    bottom: 0;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logos img {
+    margin-right: 60px;
+}
+
+.aula-marina-logo {
+    width: 170px;
+}
+
+.ceimar-logo {
+    width: 240px;
+}
+
+.ual-logo {
+    width: 260px;
+}
+
+.rrss-content {
+    border-left: 2px solid white;
+    padding-left: 16px;
+    padding-bottom: 16px;
+}
+
+.rrss-icons {
+    margin-top: 30px;
+    font-size: 32px;
+}
+
+.rrss-icons a {
+    margin-right: 12px;
+    color: white;
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.rrss-icons a:hover {
+    color: #bbbbbb;
+}
+.contact-content {
+    border-left: 2px solid white;
+    padding-left: 16px;
+    padding-bottom: 16px;
+}
+
+.contact span {
+    display: block;
+}
+
+.contact-text {
+    margin-bottom: 16px;
+}
+
+.contact a {
+    margin-bottom: 0px;
+    color: aqua;
+}
+
+.footer-bot {
+    margin: 20px 0px;
+    text-align: center;
+}
