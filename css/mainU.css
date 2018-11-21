@@ -27,8 +27,34 @@
     padding: 0px 40px;
     color: white;
     font-size: 32px;
+    margin-bottom: 15px;
 }
-   
+
+.text-1 {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0px 50px;
+  color:white;
+  font-size: 23px;
+  margin: 15px;
+    
+}
+.parrafo {
+  
+  padding: 5%;
+  
+
+}
+.slider-buttons {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 90%;
+    right: 0;
+    padding: 20px;
+}
+
 .footer {
     background-color: #001534;
     width: 100%;
