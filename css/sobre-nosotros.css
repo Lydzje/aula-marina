@@ -10,12 +10,13 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.wrapper {
-    width: 100%;
-    height: 100%;
-    background-image: url("../res/inicio.png");
+.wrapper-sobre-nosotros{
+    background-image: url("../res/sobre-nosotros.png");
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
+    position: absolute;
+    
 }
 
 .header {
@@ -90,37 +91,63 @@ body {
     margin-top: 96px;
 }
 
-.text {
+.title {
     display: inline-block;
     background: linear-gradient(
 	to right,
-	rgba(0, 0, 0, 0.3),
+	rgba(0, 0, 0, 0.7),
 	rgba(0, 0, 0, 0)
     );
-    padding: 32px 48px;
+    padding: 20px 32px;
     color: white;
-    font-size: 82px;
+    font-size: 24px;
 }
 
-.text span {
+.title span {
     display: block;
 }
+.section{
+    background-color: rgba(0,0, 0, 0.8);
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    margin-top: 10px;
+    }
 
-.slider-buttons {
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 90%;
-    right: 0;
-    padding: 20px;
+.text {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 40%;
 }
 
-.slider-button {
+.text p{
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+.slider-buttons{
+    text-align: right;
+    margin: 4px 0;
+}
+.slider-button{
+    border: 1.5px solid white;
+    margin-right: 8px;
+    width: 8px;
+    height: 8px;
     display: inline-block;
-    margin-right: 2px;
-    border: 2px solid white;
-    width: 10px;
-    height: 10px;
+    
+}
+.images{
+    display: inline-block;
+    width:35%;
+
+}
+.img-desc{
+    border-top: 1.5px solid white;
 }
 
 footer {
