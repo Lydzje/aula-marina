@@ -9,7 +9,7 @@ body{
 }
 
 .sobre-nosotros{
-    background-image: url("../res/sobre-nosotros.png");
+    background-image: url("../res/dylan-gillis-533818-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -107,8 +107,8 @@ body{
     width: 90%;
     display: flex;
     justify-content: space-around;
-    padding: 20px;
-    margin-top: 36px;
+    padding: 15px;
+    margin-top: 10px;
     }
 .text{
     display: flex;
