@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    
+}
+
+.sobre-nosotros{
+    background-image: url("./../res/sobre-nosotros.jpg");
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.wrapper {
+    margin: 0 40px;
+    padding-top: 20px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-nav{
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.logo img {
+    width: 150px;
+
+}
+
+.nav {
+    display: inline-block;
+    background-color: rgba(0,0, 0, 0.4); 
+    color: white;
+    margin-left: 8px;
+}
+
+.nav ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    display: inline-block;
+    padding: 10px;
+    transition: all 0.2s;
+}
+
+.nav ul li:hover {
+    background-color: rgba(0,0, 0, 0.45);
+}
+
+.nav a{
+    color: white;
+    text-decoration: none;
+}
+
+
+.lang{
+    display: flex;
+    align-items: center;   
+    color: white; 
+}
+
+.lang ul li {
+    display: inline-block;
+}
+
+.lang a {
+    color: white;
+    text-decoration: none;
+}
+.section{
+    background-color: rgba(0,0, 0, 0.8);
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 100px;
+    }
+.text{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 40%;
+
+}
+.text p{
+    margin-bottom: 16px;
+    text-align: justify;
+}
+.slider-buttons{
+    text-align: right;
+    margin: 4px 0;
+}
+.slider-button{
+    border: 1.5px solid white;
+    margin-right: 8px;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    
+}
+.images{
+    display: inline-block;
+    width:35%;
+
+}
+.img-desc{
+    border-top: 1.5px solid white;
+}
+footer{
+    background-color: rgb(18, 18, 59);
+    position: absolute;
+    top: 100%;
+    color: white;
+    width: 100%;
+    
+}
+.footer-top{
+    display: flex;
+    justify-content: space-around;
+}
+.footer-logos{
+    display: inline-block;
+}
+.footer-logos div{
+    display: inline-block;
+}
+.footer-logos div img{
+    width: 150px;
+    padding: 30px;
+}
+.rrss{
+    display: inline-block;
+    border-left: 2px solid white;
+    padding-top: 8px;
+    padding-left: 30px;
+}
+.footer-contacto{
+    display: inline-block;
+}
+.footer-contacto span{
+    display: block;
+}
