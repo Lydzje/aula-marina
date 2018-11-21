@@ -1,33 +1,41 @@
 * {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
-body{
+html,
+body {
+    width: 100%;
+    height: 100%;
     font-family: 'Lato', sans-serif;
-    
 }
 
-.sobre-nosotros{
-    background-image: url("../res/dylan-gillis-533818-unsplash.jpg");
+.wrapper-sobre-nosotros{
+    background-image: url("../res/sobre-nosotros.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     position: absolute;
     
 }
-.wrapper {
-    margin: 0 40px;
-    padding-top: 20px;
-}
-.header{
+
+.header {
     display: flex;
     justify-content: space-between;
+    padding: 20px;
 }
 
-.logo-nav{
+.header a {
+    color: white;
+    text-align: right;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.logo-nav {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .logo {
@@ -35,55 +43,52 @@ body{
 }
 
 .logo img {
-    width: 150px;
-
+    width: 230px;
 }
 
 .nav {
     display: inline-block;
-    background-color: rgba(0,0, 0, 0.4); 
-    color: white;
-    margin-left: 8px;
+    margin-left: 32px;
 }
 
-.nav ul {
-    list-style: none; 
-    padding: 0;
-    margin: 0;
-}
-
-.nav ul li {
+.lang {
     display: inline-block;
-    padding: 10px;
-    transition: all 0.2s;
-}
-
-.nav ul li:hover {
-    background-color: rgba(210, 210, 210, 0.45);
-}
-
-.nav a{
     color: white;
-    text-decoration: none;
-}
-
-
-.lang{
-    display: flex;
-    align-items: center;   
-    color: white; 
-}
-
-.lang ul li {
-    display: inline-block;
+    font-weight: bold;
 }
 
 .lang a {
     color: white;
+    text-align: right;
+    font-weight: bold;
     text-decoration: none;
 }
+
+.lang a:hover {
+    text-decoration: underline;
+}
+
+.nav ul {
+    background-color: rgba(0, 0, 0, 0.35);
+    list-style: none;
+    font-size: 0px;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 15px;
+    font-size: 16px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.2s;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
 .content {
-    margin-top: 25px;
+    margin-top: 96px;
 }
 
 .title {
@@ -110,18 +115,20 @@ body{
     padding: 15px;
     margin-top: 10px;
     }
-.text{
+
+.text {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     width: 40%;
-
 }
+
 .text p{
     margin-bottom: 16px;
     text-align: justify;
 }
+
 .slider-buttons{
     text-align: right;
     margin: 4px 0;
@@ -142,7 +149,8 @@ body{
 .img-desc{
     border-top: 1.5px solid white;
 }
-footer {;
+
+footer {
     background-color: #001534;
     width: 100%;
     padding-top: 40px;
@@ -220,6 +228,6 @@ footer {;
 }
 
 .footer-bot {
-    margin: 20px 0px;
+    padding: 20px 0px;
     text-align: center;
 }

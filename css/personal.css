@@ -10,20 +10,13 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.sobre-nosotros{
-    background-image: url("../res/sobre-nosotros.png");
+.wrapper-personal {
+    background-image: url("../res/dylan-gillis-533818-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    position: absolute;
-    
-}
-.wrapper {
     width: 100%;
-    height: 100%;
-    background-image: url("../res/inicio.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: absolute;
 }
 
 .header {
@@ -89,9 +82,6 @@ body {
     transition: all 0.2s;
 }
 
-.nav ul li:hover {
-  background-color: rgba(210, 210, 210, 0.45);
-}
 .nav a:hover {
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
@@ -99,51 +89,6 @@ body {
 
 .content {
     margin-top: 96px;
-}
-
-.text {
-    display: inline-block;
-    background: linear-gradient(
-	to right,
-	rgba(0, 0, 0, 0.3),
-	rgba(0, 0, 0, 0)
-    );
-    padding: 32px 48px;
-    color: white;
-    font-size: 82px;
-}
-
-.text span {
-    display: block;
-}
-
-.slider-buttons {
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 90%;
-    right: 0;
-    padding: 20px;
-}
-
-.slider-button {
-    display: inline-block;
-    margin-right: 2px;
-    border: 2px solid white;
-    width: 10px;
-    height: 10px;
-}
-
-footer {
-    background-color: #001534;
-    width: 100%;
-    padding-top: 40px;
-    position: absolute;
-    top: 100%;
-    color: white;
-}
-.content {
-    margin-top: 25px;
 }
 
 .title {
@@ -167,48 +112,42 @@ footer {
     width: 90%;
     display: flex;
     justify-content: space-around;
-    padding: 20px;
-    margin-top: 36px;
+    padding: 15px;
+    margin-top: 10px;
     }
-
-
-.footer-top {
+.text{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 40%;
+
+}
+.text p{
+    margin-bottom: 16px;
+    text-align: justify;
+}
+.slider-buttons{
+    text-align: right;
+    margin: 4px 0;
+}
+.slider-button{
+    border: 1.5px solid white;
+    margin-right: 8px;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    
+}
+.images{
+    display: inline-block;
+    width:35%;
+
+}
+.img-desc{
+    border-top: 1.5px solid white;
 }
 
-.logos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logos img {
-    margin-right: 60px;
-}
-
-.aula-marina-logo {
-    width: 170px;
-}
-
-.ceimar-logo {
-    width: 240px;
-}
-
-.ual-logo {
-    width: 260px;
-}
-
-.rrss-content {
-    border-left: 2px solid white;
-    padding-left: 16px;
-    padding-bottom: 16px;
-}
-
-.rrss-icons {
-    margin-top: 30px;
-    font-size: 32px;
-}
 footer {
     background-color: #001534;
     width: 100%;
@@ -256,26 +195,6 @@ footer {
     font-size: 32px;
 }
 
-.rrss-icons a {
-    margin-right: 12px;
-    color: white;
-    text-decoration: none;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.rrss-icons a:hover {
-    color: #bbbbbb;
-}
-.contact-content {
-    border-left: 2px solid white;
-    padding-left: 16px;
-    padding-bottom: 16px;
-}
-
-.contact span {
-    display: block;
-}
 .rrss-icons a {
     margin-right: 12px;
     color: white;
@@ -308,19 +227,5 @@ footer {
 
 .footer-bot {
     padding: 20px 0px;
-    text-align: center;
-}
-
-.contact-text {
-    margin-bottom: 16px;
-}
-
-.contact a {
-    margin-bottom: 0px;
-    color: aqua;
-}
-
-.footer-bot {
-    margin: 20px 0px;
     text-align: center;
 }

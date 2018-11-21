@@ -1,33 +1,42 @@
 * {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
-body{
+html,
+body {
+    width: 100%;
+    height: 100%;
     font-family: 'Lato', sans-serif;
-    
 }
 
-.sobre-nosotros{
-    background-image: url("../res/instalaciones.png");
+
+.wrapper-instalaciones {
+    width: 100%;
+    height: 100%;
+    background-image: url("../res/inicio.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
-    position: absolute;
-    
-}
-.wrapper {
-    margin: 0 40px;
-    padding-top: 20px;
-}
-.header{
-    display: flex;
-    justify-content: space-between;
 }
 
-.logo-nav{
+
+.header {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.header a {
+    color: white;
+    text-align: right;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.logo-nav {
+    display: flex;
+    align-items: flex-end;
 }
 
 .logo {
@@ -35,53 +44,54 @@ body{
 }
 
 .logo img {
-    width: 150px;
-
+    width: 230px;
 }
 
 .nav {
     display: inline-block;
-    background-color: rgba(0,0, 0, 0.4); 
-    color: white;
-    margin-left: 8px;
+    margin-left: 32px;
 }
 
-.nav ul {
-    list-style: none; 
-    padding: 0;
-    margin: 0;
-}
-
-.nav ul li {
+.lang {
     display: inline-block;
-    padding: 10px;
-    transition: all 0.2s;
-}
-
-.nav ul li:hover {
-    background-color: rgba(210, 210, 210, 0.45);
-}
-
-.nav a{
     color: white;
-    text-decoration: none;
-}
-
-
-.lang{
-    display: flex;
-    align-items: center;   
-    color: white; 
-}
-
-.lang ul li {
-    display: inline-block;
+    font-weight: bold;
 }
 
 .lang a {
     color: white;
+    text-align: right;
+    font-weight: bold;
     text-decoration: none;
 }
+
+.lang a:hover {
+    text-decoration: underline;
+}
+
+.nav ul {
+    background-color: rgba(0, 0, 0, 0.35);
+    list-style: none;
+    font-size: 0px;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 15px;
+    font-size: 16px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.2s;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+.content {
+    margin-top: 96px;
+}
+
 .content {
     margin-top: 25px;
 }
@@ -142,7 +152,8 @@ body{
 .img-desc{
     border-top: 1.5px solid white;
 }
-footer {;
+
+footer {
     background-color: #001534;
     width: 100%;
     padding-top: 40px;
@@ -220,6 +231,6 @@ footer {;
 }
 
 .footer-bot {
-    margin: 20px 0px;
+    padding: 20px 0px;
     text-align: center;
 }
