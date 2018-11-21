@@ -10,6 +10,14 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.sobre-nosotros{
+    background-image: url("../res/sobre-nosotros.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    
+}
 .wrapper {
     width: 100%;
     height: 100%;
@@ -81,6 +89,9 @@ body {
     transition: all 0.2s;
 }
 
+.nav ul li:hover {
+  background-color: rgba(210, 210, 210, 0.45);
+}
 .nav a:hover {
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
@@ -123,6 +134,81 @@ body {
     height: 10px;
 }
 
+footer {
+    background-color: #001534;
+    width: 100%;
+    padding-top: 40px;
+    position: absolute;
+    top: 100%;
+    color: white;
+}
+.content {
+    margin-top: 25px;
+}
+
+.title {
+    display: inline-block;
+    background: linear-gradient(
+	to right,
+	rgba(0, 0, 0, 0.7),
+	rgba(0, 0, 0, 0)
+    );
+    padding: 20px 32px;
+    color: white;
+    font-size: 24px;
+}
+
+.title span {
+    display: block;
+}
+.section{
+    background-color: rgba(0,0, 0, 0.8);
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 36px;
+    }
+
+
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logos img {
+    margin-right: 60px;
+}
+
+.aula-marina-logo {
+    width: 170px;
+}
+
+.ceimar-logo {
+    width: 240px;
+}
+
+.ual-logo {
+    width: 260px;
+}
+
+.rrss-content {
+    border-left: 2px solid white;
+    padding-left: 16px;
+    padding-bottom: 16px;
+}
+
+.rrss-icons {
+    margin-top: 30px;
+    font-size: 32px;
+}
 footer {
     background-color: #001534;
     width: 100%;
@@ -190,6 +276,26 @@ footer {
 .contact span {
     display: block;
 }
+.rrss-icons a {
+    margin-right: 12px;
+    color: white;
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.rrss-icons a:hover {
+    color: #bbbbbb;
+}
+.contact-content {
+    border-left: 2px solid white;
+    padding-left: 16px;
+    padding-bottom: 16px;
+}
+
+.contact span {
+    display: block;
+}
 
 .contact-text {
     margin-bottom: 16px;
@@ -202,5 +308,19 @@ footer {
 
 .footer-bot {
     padding: 20px 0px;
+    text-align: center;
+}
+
+.contact-text {
+    margin-bottom: 16px;
+}
+
+.contact a {
+    margin-bottom: 0px;
+    color: aqua;
+}
+
+.footer-bot {
+    margin: 20px 0px;
     text-align: center;
 }
