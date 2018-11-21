@@ -7,6 +7,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: 'Lato', sans-serif;
+    
 }
 
 .wrapper-species-of-the-month {
@@ -86,6 +87,27 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .recent-species{
     background-color: rgba(0,0, 0, 0.8);
     color: white;
@@ -131,6 +153,107 @@ body {
     margin-bottom: 50px;
     align-items: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper-contact{
+  width: 100%;
+    height: 100%;
+    background-image: url("../res/contacto.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title-page-contact{
+  background: linear-gradient(
+	to right,
+	rgba(0, 0, 0, 0.5),
+	rgba(0, 0, 0, 0)
+    );
+    color: white;
+    font-size: 30 px;
+    padding-left: 25px;
+    padding: 15px 75px;
+    display: inline-block;
+}
+.loc-cont-box{
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+}
+
+.location-box{
+  background-color: rgba(0,0, 0, 0.8);
+  color: white;
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 70px;
+  padding: 15px;
+}
+
+.location-box h1{
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  border-bottom: white solid;
+
+}
+.location-box p{
+  padding: 10px;
+  display: block;
+}
+.map{
+  padding: 10px;
+}
+
+.contact-box div{
+  background-color: rgba(0,0, 0, 0.8);
+  color: white;
+  display: inline-block;
+  align-content: space-around;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 15px;
+}
+.contact-box h1{
+  font-size: 20px;
+  padding: 15px;
+  text-align: center;
+  border-bottom: white solid;
+}
+.contact-box p{
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
