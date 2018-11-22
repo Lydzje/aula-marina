@@ -103,52 +103,80 @@ body {
     background-size: cover;       
 }
 
+.species-box{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
 
 .recent-species{
     background-color: rgba(0,0, 0, 0.8);
     color: white;
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
+    width: 500px;
+    height: 300px;
     padding: 20px;
     margin-left: 50px;
     margin-top: 30px;
-    
+    border-radius: 50px;
+
 }
 
 .recent-species-img img{
-    display: inline-block;
-    width:40%;
-    
+    display: block;
+    width:200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
     
 }
 .description-img{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
+    display: block;
     width: 80%;
-    direction: rtl;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
 }
-.description-img p{
-    margin-bottom: 16px;
-   
+.description-img a{
+    color: white;
+    text-decoration: none;
+}
+.description-img a:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
 }
 
 .lasted-species{
     background-color: rgba(0,0, 0, 0.8);
-    width: 90%;
-    height: 20%;
-    margin-left: 50px;
-    margin-top: 40 px;
+    width: 35%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    border-radius: 50px;
+    padding: 20px 40px;
 }
-.specie-box{
-    background-color: rgba(0,0, 0, 0.8);
-    padding: 20px;
-    margin-left: 50px;
-    margin-bottom: 50px;
-    align-items: center;
+.lasted-species-box{
+    text-align: center;
 }
+
+.lasted-species-box img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 10px;
+}
+.lasted-species a{
+    color:white;
+    text-decoration: none;
+}
+.lasted-species a:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+
+
 
 
 
@@ -163,6 +191,13 @@ body {
     background-image: url("../res/dustin-haney-435483-unsplash.jpg  ");
     background-repeat: no-repeat;
     background-size: cover; 
+}
+.specie-box{
+    background-color: rgba(0,0, 0, 0.8);
+    padding: 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    align-items: center;
 }
 
 .specie-box{
@@ -276,6 +311,32 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+.background-project-name{
+    background-image: url("../res/cristian-palmer-481520-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.pepito{
+    height: 2000px;
+    width: 100%;
+}
 
 
 
