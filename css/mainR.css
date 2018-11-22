@@ -166,12 +166,11 @@ body {
 }
 
 .specie-box{
-    background-color: rgba(0,0, 0, 0.8);
+    background-color: rgba(0,0, 0, 0.9);
     color: white;
     width: 90%;
     display: flex;
     justify-content: space-around;
-    padding: 20px;
     margin-left: 50px;
     margin-top: 30px;    
 }
@@ -182,7 +181,19 @@ body {
     border-radius: 30px;
 }
 
+.specie-text{
+    padding: 20px;
 
+}
+.specie-text h1{
+    text-align: center;
+    padding: 15px;
+    border-bottom: white solid 2px;
+}
+.specie-text p{
+    text-align: justify;
+    padding: 15px;
+}
 
 
 
