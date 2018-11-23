@@ -233,11 +233,11 @@ body {
 }
 
 /* FEATURED */
-.featured-form {
+.featured-form, .admin-form2-wrapper {
     width: 55%;
     margin: auto;
     margin-top: 5vh;
-    background-color: #f1f1f1;
+    background-color: #f6f6f6;
 }
 
 .featured-nav {
@@ -279,9 +279,22 @@ body {
     height: 100%;
 }
 
-.admin-form2 {
+.admin-form2-featured {
     width: 60%;
     margin: 0 16px;
+}
+
+.admin-form2-title {
+    background-color: #001534;
+    padding: 16px;
+    margin-bottom: -16px;
+    border-radius: 10px 10px 0 0;
+    font-size: 24px;
+    color: white;
+}
+
+.admin-form2 {
+    padding: 16px;
 }
 
 .field2 {
@@ -297,7 +310,7 @@ body {
     font-size: 24px;
 }
 
-.field2 input {
+.field2 input, .field2 textarea {
     width: 96%;
     padding: 8px;
     border: 2px solid #001534;
