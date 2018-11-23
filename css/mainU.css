@@ -2,9 +2,18 @@
 .wrapper-news {
     width: 100%;
     height: 100%;
+     
+}
+.background-news{
     background-image: url("../res/noticias.png");
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .content-news {
@@ -78,6 +87,10 @@
     font-weight: bold;
     margin-bottom: 16px;
 }
+.pepito {
+    width: 100%;
+    height: 3000px;
+}
 
 .footer {
     background-color: #001534;
@@ -86,4 +99,5 @@
     color: white;
     
 }
+
 
