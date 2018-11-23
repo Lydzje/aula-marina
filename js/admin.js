@@ -1,10 +1,12 @@
 "use strict";
 
+
 var logo = document.getElementsByClassName("login-logo")[0];
 var form = document.getElementsByClassName("form-wrapper")[0];
 
 var featureds = document.getElementsByClassName("featured");
 var shownDiv = 0;
+
 
 setTimeout(
     function() {

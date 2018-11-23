@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <div class="wrapper-admin-inicio">
+    <div class="wrapper-admin-inicio" style="opacity:0">
       <div class="wrapper-admin-top-side">
 	<div class="top-nav">
 	  <div class="top-nav-content">
@@ -69,5 +69,11 @@
 	
       </div>
     </div>
+
+    <script>
+      var adminBody = document.getElementsByClassName("wrapper-admin-inicio")[0];
+      adminBody.style.opacity = 1;
+    </script>    
+    
   </body>
 </html>
