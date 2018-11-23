@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aula Marina Admin | Destacados de Portada </title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    <div class="wrapper-admin-inicio">
+      <div class="wrapper-admin-top-side">
+	<div class="top-nav">
+	  <div class="top-nav-content">
+	    <div class="top-nav-left">
+	      <a href="home.html">
+		<img alt="Logo del Aula Marina" src="../res/aula-marina-logo2.png"/>
+	      </a>
+	    </div>
+            <div class="top-nav-right">
+	      <a href="login.html"><i class="fas fa-sign-out-alt"></i></a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="left-nav">
+	<a href="home.html"><i class="fas fa-home"></i><span>INICIO</span></a>
+	<a href=""><i class="fas fa-star"></i><span>DESTACADOS DE PORTADA</span></a>
+	<a href=""><i class="fas fa-fish"></i><span>ESPECIES DEL MES</span></a>
+	<a href=""><i class="fas fa-calendar-alt"></i><span>ACTIVIDADES</span></a>
+	<a href=""><i class="fas fa-project-diagram"></i><span>PROYECTOS</span></a>
+	<a href=""><i class="fas fa-users"></i><span>PERSONAL</span></a>
+	<a href=""><i class="fas fa-flask"></i><span>INSTALACIONES</span></a>
+	<a href=""><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
+	<a href=""><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
+	<a href=""><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      </div>
+      <div class="wrapper-bot-side">
+	<div class="content-admin content-admin-inicio">
+	  <span class="content-admin-title">DESTACADOS DE PORTADA</span>
+
+	  <div class="featured-form">
+	    <div class="featured-nav">
+	      <div class="featured-button" onclick="showDiv(0)">DESTACADO 1</div>
+	      <div class="featured-button" onclick="showDiv(1)">DESTACADO 2</div>
+	      <div class="featured-button" onclick="showDiv(2)">DESTACADO 3</div>
+	      <div class="featured-button" onclick="showDiv(3)">DESTACADO 4</div>
+	    </div>
+	    <div class="featureds">
+	      <div class="featured">
+		<div class="featured-image">
+		  <img alt="Imagen de destacado de portada" src="../res/inicio.png"/>
+		  <input type="file"/>
+		</div>
+		
+		<form class="admin-form2">
+		  <div class="field2">
+		    <span>Texto</span>
+		    <input type="text" placeholder="Texto del destacado"/>
+		  </div>
+
+		  <div class="field2">
+		    <span>Enlace</span>
+		    <input type="text" placeholder="Enlace del destacado"/>
+		  </div>
+
+		  <div class="submit2">
+		    <input type="submit" value="GUARDAR"/>
+		  </div>
+		</form>
+	      </div>
+
+	      <div class="featured" style="display:none">
+		<div class="featured-image">
+		  <img alt="Imagen de destacado de portada" src="../res/actividades.png"/>
+		  <input type="file"/>
+		</div>
+		
+		<form class="admin-form2">
+		  <div class="field2">
+		    <span>Texto</span>
+		    <input type="text" placeholder="Texto del destacado"/>
+		  </div>
+
+		  <div class="field2">
+		    <span>Enlace</span>
+		    <input type="text" placeholder="Enlace del destacado"/>
+		  </div>
+
+		  <div class="submit2">
+		    <input type="submit" value="GUARDAR"/>
+		  </div>
+		</form>
+	      </div>
+
+	      <div class="featured" style="display:none">
+		<div class="featured-image">
+		  <img alt="Imagen de destacado de portada" src="../res/noticias.png"/>
+		  <input type="file"/>
+		</div>
+		
+		<form class="admin-form2">
+		  <div class="field2">
+		    <span>Texto</span>
+		    <input type="text" placeholder="Texto del destacado"/>
+		  </div>
+
+		  <div class="field2">
+		    <span>Enlace</span>
+		    <input type="text" placeholder="Enlace del destacado"/>
+		  </div>
+
+		  <div class="submit2">
+		    <input type="submit" value="GUARDAR"/>
+		  </div>
+		</form>
+	      </div>
+
+	      <div class="featured" style="display:none">
+		<div class="featured-image">
+		  <img alt="Imagen de destacado de portada" src="../res/personal.png"/>
+		  <input type="file"/>
+		</div>
+		
+		<form class="admin-form2">
+		  <div class="field2">
+		    <span>Texto</span>
+		    <input type="text" placeholder="Texto del destacado"/>
+		  </div>
+
+		  <div class="field2">
+		    <span>Enlace</span>
+		    <input type="text" placeholder="Enlace del destacado"/>
+		  </div>
+
+		  <div class="submit2">
+		    <input type="submit" value="GUARDAR"/>
+		  </div>
+		</form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+      </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+  </body>
+</html>
