@@ -90,6 +90,12 @@ body {
     margin-top: 96px;
 }
 
+.slider-content {
+    opacity: 1;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+}
+
 .text {
     display: inline-block;
     background: linear-gradient(
@@ -121,6 +127,7 @@ body {
     border: 2px solid white;
     width: 10px;
     height: 10px;
+    cursor: pointer;
 }
 
 footer {
