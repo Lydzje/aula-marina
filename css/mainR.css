@@ -464,6 +464,62 @@ font-weight: bold;
 
 
 
+.wrapper-aula-marina{
+    width: 100%;
+    height: 100%;
+  justify-content: space-between;
+  z-index: -2;
+  background-image: url(../res/aula-marina.png);
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+.content-aula-marina{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 8vw;
+  margin-top: 15vw;
+}
+
+.personal-aula-marina{
+
+}
+.personal-aula-marina span{
+background-color: rgba(0,0, 0, 0.8);
+color: white;
+padding: 2vw 6vw;
+}
+.instalaciones-aula-marina{
+
+}
+.instalaciones-aula-marina span{
+  background-color: rgba(0,0, 0, 0.8);
+color: white;
+padding: 2vw 4vw;
+}
+.sobre-nosotros-aula-marina{
+
+}
+.sobre-nosotros-aula-marina span{
+  background-color: rgba(0,0, 0, 0.8);
+color: white;
+padding: 2vw 4vw;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 footer{
