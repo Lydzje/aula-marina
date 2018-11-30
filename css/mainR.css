@@ -14,6 +14,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    z-index: 4;
 }
 
 .header a {
@@ -31,6 +32,7 @@ body {
 
 .logo {
     display: inline-block;
+    z-index: 9;
 }
 
 .logo img {
@@ -40,12 +42,14 @@ body {
 .nav {
     display: inline-block;
     margin-left: 32px;
+    z-index: 9;
 }
 
 .lang {
     display: inline-block;
     color: white;
     font-weight: bold;
+    z-index: 9;
 }
 
 .lang a {
@@ -462,51 +466,68 @@ font-weight: bold;
 
 
 
-
+.bg-aula-marina {
+    
+  background-image: url(../res/aula-marina.png);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 
 .wrapper-aula-marina{
     width: 100%;
     height: 100%;
-  justify-content: space-between;
-  z-index: -2;
-  background-image: url(../res/aula-marina.png);
-  background-repeat: no-repeat;
-  background-size: cover; 
+    justify-content: space-between;
 }
 .content-aula-marina{
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-left: 8vw;
   margin-top: 15vw;
+  z-index: 1;
+}
+
+.ambutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 255, 0.3);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    font-size: 48px;
+    color: white;
+    z-index: 1;
+    cursor: pointer;
 }
 
 .personal-aula-marina{
-
-}
-.personal-aula-marina span{
-background-color: rgba(0,0, 0, 0.8);
-color: white;
-padding: 2vw 6vw;
-}
-.instalaciones-aula-marina{
-
-}
-.instalaciones-aula-marina span{
-  background-color: rgba(0,0, 0, 0.8);
-color: white;
-padding: 2vw 4vw;
-}
-.sobre-nosotros-aula-marina{
-
-}
-.sobre-nosotros-aula-marina span{
-  background-color: rgba(0,0, 0, 0.8);
-color: white;
-padding: 2vw 4vw;
-
+    width: 32.55%;
+    height: 100vh;
 }
 
+.instalaciones-aula-marina {
+    left: 32.55%;
+    background-color: rgba(255, 0, 0, 0.3);
+    width: 33.85%;
+}
+
+.sobre-nosotros-aula-marina {
+    left: 66.4%;
+    width: 33.6%;
+    height: 100vh;
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+.ambutton:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+}
 
 
 
