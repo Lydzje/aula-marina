@@ -1,0 +1,634 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 4;
+}
+
+.header a {
+    color: white;
+    text-align: right;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.logo-nav {
+    display: flex;
+    align-items: flex-end;
+}
+
+.logo {
+    display: inline-block;
+    z-index: 9;
+}
+
+.logo img {
+    width: 230px;
+}
+
+.nav {
+    display: inline-block;
+    margin-left: 32px;
+    z-index: 9;
+}
+
+.lang {
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    z-index: 9;
+}
+
+.lang a {
+    color: white;
+    text-align: right;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.lang a:hover {
+    text-decoration: underline;
+}
+
+.nav ul {
+    background-color: rgba(0, 0, 0, 0.35);
+    list-style: none;
+    font-size: 0px;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 15px;
+    font-size: 16px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper-species-of-the-month {
+    width: 100%;
+    height: 100%;
+    background-image: url("../res/dustin-haney-435483-unsplash.jpg  ");
+    background-repeat: no-repeat;
+    background-size: cover;       
+}
+
+.species-box{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.recent-species{
+    background-color: rgba(0,0, 0, 0.8);
+    color: white;
+    width: 20vw;
+    height: 20vw;
+    padding: 30px;
+    margin-left: 50px;
+    margin-top: 30px;
+
+}
+
+.recent-species-img img{
+    display: block;
+    width:15vw;
+    height: 15vw;
+    margin: auto;
+    border-radius: 50%;
+    
+}
+.description-img{
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
+.description-img a{
+    color: white;
+    text-decoration: none;
+}
+.description-img a:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+.lasted-species{
+    background-color: rgba(0,0, 0, 0.8);
+    width: 30vw;
+    height: 30vw;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    padding: 20px 40px;
+}
+.lasted-species-box{
+    text-align: center;
+}
+
+.lasted-species-box img{
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    padding: 10px;
+}
+.lasted-species a{
+    color:white;
+    text-decoration: none;
+}
+.lasted-species a:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+.wrapper-species-name{
+    width: 100%;
+    height: 100%;
+    background-image: url("../res/dustin-haney-435483-unsplash.jpg  ");
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.specie-box{
+    background-color: rgba(0,0, 0, 0.8);
+    padding: 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.specie-box{
+    background-color: rgba(0,0, 0, 0.9);
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 50px;
+    margin-top: 30px;    
+}
+
+.specie-img img{
+    width: 400px;
+    height: 400px;
+    
+}
+
+.specie-text{
+    padding: 20px;
+
+}
+.specie-text h1{
+    text-align: center;
+    padding: 15px;
+    border-bottom: white solid 2px;
+}
+.specie-text p{
+    text-align: justify;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.wrapper-contact{
+  width: 100%;
+    height: 100%;
+    background-image: url("../res/contacto.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title-page{
+  background: linear-gradient(
+	to right,
+	rgba(0, 0, 0, 0.5),
+	rgba(0, 0, 0, 0)
+    );
+    color: white;
+    font-size: 30 px;
+    padding-left: 25px;
+    padding: 15px 75px;
+    display: inline-block;
+}
+.loc-cont-box{
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+}
+
+.location-box{
+  background-color: rgba(0,0, 0, 0.8);
+  color: white;
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 70px;
+  padding: 15px;
+}
+
+.location-box h1{
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  border-bottom: white solid;
+
+}
+.location-box p{
+  padding: 10px;
+  display: block;
+}
+.map{
+  padding: 10px;
+}
+
+.contact-box div{
+  background-color: rgba(0,0, 0, 0.8);
+  color: white;
+  display: inline-block;
+  align-content: space-around;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 15px;
+}
+.contact-box h1{
+  font-size: 20px;
+  padding: 15px;
+  text-align: center;
+  border-bottom: white solid;
+}
+.contact-box p{
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.background-projects{
+    background-image: url("../res/proyecto1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.content-projects{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.project-x{
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 2%;
+    margin: 3%;
+    display: flex;
+    width: 90%;
+    color: black;
+    text-decoration: none;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.project-x:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    
+}
+.project-x:hover img{
+border-color: white;
+}
+.project-x p{
+    text-align: justify;
+    margin: 16px;
+}
+.project-x img{
+    width: 13vw;
+    height: 13vw;
+    border:  black solid 1px;
+}
+
+.project-x h1{
+ 
+ text-align: center;
+ border-bottom: 2px solid;
+ margin: 16px;
+ padding: 4px;
+ width: 100%;
+}
+.text-projects{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.background-project-name{
+    background-image: url("../res/proyecto2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.title-page-projects-name{
+    background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0)
+      );
+      color: white;
+      font-size: 30 px;
+      padding-left: 25px;
+      padding: 15px 75px;
+      display: inline-block;
+  }
+.content-projects-name{
+    height: 100%;
+    width: 95%;
+    background-color: rgba(0,0, 0, 0.8);
+    margin:30px;
+}
+.section-projects{
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    color: white;
+}
+.img-projects-name img{
+    width: 30vw;
+    height: 25vw;
+    margin:10px 10px 0 10px;
+    border: white solid 1px;
+}
+
+.slider-buttons1{
+    text-align: right;
+    right: 3px;
+    margin-right: 10px;
+    border-bottom: white solid 1px;
+}
+
+.slider-button1{
+    border: 1px solid rgb(255, 255, 255);
+    margin-right: 8px;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+}
+.text-projects-name span{
+display: block;
+text-align: center;
+font-size: 24px;
+font-weight: bold;
+
+}
+.text-projects-name p{
+    color: white;  
+    margin: 15px;  
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+.bg-aula-marina {
+    
+  background-image: url(../res/aula-marina.png);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.wrapper-aula-marina{
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+.content-aula-marina{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15vw;
+  z-index: 1;
+}
+
+.ambutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 255, 0.3);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    font-size: 48px;
+    color: white;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.personal-aula-marina{
+    width: 32.55%;
+    height: 100vh;
+}
+
+.instalaciones-aula-marina {
+    left: 32.55%;
+    background-color: rgba(255, 0, 0, 0.3);
+    width: 33.85%;
+}
+
+.sobre-nosotros-aula-marina {
+    left: 66.4%;
+    width: 33.6%;
+    height: 100vh;
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+.ambutton:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: #001534;
+    width: 100%;
+    padding-top: 80px;
+    position: absolute;
+    top: 100%;
+    color: white;
+}
+.footer {
+    background-color: #001534;
+    width: 100%;
+    padding-top: 80px;
+    top: 100%;
+    color: white;
+    bottom: 0;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logos img {
+    margin-right: 60px;
+}
+
+.aula-marina-logo {
+    width: 170px;
+}
+
+.ceimar-logo {
+    width: 240px;
+}
+
+.ual-logo {
+    width: 260px;
+}
+
+.rrss-content {
+    border-left: 2px solid white;
+    padding-left: 16px;
+    padding-bottom: 16px;
+}
+
+.rrss-icons {
+    margin-top: 30px;
+    font-size: 32px;
+}
+
+.rrss-icons a {
+    margin-right: 12px;
+    color: white;
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.rrss-icons a:hover {
+    color: #bbbbbb;
+}
+.contact-content {
+    border-left: 2px solid white;
+    padding-left: 16px;
+    padding-bottom: 16px;
+}
+
+.contact span {
+    display: block;
+}
+
+.contact-text {
+    margin-bottom: 16px;
+}
+
+.contact a {
+    margin-bottom: 0px;
+    color: aqua;
+}
+
+.footer-bot {
+    padding: 20px 0px;
+    text-align: center;
+}
