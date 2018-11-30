@@ -91,10 +91,10 @@ color:white;
 }
 .pepito {
   width: 100%;
-  
-  margin: 30px 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+
+  margin-bottom: 64px;
 
 }
 .section-left1 {
@@ -104,7 +104,8 @@ padding: 16px 32px;
 color:white;
   text-align: justify;
   width: 48%;
-  margin-left: 20px;
+  margin: 32px;
+
 
 }
 .class2 {
@@ -114,20 +115,27 @@ color:white;
 .title-act-gen{
   display: flex;
   justify-content: space-between;
-  margin: 30px 50px;
+  margin: 30px 32px;
 }
-.title-act1{
-  background-color: rgba(0, 0, 0, 0.9);
-color: white;
-padding: 20px;
+
+.title-act a {
+  color: white;
+  text-decoration: none;
+  padding: 20px;
 font-weight: bold;
+display: block;
+-webkit-transition: all 0.2s;
+transition: all 0.2s;
+background-color: rgba(0, 0, 0, 0.9);
+  
 }
-.title-act2{
-  background-color: rgba(0, 0, 0, 0.9);
-color: white;
-padding: 20px;
-font-weight: bold;
+.title-act a:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+
 }
+
+
 
 .class2 img{
   width: 18vw;
@@ -141,7 +149,8 @@ padding: 16px 32px;
 color:white;
   text-align: justify;
   width: 48%;
-  margin-left: 20px;
+ 
+  margin: 32px;
 
 }
 .class-left2 {
