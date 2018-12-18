@@ -253,36 +253,25 @@ body {
 }
 
 .admin-accesos-directos {
-    /*display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;*/
     width: 100%;
     margin: 0 auto;
 }
 
-.admin-accesos-directos a {
-    /*display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 15vw;
-    height: 15vw;
-    margin: 1.5vw;
-    border-radius: 50%;
-    text-align: center;*/
-    
+.admin-accesos-directos a { 
     display: inline-block;
     width: 100%;
     background-color: #001534;
     color: white;
     margin: 12px 0;
     text-decoration: none;
+    box-shadow: 5px 5px 3px grey;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
 }
 
 .admin-accesos-directos a:hover {
     background-color: #2a4b7a;
+    box-shadow: 2px 2px 3px grey;
 }
 
 .admin-accesos-directos i {
@@ -302,6 +291,15 @@ body {
     margin-top: 5vh;
     background-color: #e6e6e6;
     border-radius: 10px 10px 0 0;
+    box-shadow: 5px 5px 5px grey;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.featured-form:hover, .admin-form2-wrapper:hover {
+    box-shadow: 10px 10px 5px grey;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 .featured-nav {

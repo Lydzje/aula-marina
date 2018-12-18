@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
             </a>
           </div>
           <div class="top-nav-right">
-            <a href="login.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
           </div>
         </div>
       </div>
