@@ -9,11 +9,7 @@ if (!isset($_SESSION['user'])) {
 
 include '../php-functions/functions.php';
 
-if (isset($_POST['submit'])) {
-  updateContact($_POST['phone'], $_POST['email'], $_POST['hour'], $_POST['address'], $_POST['description']);
-}
-
-getContactInfo($info);
+getSpecies($species);
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +19,7 @@ getContactInfo($info);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina Admin | Contacto </title>
+  <title>Aula Marina Admin | Especies del Mes </title>
 
   <link rel="stylesheet" href="../css/admin.css">
 
@@ -64,42 +60,53 @@ getContactInfo($info);
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
-        <span class="content-admin-title">CONTACTO</span>
+        <span class="content-admin-title">ESPECIES DEL MES</span>
+
         <div class="admin-content">
-          <div class="admin-form2-wrapper">
-            <div class="admin-form2-title">DATOS DE CONTACTO</div>
-            <div class="admin-form2">
-              <form method="POST">
-                <div class="field2">
-                  <span>Teléfono</span>
-                  <input name="phone" type="tel" value=<?php echo $info->phone; ?> placeholder="Número de teléfono" />
-                </div>
-                <div class="field2">
-                  <span>Email</span>
-                  <input name="email" type="email" value=<?php echo $info->email; ?> placeholder="Correo electrónico" />
-                </div>
-                <div class="field2">
-                  <span>Horario</span>
-                  <input name="hour" type="text" value="<?php echo $info->hour; ?>" placeholder="Horario de atención" />
-                </div>
-                <div class="field2">
-                  <span>Dirección</span>
-                  <input name="address" type="text" value="<?php echo $info->address; ?>" placeholder="Dirección" />
-                </div>
-                <div class="field2">
-                  <span>Texto</span>
-                  <textarea name="description" type="text" placeholder="Más detalles"><?php echo $info->description; ?></textarea>
-                </div>
-                <div class="submit2">
-                  <input name="submit" type="submit" value="GUARDAR" />
-                </div>
-              </form>
-            </div>
-          </div>
+          <div class="newTE"><i class="fas fa-plus"></i><span> Nueva Especie del Mes</span></div>
+          <table>
+            <thead>
+              <tr>
+                <th style="width:32px;text-align:center;"><i class="fas fa-star"></i></th>
+                <th>NOMBRE CIENTÍFICO</th>
+                <th>NOMBRE COMÚN</th>
+                <th>MES</th>
+                <th>AÑO</th>
+                <th style="width:32px;text-align:center;"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <?php  
+              $len = count($species);
+              for ($i=0; $i < $len; $i++) { 
+                $id        = $species[$i]->id;
+                $sci_name  = $species[$i]->sci_name;
+                $comm_name = $species[$i]->comm_name;
+                $month     = $species[$i]->month;
+                $year      = $species[$i]->year;
+                echo "
+                  <tr>
+                      <td class='table-star'><i class='far fa-star'></i></td>
+                      <td>$sci_name</td>
+                      <td>$comm_name</td>
+                      <td>$month</td>
+                      <td>$year</td>
+                      <td class='table-open'><i class='fas fa-angle-right'></i></td>
+                  </tr>
+                ";
+              }
+              ?>
+            </tbody>
+          </table>
+
         </div>
       </div>
     </div>
   </div>
+  </div>
+
+  <script src="../js/admin.js"></script>
 </body>
 
 </html>

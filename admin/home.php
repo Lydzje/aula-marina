@@ -43,14 +43,14 @@ if (!isset($_SESSION['user'])) {
 
 		<div class="left-nav">
 			<a href="home.php"><i class="fas fa-home"></i><span>INICIO</span></a>
-			<a href="featured.html"><i class="fas fa-star"></i><span>DESTACADOS DE PORTADA</span></a>
-			<a href="species-of-the-month.html"><i class="fas fa-fish"></i><span>ESPECIES DEL MES</span></a>
-			<a href="activities.html"><i class="fas fa-calendar-alt"></i><span>ACTIVIDADES</span></a>
-			<a href="projects.html"><i class="fas fa-project-diagram"></i><span>PROYECTOS</span></a>
-			<a href="people.html"><i class="fas fa-users"></i><span>PERSONAL</span></a>
-			<a href="facilities.html"><i class="fas fa-flask"></i><span>INSTALACIONES</span></a>
-			<a href="about-us.html"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
-			<a href="news.html"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
+			<a href="featured.php"><i class="fas fa-star"></i><span>DESTACADOS DE PORTADA</span></a>
+			<a href="species-of-the-month.php"><i class="fas fa-fish"></i><span>ESPECIES DEL MES</span></a>
+			<a href="activities.php"><i class="fas fa-calendar-alt"></i><span>ACTIVIDADES</span></a>
+			<a href="projects.php"><i class="fas fa-project-diagram"></i><span>PROYECTOS</span></a>
+			<a href="people.php"><i class="fas fa-users"></i><span>PERSONAL</span></a>
+			<a href="facilities.php"><i class="fas fa-flask"></i><span>INSTALACIONES</span></a>
+			<a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
+			<a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
 			<a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
 		</div>
 

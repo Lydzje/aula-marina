@@ -1,3 +1,21 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['user'])) {
+    header("location: login.php");
+}
+
+include '../php-functions/functions.php';
+
+if (isset($_POST['submit'])) {
+    updateFeatureds($_POST['id'], $_POST['text'], $_POST['link']);
+}
+
+getFeatureds($featureds);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -34,14 +52,14 @@
 
     <div class="left-nav">
       <a href="home.php"><i class="fas fa-home"></i><span>INICIO</span></a>
-      <a href="featured.html"><i class="fas fa-star"></i><span>DESTACADOS DE PORTADA</span></a>
-      <a href="species-of-the-month.html"><i class="fas fa-fish"></i><span>ESPECIES DEL MES</span></a>
-      <a href="activities.html"><i class="fas fa-calendar-alt"></i><span>ACTIVIDADES</span></a>
-      <a href="projects.html"><i class="fas fa-project-diagram"></i><span>PROYECTOS</span></a>
-      <a href="people.html"><i class="fas fa-users"></i><span>PERSONAL</span></a>
-      <a href="facilities.html"><i class="fas fa-flask"></i><span>INSTALACIONES</span></a>
-      <a href="about-us.html"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
-      <a href="news.html"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
+      <a href="featured.php"><i class="fas fa-star"></i><span>DESTACADOS DE PORTADA</span></a>
+      <a href="species-of-the-month.php"><i class="fas fa-fish"></i><span>ESPECIES DEL MES</span></a>
+      <a href="activities.php"><i class="fas fa-calendar-alt"></i><span>ACTIVIDADES</span></a>
+      <a href="projects.php"><i class="fas fa-project-diagram"></i><span>PROYECTOS</span></a>
+      <a href="people.php"><i class="fas fa-users"></i><span>PERSONAL</span></a>
+      <a href="facilities.php"><i class="fas fa-flask"></i><span>INSTALACIONES</span></a>
+      <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
+      <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
     </div>
     <div class="wrapper-bot-side">
@@ -57,7 +75,7 @@
               <div class="featured-button" onclick="showDiv(3)">DESTACADO 4</div>
             </div>
             <div class="featureds">
-              <div class="featured show-div">
+              <form class="featured show-div" method="POST">
                 <div class="featured-image">
                   <img alt="Imagen de destacado de portada" src="../res/inicio.png" />
                   <div class="select-file">
@@ -66,24 +84,26 @@
                   </div>
                 </div>
 
-                <form class="admin-form2-featured">
+                <div class="admin-form2-featured">
+                  <input name="id" type="hidden" value="1">
+
                   <div class="field2">
                     <span>Texto</span>
-                    <input type="text" placeholder="Texto del destacado" />
+                    <input name="text" type="text" value="<?php echo $featureds[0][1] ?>" placeholder="Texto del destacado" />
                   </div>
 
                   <div class="field2">
                     <span>Enlace</span>
-                    <input type="text" placeholder="Enlace del destacado" />
+                    <input name="link" type="text" value="<?php echo $featureds[0][2] ?>" placeholder="Enlace del destacado" />
                   </div>
 
                   <div class="submit2">
-                    <input type="submit" value="GUARDAR" />
+                    <input name="submit" type="submit" value="GUARDAR" />
                   </div>
-                </form>
-              </div>
+                </div>
+              </form>
 
-              <div class="featured show-div" style="display:none">
+              <form class="featured show-div" style="display:none" method="POST">
                 <div class="featured-image">
                   <img alt="Imagen de destacado de portada" src="../res/actividades.png" />
                   <div class="select-file">
@@ -92,24 +112,26 @@
                   </div>
                 </div>
 
-                <form class="admin-form2-featured">
+                <div class="admin-form2-featured">
+                  <input name="id" type="hidden" value="2">
+
                   <div class="field2">
                     <span>Texto</span>
-                    <input type="text" placeholder="Texto del destacado" />
+                    <input name="text" type="text" value="<?php echo $featureds[1][1] ?>" placeholder="Texto del destacado" />
                   </div>
 
                   <div class="field2">
                     <span>Enlace</span>
-                    <input type="text" placeholder="Enlace del destacado" />
+                    <input name="link" type="text" value="<?php echo $featureds[1][2] ?>" placeholder="Enlace del destacado" />
                   </div>
 
                   <div class="submit2">
-                    <input type="submit" value="GUARDAR" />
+                    <input name="submit" type="submit" value="GUARDAR" />
                   </div>
-                </form>
-              </div>
+                </div>
+              </form>
 
-              <div class="featured show-div" style="display:none">
+              <form class="featured show-div" style="display:none" method="POST">
                 <div class="featured-image">
                   <img alt="Imagen de destacado de portada" src="../res/noticias.png" />
                   <div class="select-file">
@@ -118,24 +140,26 @@
                   </div>
                 </div>
 
-                <form class="admin-form2-featured">
+                <div class="admin-form2-featured">
+                  <input name="id" type="hidden" value="3">
+
                   <div class="field2">
                     <span>Texto</span>
-                    <input type="text" placeholder="Texto del destacado" />
+                    <input name="text" type="text" value="<?php echo $featureds[2][1] ?>" placeholder="Texto del destacado" />
                   </div>
 
                   <div class="field2">
                     <span>Enlace</span>
-                    <input type="text" placeholder="Enlace del destacado" />
+                    <input name="link" type="text" value="<?php echo $featureds[2][2] ?>" placeholder="Enlace del destacado" />
                   </div>
 
                   <div class="submit2">
-                    <input type="submit" value="GUARDAR" />
+                    <input name="submit" type="submit" value="GUARDAR" />
                   </div>
-                </form>
-              </div>
+                </div>
+              </form>
 
-              <div class="featured show-div" style="display:none">
+              <form class="featured show-div" style="display:none" method="POST">
                 <div class="featured-image">
                   <img alt="Imagen de destacado de portada" src="../res/personal.png" />
                   <div class="select-file">
@@ -144,22 +168,24 @@
                   </div>
                 </div>
 
-                <form class="admin-form2-featured">
+                <div class="admin-form2-featured">
+                  <input name="id" type="hidden" value="4">
+
                   <div class="field2">
                     <span>Texto</span>
-                    <input type="text" placeholder="Texto del destacado" />
+                    <input name="text" type="text" value="<?php echo $featureds[3][1] ?>" placeholder="Texto del destacado" />
                   </div>
 
                   <div class="field2">
                     <span>Enlace</span>
-                    <input type="text" placeholder="Enlace del destacado" />
+                    <input name="link" type="text" value="<?php echo $featureds[3][2] ?>" placeholder="Enlace del destacado" />
                   </div>
 
                   <div class="submit2">
-                    <input type="submit" value="GUARDAR" />
+                    <input name="submit" type="submit" value="GUARDAR" />
                   </div>
-                </form>
-              </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
