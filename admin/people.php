@@ -135,15 +135,14 @@ getPeople(0, $colabs);
                 </div>
 
                 <div class="img-cola">
-                  <div class="selected-img">
-                    <span><i class="far fa-image"></i> Foto Colabs.</span>
+                  <div class="img-cola-img-container">
                     <img src="../res/personal.png" alt="">
+                    <span><i class="far fa-image"></i> Foto Colabs.</span>
 
                     <div class="select-file">
                       <input id="real-file-button" type='file'>
                       <span id='file-val'></span><span id='file-button'>Examinar..</span>
                     </div>
-
                   </div>
                 </div>
               </div>
