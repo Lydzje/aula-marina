@@ -57,13 +57,14 @@ getSpecies($species);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
         <span class="content-admin-title">ESPECIES DEL MES</span>
 
         <div class="admin-content">
-          <div class="newTE"><i class="fas fa-plus"></i><span> Nueva Especie del Mes</span></div>
+          <div class="newTE" onclick="window.location='new-species.php'"><i class="fas fa-plus"></i><span> Nueva Especie del Mes</span></div>
           <table>
             <thead>
               <tr>
@@ -88,11 +89,11 @@ getSpecies($species);
                 echo "
                   <tr>
                       <td class='table-star'><i class='far fa-star'></i></td>
-                      <td>$sci_name</td>
-                      <td>$comm_name</td>
-                      <td>$month</td>
-                      <td>$year</td>
-                      <td class='table-open'><i class='fas fa-angle-right'></i></td>
+                      <td onclick='window.location=\"edit-species.php?id=$id\"'>$sci_name</td>
+                      <td onclick='window.location=\"edit-species.php?id=$id\"'>$comm_name</td>
+                      <td onclick='window.location=\"edit-species.php?id=$id\"'>$month</td>
+                      <td onclick='window.location=\"edit-species.php?id=$id\"'>$year</td>
+                      <td class='table-open' onclick='window.location=\"edit-species.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
                   </tr>
                 ";
               }

@@ -9,7 +9,11 @@ if (!isset($_SESSION['user'])) {
 
 include '../php-functions/functions.php';
 
-getNews($news);
+if (isset($_POST['submit'])) {
+    updateNew($_GET['id'], $_POST['title'], $_POST['date'], $_POST['link'], $_POST['description'], $_POST['img-link']);
+}
+
+getNew($_GET['id'], $info);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +23,7 @@ getNews($news);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina Admin | Noticias </title>
+  <title>Aula Marina Admin | Nueva Noticia</title>
 
   <link rel="stylesheet" href="../css/admin.css">
 
@@ -61,47 +65,52 @@ getNews($news);
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
-        <span class="content-admin-title">NOTICIAS</span>
-
+        <span class="content-admin-title">NUEVA NOTICIA</span>
         <div class="admin-content">
-          <div class="newTE" onclick="window.location='new-new.php'"><i class="fas fa-plus"></i><span> Nueva Noticia</span></div>
-          <table>
-            <thead>
-              <tr>
-                <th style="width:32px;text-align:center;"><i class="fas fa-star"></i></th>
-                <th>FECHA</th>
-                <th>TÍTULO</th>
-                <th>ENLACE</th>
-                <th style="width:32px;text-align:center;"></th>
-              </tr>
-            </thead>
+          <div class="admin-form2-wrapper">
+            <div class="admin-form2-title">DATOS DE LA NOTICIA</div>
+            <div class="admin-form2">
+              <form method="POST">
+                <div class="field2">
+                  <span>Título</span>
+                  <input name="title" type="text" placeholder="Título" value="<?php echo $info->title ?>" />
+                </div>
+                <div class="field2">
+                  <span>Fecha</span>
+                  <input name="date" type="date" placeholder="Fecha" value="<?php echo $info->date ?>" />
+                </div>
+                <div class="field2">
+                  <span>Enlace</span>
+                  <input name="link" type="text" placeholder="Enlace de la noticia" value="<?php echo $info->link ?>" />
+                </div>
+                <div class="field2">
+                    <span>Descripción</span>
+                    <textarea name="description" type="text" placeholder="Resumen o descripción breve"><?php echo $info->description ?></textarea>
+                </div>
 
-            <tbody>
-              <?php  
-              $len = count($news);
-              for ($i=0; $i < $len; $i++) { 
-                $id    = $news[$i]->id;
-                $date  = $news[$i]->date;
-                $title = $news[$i]->title;
-                $link  = $news[$i]->link;
-                echo "
-                  <tr>
-                      <td class='table-star'><i class='far fa-star'></i></td>
-                      <td onclick='window.location=\"edit-new.php?id=$id\"'>$date</td>
-                      <td onclick='window.location=\"edit-new.php?id=$id\"'>$title</td>
-                      <td><a href='$link' target='_blank'>Enlace</a></td>
-                      <td class='table-open' onclick='window.location=\"edit-new.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
-                  </tr>
-                ";
-              }
-              ?>            
-            </tbody>
-          </table>
+                <div class="img-cola" style="margin-top:0;width:100%;">
+                    <div class="img-cola-img-container" style="box-shadow:none">
+                    <img class="colab-img"  src="<?php echo $info->img ?>">
+                    <span><i class="far fa-image"></i>Portada</span>
 
+                    <div class="select-file">
+                        <input class="img-link" type="text" placeholder="URL de la portada"><span id="file-button" onclick="loadColabImage()">Cargar</span>
+                        <input class="img-link-input" type="hidden" name="img-link"  value="<?php echo $info->img ?>" />
+                    </div>
+                    </div>
+                </div>
+                    
+                
+
+                <div class="submit2">
+                  <input name="submit" type="submit" value="GUARDAR" />
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <script src="../js/admin.js"></script>

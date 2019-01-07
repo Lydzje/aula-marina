@@ -10,10 +10,12 @@ if (!isset($_SESSION['user'])) {
 include '../php-functions/functions.php';
 
 if (isset($_POST['submit'])) {
-  updateFacilities($_POST['img1'], $_POST['img2'], $_POST['img3'], $_POST['img4'], $_POST['description']);
+    if ($_GET['past'] == "0") {
+        insertActivity(false, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link']);
+    } else {
+        insertActivity(true, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link']);
+    }
 }
-
-getFacilitiesInfo($info);
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +25,7 @@ getFacilitiesInfo($info);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina Admin | Instalaciones </title>
+  <title>Aula Marina Admin | <?php if($_GET['past']==1) echo "Nueva Actividad Pasada"; else echo "Nueva Actividad Programada" ?> </title>
 
   <link rel="stylesheet" href="../css/admin.css">
 
@@ -65,60 +67,53 @@ getFacilitiesInfo($info);
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
-        <span class="content-admin-title">INSTALACIONES</span>
-
+        <span class="content-admin-title"><?php if($_GET['past']==1) echo "NUEVA ACTIVIDAD PASADA"; else echo "NUEVA ACTIVIDAD PROGRAMADA" ?></span>
         <div class="admin-content">
-
-          <form class="admin-form2-wrapper" method="POST">
-            <div class="admin-form2-title">DESCRIPCIÓN DE LAS INSTALACIONES</div>
-            <div class="side-image-form">
-              <div class="multimedia">
-                <div class="img-nav">
-
-
-                  <div class="image-nav-option" onclick="selectImg(0)">
-                    <img src="<?php echo $info->img2 ?>">
-                    <input class="img-link-input" type="hidden" name="img2" value="<?php echo $info->img2 ?>"/>
-                  </div>
-
-                  <div class="image-nav-option" onclick="selectImg(1)">
-                    <img src="<?php echo $info->img3 ?>">
-                    <input class="img-link-input" type="hidden" name="img3" value="<?php echo $info->img3 ?>"/>
-                  </div>
-
-                  <div class="image-nav-option" onclick="selectImg(2)">
-                    <img src="<?php echo $info->img4 ?>">
-                    <input class="img-link-input" type="hidden" name="img4" value="<?php echo $info->img4 ?>"/>
-                  </div>
-
-
-                </div>
-                <div class="selected-img">
-                  <img src="<?php echo $info->img1 ?>">
-                  <input class="img-link-input" type="hidden" name="img1" value="<?php echo $info->img1 ?>"/>
-
-                  <div class="select-file">
-                    <input class='img-link' type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadSelectedImage()'>Cargar</span>
-                  </div>
-
-                </div>
-              </div>
-              <div class="admin-form2">
+          <div class="admin-form2-wrapper">
+            <div class="admin-form2-title">DATOS DE LA ACTIVIDAD</div>
+            <div class="admin-form2">
+              <form method="POST">
                 <div class="field2">
-                  <span>Descripción</span>
-                  <textarea name="description" type="text" placeholder="Descripción de las instalaciones"><?php echo $info->description ?></textarea>
+                  <span>Título</span>
+                  <input name="title" type="text" placeholder="Título de la actividad" />
                 </div>
+                <div class="field2">
+                  <span>Fecha</span>
+                  <input name="date" type="date" placeholder="Fecha" />
+                </div>
+                
+                <div class="field2">
+                    <span>Ubicación</span>
+                    <textarea name="ubication" type="text" placeholder="Ubicación de la actividad"></textarea>
+                </div>
+
+                <div class="field2">
+                    <span>Descripción</span>
+                    <textarea name="description" type="text" placeholder="Descripción de la actividad"></textarea>
+                </div>
+
+                <div class="img-cola" style="margin-top:0;width:100%;">
+                    <div class="img-cola-img-container" style="box-shadow:none">
+                    <img class="colab-img">
+                    <span><i class="far fa-image"></i>Imagen</span>
+
+                    <div class="select-file">
+                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage()">Cargar</span>
+                        <input class="img-link-input" type="hidden" name="img-link" />
+                    </div>
+                    </div>
+                </div>
+
+
                 <div class="submit2">
                   <input name="submit" type="submit" value="GUARDAR" />
                 </div>
-              </div>
+              </form>
             </div>
-          </form>
-
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <script src="../js/admin.js"></script>

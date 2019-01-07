@@ -52,6 +52,7 @@ if (!isset($_SESSION['user'])) {
 			<a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
 			<a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
 			<a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+			<a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
 		</div>
 
 		<div class="wrapper-bot-side">
@@ -59,19 +60,19 @@ if (!isset($_SESSION['user'])) {
 				<span class="content-admin-title">INICIO</span>
 				<div class="admin-content">
 					<div class="admin-accesos-directos">
-						<a href="featured.html">
+						<a href="featured.php">
 							<i class="fas fa-star"></i>
 							<span>DESTACADOS DE PORTADA</span>
 						</a>
-						<a href="species-of-the-month.html">
+						<a href="species-of-the-month.php">
 							<i class="fas fa-fish"></i>
 							<span>ESPECIES DEL MES</span>
 						</a>
-						<a href="activities.html">
+						<a href="activities.php">
 							<i class="fas fa-calendar-alt"></i>
 							<span>ACTIVIDADES</span>
 						</a>
-						<a href="projects.html">
+						<a href="projects.php">
 							<i class="fas fa-project-diagram"></i>
 							<span>PROYECTOS</span>
 						</a>

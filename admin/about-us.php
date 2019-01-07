@@ -10,7 +10,7 @@ if (!isset($_SESSION['user'])) {
 include '../php-functions/functions.php';
 
 if (isset($_POST['submit'])) {
-  updateAboutUs($_POST['description']);
+  updateAboutUs($_POST['img1'], $_POST['img2'], $_POST['img3'], $_POST['img4'], $_POST['description']);
 }
 
 getAboutUsInfo($info);
@@ -61,6 +61,7 @@ getAboutUsInfo($info);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
@@ -73,19 +74,31 @@ getAboutUsInfo($info);
             <div class="side-image-form">
               <div class="multimedia">
                 <div class="img-nav">
-                  <div class="image-nav-option" onclick="selectImg(0)"><img src="../res/dylan-gillis-533818-unsplash.jpg"
-                      alt=""></div>
-                  <div class="image-nav-option" onclick="selectImg(1)"><img src="../res/guillermo-diaz-mier-y-teran-569949-unsplash.jpg"
-                      alt=""></div>
-                  <div class="image-nav-option" onclick="selectImg(2)"><img src="../res/linus-nylund-310532-unsplash.jpg"
-                      alt=""></div>
+
+                  <div class="image-nav-option" onclick="selectImg(0)">
+                    <img src="<?php echo $info->img2 ?>">
+                    <input class="img-link-input" type="hidden" name="img2" value="<?php echo $info->img2 ?>"/>
+                  </div>
+
+                  <div class="image-nav-option" onclick="selectImg(1)">
+                    <img src="<?php echo $info->img3 ?>">
+                    <input class="img-link-input" type="hidden" name="img3" value="<?php echo $info->img3 ?>"/>
+                  </div>
+
+                  <div class="image-nav-option" onclick="selectImg(2)">
+                    <img src="<?php echo $info->img4 ?>">
+                    <input class="img-link-input" type="hidden" name="img4" value="<?php echo $info->img4 ?>"/>
+                  </div>
+
+
                 </div>
+
                 <div class="selected-img">
-                  <img src="../res/scott-webb-117024-unsplash.jpg" alt="">
+                  <img src="<?php echo $info->img1 ?>">
+                  <input class="img-link-input" type="hidden" name="img1" value="<?php echo $info->img1 ?>"/>
 
                   <div class="select-file">
-                    <input id="real-file-button" type='file'>
-                    <span id='file-val'></span><span id='file-button'>Examinar..</span>
+                    <input class='img-link' type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadSelectedImage()'>Cargar</span>
                   </div>
 
                 </div>

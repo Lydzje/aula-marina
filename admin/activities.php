@@ -9,8 +9,8 @@ if (!isset($_SESSION['user'])) {
 
 include '../php-functions/functions.php';
 
-getActivities(0, $nextActivities);
-getActivities(1, $pastActivities);
+getActivities(false, $nextActivities);
+getActivities(true, $pastActivities);
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +58,7 @@ getActivities(1, $pastActivities);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
@@ -69,7 +70,7 @@ getActivities(1, $pastActivities);
         <div class="admin-content">
           <div class="tables">
             <div class="show-div">
-              <div class="newTE"><i class="fas fa-plus"></i><span> Nueva Próxima Actividad</span></div>
+              <div class="newTE" onclick="window.location='new-activity.php?past=0'"><i class="fas fa-plus"></i><span> Nueva Próxima Actividad</span></div>
               <table>
                 <thead>
                   <tr>
@@ -90,9 +91,9 @@ getActivities(1, $pastActivities);
                     echo "
                       <tr>
                           <td class='table-star'><i class='far fa-star'></i></td>
-                          <td>$date</td>
-                          <td>$title</td>
-                          <td class='table-open'><i class='fas fa-angle-right'></i></td>
+                          <td onclick='window.location=\"edit-activity.php?id=$id\"'>$date</td>
+                          <td onclick='window.location=\"edit-activity.php?id=$id\"'>$title</td>
+                          <td class='table-open' onclick='window.location=\"edit-activity.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
                       </tr>
                     ";
                   }
@@ -103,7 +104,7 @@ getActivities(1, $pastActivities);
 
 
             <div class="show-div" style="display:none;">
-              <div class="newTE"><i class="fas fa-plus"></i><span> Nueva Actividad Pasada</span></div>
+              <div class="newTE"  onclick="window.location='new-activity.php?past=1'"><i class="fas fa-plus"></i><span> Nueva Actividad Pasada</span></div>
               <table>
                 <thead>
                   <tr>
@@ -124,9 +125,9 @@ getActivities(1, $pastActivities);
                     echo "
                       <tr>
                           <td class='table-star'><i class='far fa-star'></i></td>
-                          <td>$date</td>
-                          <td>$title</td>
-                          <td class='table-open'><i class='fas fa-angle-right'></i></td>
+                          <td onclick='window.location=\"edit-activity.php?id=$id\"'>$date</td>
+                          <td onclick='window.location=\"edit-activity.php?id=$id\"'>$title</td>
+                          <td class='table-open' onclick='window.location=\"edit-activity.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
                       </tr>
                     ";
                   }

@@ -9,11 +9,18 @@ var navActive = 0;
 var showDivs = document.getElementsByClassName("show-div");
 var shownDiv = 0;
 
+var featuredImgs = document.getElementsByClassName("featured-img");
+var imgLinks = document.getElementsByClassName("img-link");
+var imgLinkInputs = document.getElementsByClassName("img-link-input");
+
 var imageNav = document.getElementsByClassName("image-nav-option");
 var selectedImg = document.getElementsByClassName("selected-img")[0];
-var fileButton = document.getElementById("file-button");
+
+var colabImg = document.getElementsByClassName("colab-img")[0];
+
+/*var fileButton = document.getElementById("file-button");
 var realFileButton = document.getElementById("real-file-button");
-var fileVal = document.getElementById("file-val");
+var fileVal = document.getElementById("file-val");*/
 
 var tableStars = document.getElementsByClassName("table-star");
 
@@ -37,7 +44,7 @@ setTimeout(
 );
 
 
-try {
+/*try {
     fileButton.onclick = function () {
         realFileButton.click();
     };
@@ -51,7 +58,7 @@ try {
     };
 } catch (error) {
     //
-}
+}*/
 
 
 try {
@@ -74,6 +81,11 @@ function active(act) {
 }
 
 
+function loadImage(img) {
+    featuredImgs[img].src = imgLinks[img].value;
+    imgLinkInputs[img].value = imgLinks[img].value;
+}
+
 function showDiv(show, disp='flex') {
     showDivs[shownDiv].style.display = "none";
     showDivs[show].style.display = disp;
@@ -82,7 +94,24 @@ function showDiv(show, disp='flex') {
 
 
 function selectImg(img) {
-    var temp = selectedImg.children[0];
+    var selImg = selectedImg.children[0];
+    var selInp = selectedImg.children[1];
+
     selectedImg.replaceChild(imageNav[img].children[0], selectedImg.children[0]);
-    imageNav[img].appendChild(temp);
+    imageNav[img].appendChild(selImg);
+
+    selectedImg.replaceChild(imageNav[img].children[0], selectedImg.children[1]);
+    imageNav[img].appendChild(selInp);
+}
+
+
+function loadSelectedImage() {
+    selectedImg.children[0].src = imgLinks[0].value;
+    selectedImg.children[1].value = imgLinks[0].value;
+}
+
+
+function loadColabImage() {
+    colabImg.src = imgLinks[0].value;
+    imgLinkInputs[0].value = imgLinks[0].value;
 }

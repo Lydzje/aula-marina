@@ -9,8 +9,13 @@ if (!isset($_SESSION['user'])) {
 
 include '../php-functions/functions.php';
 
+if (isset($_POST['submit'])) {
+  updateColabsPhoto($_POST['img-link']);
+}
+
 getPeople(1, $main);
 getPeople(0, $colabs);
+getColabsPhoto($colabsPhoto);
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +63,7 @@ getPeople(0, $colabs);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
@@ -69,7 +75,7 @@ getPeople(0, $colabs);
         <div class="admin-content">
           <div class="tables">
             <div class="show-div">
-              <div class="newTE"><i class="fas fa-plus"></i><span> Nueva Persona Principal</span></div>
+              <div class="newTE" onclick="window.location='new-person.php?main=1'"><i class="fas fa-plus"></i><span> Nueva Persona Principal</span></div>
               <table>
                 <thead>
                   <tr>
@@ -87,7 +93,7 @@ getPeople(0, $colabs);
                     $name    = $main[$i]->name;
                     $charge  = $main[$i]->charge;
                     echo "
-                      <tr>
+                      <tr onclick='window.location=\"edit-person.php?id=$id\"'>
                           <td>$name</td>
                           <td>$charge</td>
                           <td class='table-open'><i class='fas fa-angle-right'></i></td>
@@ -104,7 +110,7 @@ getPeople(0, $colabs);
               <div class="side-img-table">
 
                 <div class="table1">
-                  <div class="newTE"><i class="fas fa-plus"></i><span> Nuevo Colaborador</span></div>
+                  <div class="newTE" onclick="window.location='new-person.php?main=0'"><i class="fas fa-plus"></i><span> Nuevo Colaborador</span></div>
                   <table>
                     <thead>
                       <tr>
@@ -122,7 +128,7 @@ getPeople(0, $colabs);
                         $name    = $colabs[$i]->name;
                         $charge  = $colabs[$i]->charge;
                         echo "
-                          <tr>
+                          <tr onclick='window.location=\"edit-person.php?id=$id\"'>
                               <td>$name</td>
                               <td>$charge</td>
                               <td class='table-open'><i class='fas fa-angle-right'></i></td>
@@ -134,17 +140,21 @@ getPeople(0, $colabs);
                   </table>
                 </div>
 
-                <div class="img-cola">
+                <form class="img-cola" method="POST">
                   <div class="img-cola-img-container">
-                    <img src="../res/personal.png" alt="">
+                    <img class="colab-img" src="<?php echo $colabsPhoto->img ?>">
                     <span><i class="far fa-image"></i> Foto Colabs.</span>
 
                     <div class="select-file">
-                      <input id="real-file-button" type='file'>
-                      <span id='file-val'></span><span id='file-button'>Examinar..</span>
+                      <input class='img-link' type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadColabImage()'>Cargar</span>
+                      <input class="img-link-input" type="hidden" name="img-link" value="<?php echo $colabsPhoto->img ?>"/>
                     </div>
                   </div>
-                </div>
+                  <div class="submit2">
+                    <input name="submit" type="submit" value="GUARDAR FOTO" style="display:block;width:80%;padding:12px 6px;margin:auto;font-size:12px;"/>
+                  </div>
+                </form>
+
               </div>
             </div>
           </div>

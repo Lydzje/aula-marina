@@ -9,7 +9,11 @@ if (!isset($_SESSION['user'])) {
 
 include '../php-functions/functions.php';
 
-getNews($news);
+if (isset($_POST['submit'])) {
+    updateAccount($_POST['username'], $_POST['password']);
+}
+
+getAccountInfo($info);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +23,7 @@ getNews($news);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina Admin | Noticias </title>
+  <title>Aula Marina Admin | Configuración de Cuenta </title>
 
   <link rel="stylesheet" href="../css/admin.css">
 
@@ -61,50 +65,30 @@ getNews($news);
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
-        <span class="content-admin-title">NOTICIAS</span>
-
+        <span class="content-admin-title">CONFIGURACIÓN DE CUENTA</span>
         <div class="admin-content">
-          <div class="newTE" onclick="window.location='new-new.php'"><i class="fas fa-plus"></i><span> Nueva Noticia</span></div>
-          <table>
-            <thead>
-              <tr>
-                <th style="width:32px;text-align:center;"><i class="fas fa-star"></i></th>
-                <th>FECHA</th>
-                <th>TÍTULO</th>
-                <th>ENLACE</th>
-                <th style="width:32px;text-align:center;"></th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <?php  
-              $len = count($news);
-              for ($i=0; $i < $len; $i++) { 
-                $id    = $news[$i]->id;
-                $date  = $news[$i]->date;
-                $title = $news[$i]->title;
-                $link  = $news[$i]->link;
-                echo "
-                  <tr>
-                      <td class='table-star'><i class='far fa-star'></i></td>
-                      <td onclick='window.location=\"edit-new.php?id=$id\"'>$date</td>
-                      <td onclick='window.location=\"edit-new.php?id=$id\"'>$title</td>
-                      <td><a href='$link' target='_blank'>Enlace</a></td>
-                      <td class='table-open' onclick='window.location=\"edit-new.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
-                  </tr>
-                ";
-              }
-              ?>            
-            </tbody>
-          </table>
-
+          <div class="admin-form2-wrapper">
+            <div class="admin-form2-title">CUENTA DE ADMINISTRADOR</div>
+            <div class="admin-form2">
+              <form method="POST">
+                <div class="field2">
+                  <span>Usuario</span>
+                  <input name="username" type="text" value=<?php echo $info->username; ?> placeholder="Nombre de usuario" />
+                </div>
+                <div class="field2">
+                  <span>Contraseña</span>
+                  <input name="password" type="password" value=<?php echo $info->password; ?> placeholder="Contraseña" />
+                </div>
+                <div class="submit2">
+                  <input name="submit" type="submit" value="APLICAR" />
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
-
-  <script src="../js/admin.js"></script>
 </body>
 
 </html>

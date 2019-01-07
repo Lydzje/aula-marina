@@ -61,6 +61,7 @@ getContactInfo($info);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
@@ -72,11 +73,11 @@ getContactInfo($info);
               <form method="POST">
                 <div class="field2">
                   <span>Teléfono</span>
-                  <input name="phone" type="tel" value=<?php echo $info->phone; ?> placeholder="Número de teléfono" />
+                  <input name="phone" type="tel" value="<?php echo $info->phone; ?>" placeholder="Número de teléfono" />
                 </div>
                 <div class="field2">
                   <span>Email</span>
-                  <input name="email" type="email" value=<?php echo $info->email; ?> placeholder="Correo electrónico" />
+                  <input name="email" type="email" value="<?php echo $info->email; ?>" placeholder="Correo electrónico" />
                 </div>
                 <div class="field2">
                   <span>Horario</span>
