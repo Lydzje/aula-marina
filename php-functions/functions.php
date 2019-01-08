@@ -6,8 +6,10 @@ $conn->query("SET NAMES 'utf8'");
 function verify_login($username, $password, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM users WHERE username=? AND password=?");
+    $sql->bind_param('ss', $username, $password);
+    $sql->execute();
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
         return 1;
