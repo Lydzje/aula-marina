@@ -1,10 +1,8 @@
 <?php
-include("")
+include_once 'db/connection.php';
+include 'php-functions/functions.php';
 
-
-
-
-
+getActivity($_GET['id'], $info);
 
 ?>
 
@@ -16,7 +14,7 @@ include("")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aula Marina | Actividad</title>
+    <title>Aula Marina | <?php echo $info->title ?></title>
 
     <link rel="stylesheet" href="./css/instalaciones.css">
 
@@ -58,22 +56,27 @@ include("")
       </div>
       <div class="content">
         <div class="title">
-          <span>INSTALACIONES</span>
+          <span><?php echo $info->title ?></span>
           
         </div>
 
         <div class="section">
           <div class="text">
             <p>
-              El Aula Marina está ubicada dentro del Campus Universitario de la Universidad de Almería. El Campus de la Universidad de Almería disfruta de una ubicación privilegiada junto al mar y además de albergar modernos edificios e infraestructuras destinados a docencia e investigación, está dotado de una excelente biblioteca, cafeterías, zonas verdes, etc. que amplían de manera significativa la acogida que el Aula Marina pueda brindar a sus visitantes con el fin de apoyar las actividades que se desarrollen en la misma.
+              <?php echo $info->description ?>
             </p>
             <p>
-              Dentro de dicho campus los espacios destinados al Aula Marina se sitúan dentro del Edificio Científico Técnico V (CITE V) de la Universidad. Concretamente el Aula Marina se ubica en el despacho D2-08, segunda planta del edificio, donde dispone de una oficina para su gestión y en el aula-laboratorio del semisótano donde dispone de un espacio tematizado para el desarrollo de sus actividades.
+             <b>Ubicación: </b> 
+               <?php echo $info->ubication ?>
+            </p>
+            <p>
+              <b>Fecha: </b>
+            <?php echo $info->date ?>
             </p>
           </div>
           <div class="images">
             <div>
-              <img src="./res/lab.jpg" alt="FOTO" width="100%">
+              <img src="<?php echo $info->img ?>" width="100%">
             </div>
             <div class="slider-buttons">
               <div class="slider-button"></div>
@@ -82,9 +85,7 @@ include("")
               <div class="slider-button"></div>
 
             </div>
-            <div class="img-desc">
-              LABORATARIO DE ALGAS MARINAS
-            </div>
+            <div class="img-desc"></div>
           </div>
         </div>
       </div>

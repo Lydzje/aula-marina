@@ -1,5 +1,5 @@
 <?php
-include '../db/connection.php';
+
 
 $conn->query("SET NAMES 'utf8'");
 
