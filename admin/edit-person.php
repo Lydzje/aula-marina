@@ -1,12 +1,13 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
+  session_start();
 }
 
 if (!isset($_SESSION['user'])) {
   header("location: login.php");
 }
 
+include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
 getPerson($_GET['id'], $info); // Necesario para saber si es main o no, ya se actualiza más abajo si toca

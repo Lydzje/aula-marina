@@ -7,6 +7,7 @@ if (!isset($_SESSION['user'])) {
   header("location: login.php");
 }
 
+include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
 if (isset($_POST['submit'])) {

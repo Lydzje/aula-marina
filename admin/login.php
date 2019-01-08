@@ -3,6 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
 if (isset($_POST['login'])) {
