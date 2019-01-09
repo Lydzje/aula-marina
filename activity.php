@@ -16,7 +16,7 @@ getActivity($_GET['id'], $info);
 
     <title>Aula Marina | <?php echo $info->title ?></title>
 
-    <link rel="stylesheet" href="./css/instalaciones.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
           crossorigin="anonymous">
@@ -24,8 +24,8 @@ getActivity($_GET['id'], $info);
   </head>
 
   <body>
-
-    <div class="wrapper-instalaciones">
+    <div class="bg bg-activity"></div>
+    <div class="wrapper">
 
       <?php include "nav.php"?>
 
@@ -36,7 +36,9 @@ getActivity($_GET['id'], $info);
         </div>
 
         <div class="section">
-          <div class="text">
+        <div class="section-top"></div>
+        <div class="section-bot">
+          <div class="section-left section-text">
             <p>
               <?php echo $info->description ?>
             </p>
@@ -49,11 +51,11 @@ getActivity($_GET['id'], $info);
             <?php echo $info->date ?>
             </p>
           </div>
-          <div class="images">
+          <div class="section-right section-img">
             <div>
-              <img src="<?php echo $info->img ?>" width="100%">
+              <img src="<?php echo $info->img ?>">
             </div>
-            <div class="slider-buttons">
+            <div class="section-slider-buttons">
               <div class="slider-button"></div>
               <div class="slider-button"></div>
               <div class="slider-button"></div>
@@ -61,6 +63,7 @@ getActivity($_GET['id'], $info);
 
             </div>
             <div class="img-desc"></div>
+          </div>
           </div>
         </div>
       </div>
