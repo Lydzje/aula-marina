@@ -86,7 +86,7 @@ getContactInfo($info);
                 </div>
                 <div class="field2">
                   <span>Dirección</span>
-                  <input name="address" type="text" value="<?php echo $info->address; ?>" placeholder="Dirección" />
+                  <textarea name="address" type="text" placeholder="Dirección"><?php echo $info->address; ?></textarea>
                 </div>
                 <div class="field2">
                   <span>Texto</span>

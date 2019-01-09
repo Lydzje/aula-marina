@@ -152,4 +152,8 @@ INSERT INTO news VALUES (2, "Un protocolo para las carabelas portuguesas", "2018
 INSERT INTO news VALUES (3, "Desenterrando grandes especies marinas de cinco millones de años", "2017-09-04", "Vacas marinas, focas y ballenas del son algunos de los ejemplares hallados en la excavación", "https://www.lavozdealmeria.com/noticia/3/provincia/137134/desenterrando-grandes-especies-marinas-de-cinco-millones-de-anos", "https://lh4.googleusercontent.com/proxy/0UZ9mbtzl24n0NJypG1X1e9hxOgk1Aw-kHGVPgDKxVBfdgtuyC_0WlhdFXn6H-33g6-RmAimgwJbmdr0xK4_r78mKiQOOTNAgX90QQSU8dQCebAO20xz5GPhWMBofVN13t5xTBg5blvqBZ1AiOHee8IRm7Bl0kdfkvZu8s9djH75jWBCfcAWAgEhycF95YDVjEOo-Qo1FuRc1z4GezvJ");
 INSERT INTO news VALUES (4, "El futuro de la pesca en el Mediterráneo andaluz se ha decidido en Almería", "2017-08-31", "Logran un acuerdo mejor que la propuesta inicial aunque se reducen los topes, horarios y número de días anuales", "https://www.ideal.es/almeria/provincia-almeria/futuro-pesca-mediterraneo-20170831093708-nt.html", "https://lh5.googleusercontent.com/proxy/-XmR_MNwLrZmOeGBh3kiOqyPCzbMSk7lN303L60hQVXIqJCEupTXL461hNBbA5YgRXfjh67XVbHZONta1tdhIU5mxsPwcusqwiLdVNvErKPV8SjXQ3OwhzBK07mmbiwPfp0Zh_9EmnoHXFkQPQIyBdhT9iuO029qTiSWaYKUvyvvJsB55RF7CD3LClejGQ");
 
-INSERT INTO contact VALUES (1, "950 21 47 71", "aulamar@ual.es", "9:00 - 14:00 de Lunes a Viernes", "Carretera de Sacramento s/n 04120 La Cañada de San Urbano (Almería, España). Edificio Científico Técnico V (CITE-V) 2ª planta, despacho 2-08", "");
+INSERT INTO contact VALUES (1, "950 21 47 71", "aulamar@ual.es", "9:00 - 14:00 de Lunes a Viernes", "Carretera de Sacramento s/n 04120
+La Cañada de San Urbano (Almería, España)
+
+Edificio Científico Técnico V (CITE-V) 
+2ª planta, despacho 2-08", "");
