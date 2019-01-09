@@ -7,7 +7,7 @@
 
   <title>Aula Marina | Especie del mes</title>
 
-  <link rel="stylesheet" href="css/mainR.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
@@ -15,8 +15,10 @@
 </head>
 
 <body>
-  <div class="wrapper-species-of-the-month">
+  <div class="bg bg-species-of-the-month"></div>
+  <div class="wrapper">
   <?php include "nav.php"?>
+  <div class="content">
     <div class="species-box">
       <div class="recent-species">
         <a class="recent-species-img" href="#">
@@ -92,7 +94,7 @@
 
       </div>
     </div>
-
+    </div>  
 
 
 

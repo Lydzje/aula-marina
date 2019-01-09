@@ -7,7 +7,7 @@
 
   <title>Aula Marina | Proyectos</title>
 
-  <link rel="stylesheet" href="css/mainR.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
@@ -15,17 +15,16 @@
 </head>
 
 <body>
-  <div class="background-projects">
-
-  </div>
-  <div class="wrapper-projects">
+  <div class="bg bg-projects"></div>
+  <div class="wrapper">
     <?php include "nav.php"?>
-    <div class="title-page">
-      <h1>PROYECTOS</h1>
+    <div class="content">
+    <div class="title">
+      <span>PROYECTOS</span>
     </div>
 
     <div class="content-projects">
-      <a class="project-x" href="#">
+      <a class="project-x" href="project.php?id=1">
         <div>
           <img src="./res/beach.jpg">
         </div>
@@ -38,7 +37,7 @@
           </p>
         </div>
       </a>
-      <a class="project-x" href="#">
+      <a class="project-x" href="project.php?id=1">
         <div>
           <img src="./res/beach.jpg">
         </div>
@@ -51,7 +50,7 @@
           </p>
         </div>
       </a>
-      <a class="project-x" href="#">
+      <a class="project-x" href="project.php?id=1">
         <div>
           <img src="./res/beach.jpg">
         </div>
@@ -65,7 +64,7 @@
         </div>
       </a>
     </div>
-
+    </div>
 
 
 

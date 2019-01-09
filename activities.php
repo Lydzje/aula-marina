@@ -7,8 +7,7 @@
 
   <title>Aula Marina | Actividades</title>
 
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/activities.css">
+  <link rel="stylesheet" href="./css/style.css">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
@@ -16,13 +15,12 @@
 </head>
 
 <body>
-  <div class="background-activities">
-  </div>
+  <div class="bg bg-activities"></div>
 
-  <div class="wrapper-activities">
+  <div class="wrapper">
     <?php include "nav.php"?>
-    <div class="content-activities">
-      <div class="text-activities">
+    <div class="content">
+      <div class="title">
         <span>ACTIVIDADES</span>
       </div>
     </div>
@@ -33,13 +31,10 @@
 
       </div>
 
-
-
-
-      <div class="text-1">
+      <div class="section-bot">
         <div class="section-left">
           <img src="./res/principal-act.jpg" alt="">
-          <div class="slider-buttons2">
+          <div class="section-slider-buttons">
             <div class="slider-button"></div>
             <div class="slider-button"></div>
             <div class="slider-button"></div>
@@ -53,21 +48,16 @@
 
         </div>
 
-        <div class="section-right">
-
-          <div class="parrafo">
-
+        <div class="section-right section-text">
+          <div class="par">
             <span>
               ACTIVIDAD DE VOLUNTARIADO AMBIENTAL PARQUE NATURAL CABO DE GATA
             </span>
-
             <p>
               El pasado sábado 12 de mayo estuvimos en la playas de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar,
               ayudando en una limpieza de la playas juento con nuestros amigos de Ecocampus.
             </p>
           </div>
-
-
         </div>
       </div>
     </div>
@@ -143,17 +133,13 @@
 
     </div>
 
-  </div>
-
-
-
-  </div>
-  </div>
-  
-  <?php 
+    
+    <?php 
   $notFixed = true;
   include "footer.php";
   ?>
+  </div>
+
 </body>
 
 </html>

@@ -7,7 +7,7 @@
 
     <title>Aula Marina | Especie del mes</title>
 
-    <link rel="stylesheet" href="css/mainR.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	  crossorigin="anonymous">
@@ -15,13 +15,15 @@
   </head>
 
   <body>
-    <div class="wrapper-species-name">
+    <div class="bg bg-species"></div>
+    <div class="wrapper">
     <?php include "nav.php"?>
-      <div class="specie-box">
-	<div class="specie-img">
+    <div class="content">
+      <div class="ind-species-box">
+	<div class="ind-species-img">
           <img src="./res/octopus.jpg">
 	</div>
-	<div class="specie-text">
+	<div class="ind-species-text">
           <h1>
             PULPO <br> (Octopus Vulgaris)
           </h1>
@@ -42,6 +44,7 @@
           </p>
 	</div>
 
+      </div>
       </div>
       <?php include "footer.php"?>
 

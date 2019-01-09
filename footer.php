@@ -1,7 +1,7 @@
 <<?php if(isset($notFixed)) echo "div class='footer'"; else echo "footer";?>>
     <div class="footer-top">
         <div class="logos">
-            <a href="./index.html" target="_blank"><img class="aula-marina-logo" src="./res/aula-marina-logo.png"></a>
+            <a href="./index.php" target="_blank"><img class="aula-marina-logo" src="./res/aula-marina-logo.png"></a>
             <a href="http://www.campusdelmar.com/es/" target="_blank"><img class="ceimar-logo" src="./res/ceimar-logo.png"></a>
             <a href="https://www.ual.es/" target="_blank"><img class="ual-logo" src="./res/ual-logo.png"></a>
         </div>
@@ -27,7 +27,7 @@
                 <span class="contact-text">Ctra Sacramento s/n, 04120
                     <span>La Cañada de San Urbano, Almería</span>
                 </span>
-                <a class="contact-text" href="contact.html">Saber más</a>
+                <a class="contact-text" href="contact.php">Saber más</a>
             </div>
         </div>	
     </div>

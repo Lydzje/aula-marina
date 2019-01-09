@@ -7,7 +7,7 @@
 
     <title>Aula Marina | Name </title>
 
-    <link rel="stylesheet" href="css/mainR.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	  crossorigin="anonymous">
@@ -15,32 +15,29 @@
   </head>
 
   <body>
-    <div class="background-project-name">
-
-    </div>
-    <div class="wrapper-projects-name">
+    <div class="bg bg-project"></div>
+    <div class="wrapper">
       <?php include "nav.php"?>
-      <div class="title-page-projects-name">
-	<h1>NAME</h1>
+      <div class="title">
+	<span>NAME</span>
       </div>
 
-      <div class="content-projects-name">
-	<div class="section-projects">
+      <div class="content-project">
+	<div class="section-project">
           <div>
 
-            <div class="img-projects-name">
+            <div class="img-project">
               <img src="./res/proyecto3.jpg">
             </div>
-            <div class="slider-buttons1">
-              <div class="slider-button1"></div>
-              <div class="slider-button1"></div>
-              <div class="slider-button1"></div>
-              <div class="slider-button1"></div>
+            <div class="section-slider-buttons">
+              <div class="slider-button"></div>
+              <div class="slider-button"></div>
+              <div class="slider-button"></div>
+              <div class="slider-button"></div>
             </div>
-            <div>
-            </div>
+            <div class="img-desc"></div>
           </div>
-          <div class="text-projects-name">
+          <div class="text-project">
             <span>
               TITULO
             </span>
@@ -56,8 +53,8 @@
             </p>
           </div>
 	</div>
-	<div class="section-projects">
-          <div class="text-projects-name">
+	<div class="section-project">
+          <div class="text-project">
             <span>
               TITULO
             </span>
@@ -74,31 +71,33 @@
           </div>
           <div>
 
-            <div class="img-projects-name">
+            <div class="img-project">
               <img src="./res/proyecto3.jpg">
             </div>
-            <div class="slider-buttons1">
-              <div class="slider-button1"></div>
-              <div class="slider-button1"></div>
-              <div class="slider-button1"></div>
-              <div class="slider-button1"></div>
+            <div class="section-slider-buttons">
+              <div class="slider-button"></div>
+              <div class="slider-button"></div>
+              <div class="slider-button"></div>
+              <div class="slider-button"></div>
             </div>
+            <div class="img-desc"></div>
           </div>
 	</div>
-	<div class="section-projects">
+	<div class="section-project">
           <div>
 
-            <div class="img-projects-name">
+            <div class="img-project">
               <img src="./res/proyecto3.jpg">
             </div>
-            <div class="slider-buttons1">
-              <div class="slider-button1"></div>
-              <div class="slider-button1"></div>
-              <div class="slider-button1"></div>
-              <div class="slider-button1"></div>
+            <div class="section-slider-buttons">
+              <div class="slider-button"></div>
+              <div class="slider-button"></div>
+              <div class="slider-button"></div>
+              <div class="slider-button"></div>
             </div>
-          </div>
-          <div class="text-projects-name">
+            <div class="img-desc"></div>
+</div>
+          <div class="text-project">
             <span>
               TITULO
             </span>
