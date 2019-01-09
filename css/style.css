@@ -159,7 +159,7 @@ body {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/noticias.jpg");
+    background-image: url("../res/noticias.png");
 }
 
 .bg-contact {
@@ -544,7 +544,6 @@ body {
 .class2 img{
     width: 18vw;
     height: 14vw;
-    border: white solid 1px;
     margin: 10px;
     object-fit: cover;
 }
@@ -699,6 +698,63 @@ body {
     margin: 15px;  
     text-align: justify;
 }
+
+.loc-cont-box {
+    --display: flex;
+    --justify-content: space-between;
+    padding: 32px;
+}
+  
+.location-box {
+    background-color: rgba(0,0, 0, 0.8);
+    color: white;
+    display: inline-block;
+    padding: 15px;
+    width: 45%;
+}
+  
+.location-box h1 {
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    border-bottom: white solid;  
+}
+
+.location-box p {
+    padding: 10px;
+    display: block;
+}
+
+.map {
+    padding: 10px 0;
+    width: 100%;
+}
+  
+.contact-box {
+    display: inline-block;
+    width: 45%;
+    margin-left: 5%;
+}
+
+.contact-box div {
+    background-color: rgba(0,0, 0, 0.8);
+    color: white;
+    display: inline-block;
+    padding: 15px;
+    width: 100%;
+}
+
+.contact-box h1 {
+    font-size: 20px;
+    padding: 23px;
+    text-align: center;
+    border-bottom: white solid;
+}
+
+.contact-box p {
+    padding: 10px;
+}
+
 
 footer {
     background-color: #001534;

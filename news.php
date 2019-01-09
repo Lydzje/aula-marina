@@ -7,8 +7,7 @@
 
   <title>Aula Marina | Noticias</title>
 
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/mainU.css">
+  <link rel="stylesheet" href="./css/style.css">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
@@ -16,11 +15,11 @@
 </head>
 
 <body>
-  <div class="background-news"></div>
-  <div class="wrapper-news">
+  <div class="bg bg-news"></div>
+  <div class="wrapper">
     <?php include "nav.php"?>
-    <div class="content-news">
-      <div class="textNews">
+    <div class="content">
+      <div class="title">
         <span>NOTICIAS</span>
       </div>
     </div>
@@ -30,10 +29,10 @@
         <span>NOTICIA DESTACADA</span>
       </div>
 
-      <div class="text-1">
-        <div class="section-left">
+      <div class="section-bot">
+        <div class="section-left section-img">
           <img src="./res/noticias-principal.jpg" alt="">
-          <div class="slider-buttons2">
+          <div class="section-slider-buttons">
             <div class="slider-button"></div>
             <div class="slider-button"></div>
             <div class="slider-button"></div>
@@ -46,8 +45,8 @@
           </div>
         </div>
 
-        <div class="section-right">
-          <div class="parrafo">
+        <div class="section-right section-text">
+          <div class="parr">
             <span>
               ACTIVIDAD DE VOLUNTARIADO AMBIENTAL PARQUE NATURAL CABO DE GATA
             </span>
@@ -103,10 +102,10 @@
         </div>
       </div>
     </div>
-  </div>
   <?php 
   $notFixed = true;
   include "footer.php";
   ?>
+  </div>
 </body>
 </html>
