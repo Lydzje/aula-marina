@@ -18,12 +18,15 @@
   <div class="bg bg-aula-marina"></div>
   <div class="wrapper">
     <?php include "nav.php"?>
-    
-    <div class="content-aula-marina">
-      <div class="aula-marina-links">
-        <div class="personal"><a href="people.php">PERSONAL</a></div>
-        <div class="instalaciones"><a href="facilities.php">INSTALACIONES</a></div>
-        <div class="sobre-nosotros"><a href="about-us.php">SOBRE NOSOTROS</a></div>
+    <div class="content" style="height:100%">
+
+      <div class="title">AULA MARINA</div>
+      <div class="content-aula-marina">
+        <div class="aula-marina-links">
+          <div class="personal"><a href="people.php">PERSONAL</a></div>
+          <div class="instalaciones"><a href="facilities.php">INSTALACIONES</a></div>
+          <div class="sobre-nosotros"><a href="about-us.php">SOBRE NOSOTROS</a></div>
+        </div>
       </div>
     </div>
 

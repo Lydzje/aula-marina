@@ -25,6 +25,7 @@ include "php-functions/functions.php";
   <div class="wrapper">
   <?php include "nav.php"?>
   <div class="content">
+    <div class="title">ESPECIE DEL MES</div>
     <div class="species-box">
       <div class="recent-species">
         <a class="recent-species-img" href="#">
