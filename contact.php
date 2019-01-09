@@ -1,3 +1,9 @@
+<?php
+include "db/connection.php";
+include "php-functions/functions.php";
+
+getContactInfo($info);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -37,18 +43,19 @@
 
             <h1>Contacto</h1>
             <p>
-              Si tienes alguna pregunta o duda, por favor, no dudes
-              en <br> contactar con nosotros por teléfono o correo electrónico
-              y <br> nos pondremos en contacto contigo tan pronto como sea <br> posible.
+            <?php echo $info->description ?>
             </p>
             <p>
-              Tlfno.aulamarina: 950 21 47 71 <br>
-              Email: aulamar@ual.es <br>
-              Horario de atención: 9:00 - 14:00 de Lunes a Viernes <br>
-              Dirección postal: Carretera de Sacramento s/n 04120 <br>
-              La Cañada de San Urbano (Almería, España) <br>
-              Edificio Científico Técnico V (CITE-V) 2ª planta, <br> despacho 2-08 <br>
-              Laboratorio: planta semisótano, laboratorio S-12.
+                <b>Teléfono: </b> <?php echo $info->phone ?> <br>
+              <p>
+                <b>Email: </b> <?php echo $info->email ?> <br>
+              </p>
+               <p>
+                <b>Horario de atención: </b> <?php echo $info->hour ?> <br>
+              </p>
+              <p>
+                <b>Dirección postal: </b> <?php echo $info->address ?>
+              </p>
             </p>
           </div>
         </div>
