@@ -19,33 +19,7 @@
 
       <div class="wrapper-sobre-nosotros">
 
-        <div class="header">
-          <div class="logo-nav">
-
-	    <div class="logo">
-              <a href="./index.html">
-		<img src="./res/aula-marina-logo.png">
-              </a>
-            </div>
-            <div class="nav">
-              <ul>
-		<a href="index.html"><li>INICIO</li></a>
-		<a href="species-of-the-month.html"><li>ESPECIE DEL MES</li></a>
-		<a href="aula-marina.html"><li>AULA MARINA</li></a>
-		<a href="activities.html"><li>ACTIVIDADES</li></a>
-		<a href="projects.html"><li>PROYECTOS</li></a>
-		<a href="news.html"><li>NOTICIAS</li></a>
-		<a href="contact.html"><li>CONTACTO</li></a>
-              </ul>
-            </div>
-
-          </div>
-          <div class="lang">
-            <a href="#">ES</a>
-            <span>/</span>
-            <a href="#">EN</a>
-          </div>
-        </div>
+      <?php include "nav.php"?>
         <div class="content">
           <div class="title">
             <span>SOBRE NOSOTROS</span>
@@ -83,43 +57,7 @@
         </div>
       </div>
 
-      <footer>
-        <div class="footer-top">
-          <div class="logos">
-            <a href="./index.html"><img class="aula-marina-logo" src="../aula-marina/res/aula-marina-logo.png"></a>
-            <a href=""><img class="ceimar-logo" src="./res/ceimar-logo.png"></a>
-            <a href=""><img class="ual-logo" src="./res/ual-logo.png"></a>
-          </div>
-          
-          <div class="rrss">
-            <div class="rrss-content">	    
-              <span>SÍGUENOS EN</span>
-              <div class="rrss-icons">
-		<a href="#"><i class="fab fa-facebook-square"></i></a>
-		<a href="#"><i class="fab fa-twitter-square"></i></a>
-		<a href="#"><i class="fab fa-youtube-square"></i></a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="contact">
-            <div class="contact-content">
-              <span class="contact-text">LOCALIZACIÓN Y CONTACTO</span>
-              <span class="contact-text">Aula Marina
-		<span>Edificio Científico Técnico V</span>
-              </span>
-              <span class="contact-text">Ctra Sacramento s/n, 04120
-		<span>La Cañada de San Urbano, Almería</span>
-              </span>
-              <a class="contact-text" href="contact.html">Saber más</a>
-            </div>
-          </div>	
-        </div>
-        
-        <div class="footer-bot">
-          <span>Copyright 2018 Aula Marina</span>
-        </div>
-      </footer>
+      <?php include "footer.php"?>
       
   </body>
 
