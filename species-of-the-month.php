@@ -1,3 +1,9 @@
+<?php
+include "db/connection.php";
+include "php-functions/functions.php";
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -31,6 +37,20 @@
         </div>
       </div>
       <div class="lasted-species">
+        <div class="dropdonw">
+
+          <button class="button">
+            <b> AÑO  </b>
+            <div class="annio">
+              <a href="#"> 2018 </a>
+              <a href="#"> 2019 </a>
+              <a href="#"> 2020 </a>
+              <a href="#"> 2021 </a>
+              <a href="#"> 2022 </a>
+            </div>
+          </button>
+        </div>
+      <div>
         <a class="lasted-species-box" href="#">
           Enero
           <img src="./res/octopus.jpg">
@@ -92,6 +112,7 @@
           NOMBRE12
         </a>
 
+      </div>
       </div>
     </div>
     </div>  
