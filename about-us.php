@@ -1,3 +1,10 @@
+<?php
+include "db/connection.php";
+include "php-functions/functions.php";
+
+getAboutUsInfo($info);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -31,18 +38,14 @@
             <div class="section-bot">
               <div class="section-left section-text">
                 <p>
-                  El Aula Marina es una entidad que persigue desarrollar actividades de carácter divulgativo y de formacion relacionadas con el mar.
-                </p>
-                <p>
-                  Su creación se aprobó en Consejo extraordinario de Gobierno, el dia 24 de julio de 2017, a partir de una iniciativa llevada a cabo por el Centro de Excelencia Internacional del Mar (CEIMAR) de la Universidad de Almería.
-                </p>
-                <p>
-                  El objetivo del Aula Marina es ser motor de divulgacion y formación sobre aspectos relacionados del medio marino almeriense. Su fin no es competir con otras entidades privadas o coletivos sino intentar ser agente de unión de todas aquellas iniciativas que actuén en pro del mar, los oceanos y sus gentes.
+                 <?php
+                 echo $info->description;
+                 ?>
                 </p>
               </div>
               <div class="section-right section-img">
                 <div>
-                  <img src="./res/roquetas.jpg" alt="FOTO" width="100%">
+                  <img src="<?php echo $info->img1 ?>" alt="FOTO" width="100%">
                 </div>
                 <div class="section-slider-buttons">
                   <div class="slider-button"></div>
@@ -51,7 +54,7 @@
                   <div class="slider-button"></div>
                 </div>
                 <div class="img-desc">
-                  PLAYA DE ROQUETAS DE MAR
+                  
                 </div>
               </div>
             </div>
