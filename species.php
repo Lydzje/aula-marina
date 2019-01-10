@@ -1,3 +1,11 @@
+<?php
+include "db/connection.php";
+include "php-functions/functions.php";
+
+getOneSpecies($_GET["id"], $info);
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aula Marina | Especie del mes</title>
+    <title>Aula Marina | <?php echo $info->comm_name ?></title>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -21,26 +29,14 @@
     <div class="content">
       <div class="ind-species-box">
 	<div class="ind-species-img">
-          <img src="./res/octopus.jpg">
+          <img src="<?php echo $info->img ?>">
 	</div>
 	<div class="ind-species-text">
           <h1>
-            PULPO <br> (Octopus Vulgaris)
+          <?php echo $info->comm_name ?> <br> (<?php echo $info->sci_name ?>)
           </h1>
           <p>
-            Muy conocida por sus culinarios, se trata de una
-            especie canívora principalmente nocturna, que se
-            alimenta de crustáceos, bivalvos y peces. Es, por
-            lo general, una especie solitaria y territorial con
-            una gran capacidad de adaptación, llegando a cambiar
-            su colorarión en función del ambiente en el que se encuentre.
-          </p>
-
-          <p>
-            Ha sido ampliamente utilizado con fines investigativos
-            por poseer una gran inteligencia capacidad para resolver
-            problemas. Son capaces de distinguir el brillo, las formas
-            y el tamaño entre los objetos y tienen muy buena memoria.
+          <?php echo $info->description ?>
           </p>
 	</div>
 

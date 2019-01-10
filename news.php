@@ -1,3 +1,13 @@
+<?php
+include "db/connection.php";
+include "php-functions/functions.php";
+
+getNews($news);
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -59,48 +69,49 @@
       </div>
     </div>
     <div class="pepito">
-      <div class="section-left1">
-        <div class="img-desc">
+
+    <?php
+    $pos = "left1";
+    for ($i=0; $i < count($news) ; $i++) { 
+      $date = $news[$i]->date;
+      $title = $news[$i]->title;
+      $description = $news[$i]->description;
+      $link = $news[$i]->link;
+      $img = $news[$i]->img;
+      
+      if ($i%2 == 0) {
+        $pos="section-left1";
+      }else{
+        $pos="section-right1";
+      }
+
+      echo "
+      <div class=\"$pos\" onclick=\"window.open('$link', '_blank');\">
+        <div class=\"news-date\">
           <span>
-            25/12/2015
+            $date
           </span>
         </div>
-        <div class="class2">
-          <img src="./res/principal-act.jpg" alt="">
-          <div class="section-left3">
+        <div class=\"class2\">
+          <img src=\"$img\">
+          <div class=\"section-left3\">
             <div>
               <span>
-                ACTIVIDAD DE VOLUNTARIADO AMBIENTAL PARQUE NATURAL CABO DE GATA
+                $title
               </span>
             </div>
             <p>
-              El pasado sábado 12 de mayo estuvimos en la playas de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar,
-              ayudando en una limpieza de la playas juento con nuestros amigos de Ecocampus.
+              $description
             </p>
           </div>
         </div>
       </div>
-      <div class="section-right1">
-        <div class="img-desc">
-          <span>
-            25/12/2015
-          </span>
-        </div>
-        <div class="class2">
-          <img src="./res/principal-act.jpg" alt="">
-          <div class="section-right3">
-            <div>
-              <span>
-                ACTIVIDAD DE VOLUNTARIADO AMBIENTAL PARQUE NATURAL CABO DE GATA
-              </span>
-            </div>
-            <p>
-              El pasado sábado 12 de mayo estuvimos en la playas de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar,
-              ayudando en una limpieza de la playas juento con nuestros amigos de Ecocampus.
-            </p>
-          </div>
-        </div>
-      </div>
+      "; 
+    }
+
+    ?>
+
+     
     </div>
   <?php 
   $notFixed = true;

@@ -37,15 +37,11 @@ getAboutUsInfo($info);
             <div class="section-top"></div>
             <div class="section-bot">
               <div class="section-left section-text">
-                <p>
-                 <?php
-                 echo $info->description;
-                 ?>
-                </p>
+                <p style="white-space:pre-wrap;text-align:justify;"><?php echo $info->description;?></p>
               </div>
               <div class="section-right section-img">
                 <div>
-                  <img src="<?php echo $info->img1 ?>" alt="FOTO" width="100%">
+                  <img src="<?php echo $info->img1 ?>" width="100%">
                 </div>
                 <div class="section-slider-buttons">
                   <div class="slider-button"></div>

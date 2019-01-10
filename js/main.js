@@ -2,8 +2,10 @@
 
 
 var sliderContents = document.getElementsByClassName("slider-content");
-var sliderButtons = document.getElementsByClassName("slider-button");
-var sliderCounter = 0;
+var sliderButtons  = document.getElementsByClassName("slider-button");
+var sliderCounter  = 0;
+
+var yearSelector = document.getElementById("year-selector");
 
 setInterval(
     function() {
@@ -45,4 +47,10 @@ function showSlide(target) {
     sliderButtons[sliderCounter].style.backgroundColor = "rgba(0,0,0,0)";
     sliderButtons[target].style.backgroundColor = "white";
     sliderCounter = target;
+}
+
+
+function goToYear() {
+	var year = yearSelector.options[yearSelector.selectedIndex].value;
+	window.location = "species-of-the-month.php?year=" + year;
 }

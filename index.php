@@ -1,3 +1,10 @@
+<?php
+include "db/connection.php";
+include "php-functions/functions.php";
+
+getFeatureds($featureds);
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -18,21 +25,29 @@
     <div class="wrapper">
 			<?php include "nav.php"?>
       <div class="index-content">
-				<div class="text slider-content">
-          <span>CONOCE EL MAR ALMERIENSE</span>
-				</div>
-
-				<div class="text slider-content" style="display:none;opacity:0;">
-          <span>CONOCE NUESTRA ESPECIE DEL MES</span>
-				</div>
-	
-				<div class="text slider-content" style="display:none;opacity:0;">
-          <span>APÚNTATE A NUESTRAS ACTIVIDADES</span>
-				</div>
-	
-				<div class="text slider-content" style="display:none;opacity:0;">
-          <span>ECHA UN VISTAZO A NUESTRO LABORATORIO</span>
-				</div>
+      <?php
+        for ($i=0; $i < count($featureds); $i++) { 
+            $id   = $featureds[$i]->id;
+            $text = $featureds[$i]->text;
+            $link = $featureds[$i]->link;
+            $img  = $featureds[$i]->img;
+            if ($i==0) {
+              echo "
+            <div class=\"text slider-content\" style=\"cursor:pointer;\" onclick=\"window.location='$link'\">
+            <span>$text</span>
+          </div>
+            ";
+            }else{
+              echo "
+            <div class=\"text slider-content\" style=\"display:none;opacity:0;cursor:pointer;\" onclick=\"window.location='$link'\">
+            <span>$text</span>
+          </div>
+            ";
+            }
+            
+        }
+        ?>
+				
 	
 				<div class="slider-buttons">
 					<div class="slider-button" onclick="showSlide(0)" style="background-color:white"></div>

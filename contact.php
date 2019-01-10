@@ -39,29 +39,27 @@ getContactInfo($info);
           </div>
         </div>
         <div class="contact-box">
-          <div>
+          <div class="inner-contact-box">
 
             <h1>Contacto</h1>
-            <p>
-            <?php echo $info->description ?>
-            </p>
-            <p>
-                <b>Teléfono: </b> <?php echo $info->phone ?> <br>
-              <p>
-                <b>Email: </b> <?php echo $info->email ?> <br>
-              </p>
-               <p>
-                <b>Horario de atención: </b> <?php echo $info->hour ?> <br>
-              </p>
-              <p>
-                <b>Dirección postal: </b> <?php echo $info->address ?>
-              </p>
-            </p>
+            <p style="white-space:pre-wrap;margin-bottom:32px;"><?php echo $info->description ?></p>
+            <div class="contact-info">
+              <div>
+                <p><b>Teléfono: </b><br><?php echo $info->phone ?><br></p>
+                <p><b>Email: </b><br><?php echo $info->email ?><br></p>
+                <p><b>Horario de atención: </b><br><?php echo $info->hour ?><br></p>
+              </div>
+              <div>
+                <p style="white-space: pre-wrap;"><b>Dirección postal: </b><br><?php echo $info->address ?></p>
+              </div>
+            </div>
           </div>
         </div>
         </div>
       </div>
-      <?php include "footer.php"?>
+      <?php 
+  include "footer.php";
+  ?>
 
     </div>
   </body>
