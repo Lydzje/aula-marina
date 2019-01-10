@@ -1,3 +1,12 @@
+<?php
+include "db/connection.php";
+include "php-functions/functions.php";
+
+getProject($_GET["id"],$info);
+getSectionsOfProject($info->id,$sections);
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aula Marina | Name </title>
+    <title>Aula Marina | <?php echo "$info->name"?></title>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -19,104 +28,76 @@
     <div class="wrapper">
       <?php include "nav.php"?>
       <div class="title">
-	<span>NAME</span>
+	<span><?php echo "$info->name"?></span>
       </div>
 
       <div class="content-project">
-	<div class="section-project">
-          <div>
-
-            <div class="img-project">
-              <img src="./res/proyecto3.jpg">
-            </div>
-            <div class="section-slider-buttons">
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-            </div>
-            <div class="img-desc"></div>
-          </div>
-          <div class="text-project">
-            <span>
-              TITULO
-            </span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Pellentesque rutrum velit
-              vitae arcu tempus, vel facilisis urna pellentesque.
-              Ut dignissim ut odio et placerat. Phasellus justo
-              leo, malesuada blandit leo eget, placerat euismod
-              nunc. Pellentesque et nisi nulla. Fusce congue nunc
-              ae arcu vestibulum, quis laoreet nunc dignissim.
-              Curabitur posuere.
-            </p>
-          </div>
-	</div>
-	<div class="section-project">
-          <div class="text-project">
-            <span>
-              TITULO
-            </span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Pellentesque rutrum velit
-              vitae arcu tempus, vel facilisis urna pellentesque.
-              Ut dignissim ut odio et placerat. Phasellus justo
-              leo, malesuada blandit leo eget, placerat euismod
-              nunc. Pellentesque et nisi nulla. Fusce congue nunc
-              ae arcu vestibulum, quis laoreet nunc dignissim.
-              Curabitur posuere.
-            </p>
-          </div>
-          <div>
-
-            <div class="img-project">
-              <img src="./res/proyecto3.jpg">
-            </div>
-            <div class="section-slider-buttons">
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-            </div>
-            <div class="img-desc"></div>
-          </div>
-	</div>
-	<div class="section-project">
-          <div>
-
-            <div class="img-project">
-              <img src="./res/proyecto3.jpg">
-            </div>
-            <div class="section-slider-buttons">
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-            </div>
-            <div class="img-desc"></div>
+          <?php
+             for ($i=0; $i < count($sections) ; $i++) { 
+              $title       = $sections[$i]->title;
+              $description = $sections[$i]->description;
+              $img1        = $sections[$i]->img1;
+              $img2        = $sections[$i]->img2;
+              $img3        = $sections[$i]->img3;
+              $img4        = $sections[$i]->img4;
+              if ($i%2==0) {
+                echo "
+                <div class=\"section-project\">
+                <div>
+                <div class=\"img-project\">
+                <img src=\"$img1\">
+                </div>
+                <div class=\"section-slider-buttons\">
+                <div class=\"slider-button\"></div>
+                <div class=\"slider-button\"></div>
+                <div class=\"slider-button\"></div>
+                <div class=\"slider-button\"></div>
+                </div>
+                <div class=\img-desc\"></div>
+                </div>
+                <div class=\"text-project\">
+                <span>
+                $title
+                </span>
+                <p>
+                $description
+                </p>
+                </div>
+                </div>
+                ";
+              }else{
+                echo"
+                <div class=\"section-project\">
+                <div class=\"text-project\">
+                <span>
+                $title
+                </span>
+                <p>
+                $description
+                </p>
+                </div>
+                <div>
+                
+                <div class=\"img-project\">
+                <img src=\"$img1\">
+                </div>
+                <div class=\"section-slider-buttons\">
+              <div class=\"slider-button\"></div>
+              <div class=\"slider-button\"></div>
+              <div class=\"slider-button\"></div>
+              <div class=\"slider-button\"></div>
+              </div>
+              <div class=\"img-desc\"></div>
+              </div>
+              </div>
+              ";
+               }
+            }
+            ?>
+	
 </div>
-          <div class="text-project">
-            <span>
-              TITULO
-            </span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Pellentesque rutrum velit
-              vitae arcu tempus, vel facilisis urna pellentesque.
-              Ut dignissim ut odio et placerat. Phasellus justo
-              leo, malesuada blandit leo eget, placerat euismod
-              nunc. Pellentesque et nisi nulla. Fusce congue nunc
-              ae arcu vestibulum, quis laoreet nunc dignissim.
-              Curabitur posuere.
-            </p>
-          </div>
-	</div>
 
-      </div>
-
-      <?php 
+<?php 
       $notFixed = true;
       include "footer.php";
       ?>
