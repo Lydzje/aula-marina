@@ -14,9 +14,9 @@ getActivity($_GET['id'], $info); // Necesario para saber si es past o no, ya se 
 
 if (isset($_POST['submit'])) {
     if ($info->past == "0") {
-        updateActivity($_GET['id'], false, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link']);
+        updateActivity($_GET['id'], false, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     } else {
-        updateActivity($_GET['id'], true, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link']);
+        updateActivity($_GET['id'], true, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     }
 }
 
@@ -99,12 +99,39 @@ getActivity($_GET['id'], $info);
 
                 <div class="img-cola" style="margin-top:0;width:100%;">
                     <div class="img-cola-img-container" style="box-shadow:none">
-                    <img class="colab-img"  src="<?php echo $info->img ?>">
+                    <img class="colab-img"  src="<?php echo $info->img1 ?>">
                     <span><i class="far fa-image"></i>Imagen</span>
 
                     <div class="select-file">
                         <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage()">Cargar</span>
-                        <input class="img-link-input" type="hidden" name="img-link" value="<?php echo $info->img ?>" />
+                        <input class="img-link-input" type="hidden" name="img-link1" value="<?php echo $info->img1 ?>" />
+                    </div>
+                    </div>
+                    <div class="img-cola-img-container" style="box-shadow:none">
+                    <img class="colab-img"  src="<?php echo $info->img2 ?>">
+                    <span><i class="far fa-image"></i>Imagen</span>
+
+                    <div class="select-file">
+                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage(1)">Cargar</span>
+                        <input class="img-link-input" type="hidden" name="img-link2" value="<?php echo $info->img2 ?>" />
+                    </div>
+                    </div>
+                    <div class="img-cola-img-container" style="box-shadow:none">
+                    <img class="colab-img"  src="<?php echo $info->img3 ?>">
+                    <span><i class="far fa-image"></i>Imagen</span>
+
+                    <div class="select-file">
+                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage(2)">Cargar</span>
+                        <input class="img-link-input" type="hidden" name="img-link3" value="<?php echo $info->img3 ?>" />
+                    </div>
+                    </div>
+                    <div class="img-cola-img-container" style="box-shadow:none">
+                    <img class="colab-img"  src="<?php echo $info->img4 ?>">
+                    <span><i class="far fa-image"></i>Imagen</span>
+
+                    <div class="select-file">
+                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage(3)">Cargar</span>
+                        <input class="img-link-input" type="hidden" name="img-link4" value="<?php echo $info->img4 ?>" />
                     </div>
                     </div>
                 </div>

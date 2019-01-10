@@ -128,23 +128,23 @@ function getActivity($id, &$result)
     }
 }
 
-function updateActivity($id, $past, $title, $date, $ubication, $description, $img)
+function updateActivity($id, $past, $title, $date, $ubication, $description, $img1, $img2, $img3, $img4)
 {
     global $conn;
     $sql =
         "UPDATE activities
-            SET past='$past', title='$title', date='$date', ubication='$ubication', description='$description', img='$img'
+            SET past='$past', title='$title', date='$date', ubication='$ubication', description='$description', img1='$img1', img2='$img2', img3='$img3', img4='$img4'
             WHERE id='$id'
         ";
     $rec = $conn->query($sql);
 }
 
-function insertActivity($past, $title, $date, $ubication, $description, $img)
+function insertActivity($past, $title, $date, $ubication, $description, $img1, $img2, $img3, $img4)
 {
     global $conn;
     $sql =
-        "INSERT INTO activities (past, title, date, ubication, description, img)
-            VALUES ('$past', '$title', '$date', '$ubication', '$description', '$img') 
+        "INSERT INTO activities (past, title, date, ubication, description, img1, img2, img3, img4)
+            VALUES ('$past', '$title', '$date', '$ubication', '$description', '$img1', '$img2', '$img3', '$img4') 
         ";
     $rec = $conn->query($sql);
 }

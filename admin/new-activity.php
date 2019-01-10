@@ -12,9 +12,9 @@ include '../php-functions/functions.php';
 
 if (isset($_POST['submit'])) {
     if ($_GET['past'] == "0") {
-        insertActivity(false, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link']);
+        insertActivity(false, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     } else {
-        insertActivity(true, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link']);
+        insertActivity(true, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     }
 }
 ?>
@@ -100,7 +100,37 @@ if (isset($_POST['submit'])) {
 
                     <div class="select-file">
                         <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage()">Cargar</span>
-                        <input class="img-link-input" type="hidden" name="img-link" />
+                        <input class="img-link-input" type="hidden" name="img-link1" />
+                    </div>
+                    </div>
+
+                    <div class="img-cola-img-container" style="box-shadow:none">
+                    <img class="colab-img">
+                    <span><i class="far fa-image"></i>Imagen</span>
+
+                    <div class="select-file">
+                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage(1)">Cargar</span>
+                        <input class="img-link-input" type="hidden" name="img-link2" />
+                    </div>
+                    </div>
+
+                    <div class="img-cola-img-container" style="box-shadow:none">
+                    <img class="colab-img">
+                    <span><i class="far fa-image"></i>Imagen</span>
+
+                    <div class="select-file">
+                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage(2)">Cargar</span>
+                        <input class="img-link-input" type="hidden" name="img-link3" />
+                    </div>
+                    </div>
+
+                    <div class="img-cola-img-container" style="box-shadow:none">
+                    <img class="colab-img">
+                    <span><i class="far fa-image"></i>Imagen</span>
+
+                    <div class="select-file">
+                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage(3)">Cargar</span>
+                        <input class="img-link-input" type="hidden" name="img-link4" />
                     </div>
                     </div>
                 </div>

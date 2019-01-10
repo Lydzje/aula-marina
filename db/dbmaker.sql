@@ -36,7 +36,10 @@ CREATE TABLE activities(
     description TEXT,
     date VARCHAR(11),
     ubication TEXT,
-    img VARCHAR(2083),
+    img1 VARCHAR(2083),
+    img2 VARCHAR(2083),
+    img3 VARCHAR(2083),
+    img4 VARCHAR(2083),
     past BIT /* past == 1 -> actividad pasada, past == 0 -> actividad programada*/
 );
 
@@ -130,9 +133,9 @@ INSERT INTO species VALUES (1, "Octopus vulgaris", "Pulpo", "descripción", "Nov
 INSERT INTO species VALUES (2, "Aristeus antenmatus", "Gamba Roja", "descripción", "Diciembre", "2018", "https://i.imgur.com/QUaa9ao.png");
 INSERT INTO species VALUES (3, "Diplodus sargus", "Sargo Blanco", "descripción", "Enero", "2019", "https://i.imgur.com/t1Fi4jG.png");
 
-INSERT INTO activities VALUES (1, "Almería te pesca (Día Marítimo Europeo)", "El sábado 19 de mayo estuvimos celebrando en el Mercado Central de Almería el Día Marítimo Europeo. Allí conocimos diferentes aspectos de la pesca, gastronomía, valores nutricionales y biología de los productos pesqueros que nos ofrecen nuestros mares.", "2018-05-19", "Mercado Central de Almería", "https://previews.123rf.com/images/torwai/torwai1608/torwai160800233/64055464-juego-en-el-mar-las-vacaciones-de-verano-de-la-actividad-tur%C3%ADstica-en-la-playa-las-personas-y-un-barco.jpg", 1);
-INSERT INTO activities VALUES (2, "Actividad de Voluntariado Ambiental Parque Natural Cabo de Gata Nijar", "El pasado sábado 12 de mayo estuvimos en la playa de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar, ayudando en una limpieza de la playas junto con nuestros amigos de Ecocampus.", "2018-05-12", "Playa de Torregarcía", "https://www.javea.com/wp-content/uploads/2014/05/Actividad-de-deporte-acu%C3%A1tico-en-la-celebraci%C3%B3n-del-Festival-del-Mar-el-pasado-a%C3%B1o.jpg", 1);
-INSERT INTO activities VALUES (3, "Visita a las instalaciones del Aula Marina", "Visita a las instalaciones del Aula Marina.", "2019-04-30", "UAL", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", 0);
+INSERT INTO activities VALUES (1, "Almería te pesca (Día Marítimo Europeo)", "El sábado 19 de mayo estuvimos celebrando en el Mercado Central de Almería el Día Marítimo Europeo. Allí conocimos diferentes aspectos de la pesca, gastronomía, valores nutricionales y biología de los productos pesqueros que nos ofrecen nuestros mares.", "2018-05-19", "Mercado Central de Almería", "https://previews.123rf.com/images/torwai/torwai1608/torwai160800233/64055464-juego-en-el-mar-las-vacaciones-de-verano-de-la-actividad-tur%C3%ADstica-en-la-playa-las-personas-y-un-barco.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", 1);
+INSERT INTO activities VALUES (2, "Actividad de Voluntariado Ambiental Parque Natural Cabo de Gata Nijar", "El pasado sábado 12 de mayo estuvimos en la playa de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar, ayudando en una limpieza de la playas junto con nuestros amigos de Ecocampus.", "2018-05-12", "Playa de Torregarcía", "https://www.javea.com/wp-content/uploads/2014/05/Actividad-de-deporte-acu%C3%A1tico-en-la-celebraci%C3%B3n-del-Festival-del-Mar-el-pasado-a%C3%B1o.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", 1);
+INSERT INTO activities VALUES (3, "Visita a las instalaciones del Aula Marina", "Visita a las instalaciones del Aula Marina.", "2019-04-30", "UAL", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", 0);
 
 INSERT INTO projects VALUES (1, "Maqueta de las Salinas de Cabo de Gata", "Descripción", "https://images.unsplash.com/photo-1526647127948-1266ca12f019?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80", "https://images.unsplash.com/photo-1526647127948-1266ca12f019?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=80");
 INSERT INTO projects VALUES (2, "Especie del Mes", "Descripción", "https://i.imgur.com/gH3bLkX.jpg", "https://i.imgur.com/gH3bLkX.jpg");
