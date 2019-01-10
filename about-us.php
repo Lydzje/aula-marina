@@ -41,7 +41,7 @@ getAboutUsInfo($info);
               </div>
               <div class="section-right section-img">
                 <div>
-                  <img src="<?php echo $info->img1 ?>" alt="FOTO" width="100%">
+                  <img src="<?php echo $info->img1 ?>" width="100%">
                 </div>
                 <div class="section-slider-buttons">
                   <div class="slider-button"></div>
