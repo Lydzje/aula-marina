@@ -87,7 +87,7 @@ getNews($news);
 
       echo "
       <div class=\"$pos\" onclick=\"window.open('$link', '_blank');\">
-        <div class=\"img-desc\">
+        <div class=\"news-date\">
           <span>
             $date
           </span>

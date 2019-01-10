@@ -513,7 +513,6 @@ padding: 3px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
-    cursor: pointer;
 }
 
 .section:hover {
@@ -582,11 +581,11 @@ padding: 3px;
 }
 
 .pepito {
-    width: 100%;
+    width: 95%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 64px;
+    margin-left: 32px;
 }
 
 .section-left1 {  
@@ -594,14 +593,22 @@ padding: 3px;
     padding: 16px 32px;
     color:white;
     text-align: justify;
-    width: 40%;
+    width: 43%;
     margin: 22px 0;
     cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.section-left1:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
 .class2 {
     display: flex;
-    margin: 10px;
+    margin-top: 10px;
 }
 
 .title-act-gen{
@@ -621,15 +628,20 @@ padding: 3px;
     background-color: rgba(0, 0, 0, 0.9);   
 }
 
-.title-act a:hover{
+.title-act a:hover {
     background-color: rgba(255, 255, 255, 0.9);
     color: black;
 }
 
-.class2 img{
+.news-date {
+    font-weight: bold;
+    border-top: 2px solid white;
+}
+
+.class2 img {
     width: 18vw;
     height: 14vw;
-    margin: 10px;
+    margin-right: 10px;
     object-fit: cover;
 }
 
@@ -638,10 +650,19 @@ padding: 3px;
     padding: 16px 32px;
     color:white;
     text-align: justify;
-    width: 40%;
+    width: 43%;
     margin: 22px 0;
     cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
+
+.section-right1:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
 
 .class-left2 {
     display: flex;
@@ -659,8 +680,8 @@ padding: 3px;
 }
 
 .section-left3 div {
-    margin: 5px;
-    border-bottom: white solid 2px;
+    margin-bottom: 10px;
+    border-bottom: white solid 1.5px;
 }
 
 .section-right3 span {
