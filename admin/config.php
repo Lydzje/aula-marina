@@ -80,7 +80,7 @@ getAccountInfo($info);
                   <span>Contraseña</span>
                   <input name="password" type="password" value=<?php echo $info->password; ?> placeholder="Contraseña" />
                 </div>
-                <div class="submit2">
+                <div class="submit2" style="display:block;text-align:right;">
                   <input name="submit" type="submit" value="APLICAR" />
                 </div>
               </form>

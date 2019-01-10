@@ -119,6 +119,7 @@ getOneSpecies($_GET['id'], $info);
                 </div>
 
                 <div class="submit2">
+                <span class="cancel-button" onclick="window.location='species-of-the-month.php'">CANCELAR</span>
                   <input name="submit" type="submit" value="GUARDAR" />
                 </div>
               </form>

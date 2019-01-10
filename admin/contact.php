@@ -92,7 +92,7 @@ getContactInfo($info);
                   <span>Texto</span>
                   <textarea name="description" type="text" placeholder="Más detalles"><?php echo $info->description; ?></textarea>
                 </div>
-                <div class="submit2">
+                <div class="submit2" style="display:block;text-align:right;">
                   <input name="submit" type="submit" value="GUARDAR" />
                 </div>
               </form>

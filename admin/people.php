@@ -141,7 +141,7 @@ getColabsPhoto($colabsPhoto);
                   </table>
                 </div>
 
-                <form class="img-cola" method="POST">
+                <form class="img-cola" style="display:block;" method="POST">
                   <div class="img-cola-img-container">
                     <img class="colab-img" src="<?php echo $colabsPhoto->img ?>">
                     <span><i class="far fa-image"></i> Foto Colabs.</span>

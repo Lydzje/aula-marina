@@ -99,7 +99,7 @@ getFeatureds($featureds);
                     <input name="link" type="text" value="<?php echo $featureds[0]->link ?>" placeholder="Enlace del destacado" />
                   </div>
 
-                  <div class="submit2">
+                  <div class="submit2" style="display:block;text-align:right;">
                     <input name="submit" type="submit" value="GUARDAR" />
                   </div>
                 </div>
@@ -126,7 +126,7 @@ getFeatureds($featureds);
                     <input name="link" type="text" value="<?php echo $featureds[1]->link ?>" placeholder="Enlace del destacado" />
                   </div>
 
-                  <div class="submit2">
+                  <div class="submit2" style="display:block;text-align:right;">
                     <input name="submit" type="submit" value="GUARDAR" />
                   </div>
                 </div>
@@ -153,7 +153,7 @@ getFeatureds($featureds);
                     <input name="link" type="text" value="<?php echo $featureds[2]->link ?>" placeholder="Enlace del destacado" />
                   </div>
 
-                  <div class="submit2">
+                  <div class="submit2" style="display:block;text-align:right;">
                     <input name="submit" type="submit" value="GUARDAR" />
                   </div>
                 </div>
@@ -180,7 +180,7 @@ getFeatureds($featureds);
                     <input name="link" type="text" value="<?php echo $featureds[3]->link ?>" placeholder="Enlace del destacado" />
                   </div>
 
-                  <div class="submit2">
+                  <div class="submit2" style="display:block;text-align:right;">
                     <input name="submit" type="submit" value="GUARDAR" />
                   </div>
                 </div>

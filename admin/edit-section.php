@@ -11,10 +11,12 @@ include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
 if (isset($_POST['submit'])) {
-    updateSection($_GET['id'], $_POST['title'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
+    updateSection($_GET['sect_id'], $_POST['title'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
 }
 
-getSection($_GET['id'], $section);
+getSection($_GET['id_sect'], $section);
+getProject($_GET['id_proj'], $project);
+$projId = $project->id;
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +126,8 @@ getSection($_GET['id'], $section);
                 
 
                 <div class="submit2">
-                  <input name="submit" type="submit" value="GUARDAR" />
+                    <span class="cancel-button" onclick="window.location='sections.php?project_id=<?php echo $projId ?>'">CANCELAR</span>
+                    <input name="submit" type="submit" value="GUARDAR" />
                 </div>
               </form>
             </div>

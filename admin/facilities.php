@@ -109,7 +109,7 @@ getFacilitiesInfo($info);
                   <span>Descripción</span>
                   <textarea name="description" type="text" placeholder="Descripción de las instalaciones"><?php echo $info->description ?></textarea>
                 </div>
-                <div class="submit2">
+                <div class="submit2" style="display:block;text-align:right;">
                   <input name="submit" type="submit" value="GUARDAR" />
                 </div>
               </div>

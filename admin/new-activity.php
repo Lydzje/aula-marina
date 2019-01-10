@@ -107,6 +107,7 @@ if (isset($_POST['submit'])) {
 
 
                 <div class="submit2">
+                <span class="cancel-button" onclick="window.location='activities.php'">CANCELAR</span>
                   <input name="submit" type="submit" value="GUARDAR" />
                 </div>
               </form>

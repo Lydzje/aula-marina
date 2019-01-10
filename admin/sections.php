@@ -11,7 +11,8 @@ include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
 getSectionsOfProject($_GET['project_id'], $sections);
-getProject($_GET['project_id'], $project)
+getProject($_GET['project_id'], $project);
+$idProj = $project->id;
 ?>
 
 <!DOCTYPE html>
@@ -79,12 +80,12 @@ getProject($_GET['project_id'], $project)
               <?php  
               $len = count($sections);
               for ($i=0; $i < $len; $i++) { 
-                $id   = $sections[$i]->id;
-                $title = $sections[$i]->title;
+                $idSect = $sections[$i]->id;
+                $title  = $sections[$i]->title;
                 echo "
                   <tr>
-                      <td onclick='window.location=\"edit-section.php?id=$id\"'>$title</td>
-                      <td class='table-open' onclick='window.location=\"edit-section.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
+                      <td onclick='window.location=\"edit-section.php?id_proj=$idProj&id_sect=$idSect\"'>$title</td>
+                      <td class='table-open' onclick='window.location=\"edit-section.php?id_proj=$idProj&id_sect=$idSect\"'><i class='fas fa-angle-right'></i></td>
                   </tr>
                 ";
               }
