@@ -758,9 +758,8 @@ padding: 3px;
 
 .section-project {
     background-color: rgba(0,0, 0, 0.0);
-    padding: 32px;
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
     align-content: center;
     color: white;
     -webkit-transition: all 0.3s;
@@ -792,7 +791,10 @@ padding: 3px;
     height: 8px;
     display: inline-block;
 }
-
+.text-project{
+    padding: 0 32px;
+    width: 58%;
+}
 .text-project span {
     display: block;
     text-align: center;
