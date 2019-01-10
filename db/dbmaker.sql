@@ -156,4 +156,4 @@ INSERT INTO contact VALUES (1, "950 21 47 71", "aulamar@ual.es", "9:00 - 14:00 d
 La Cañada de San Urbano (Almería, España)
 
 Edificio Científico Técnico V (CITE-V) 
-2ª planta, despacho 2-08", "");
+2ª planta, despacho 2-08", "Si tienes alguna pregunta o duda, por favor, no dudes en contactar con nosotros por teléfono o correo electrónico y nos pondremos en contacto contigo tan pronto como sea posible.");

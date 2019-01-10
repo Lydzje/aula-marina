@@ -37,11 +37,7 @@ getAboutUsInfo($info);
             <div class="section-top"></div>
             <div class="section-bot">
               <div class="section-left section-text">
-                <p>
-                 <?php
-                 echo $info->description;
-                 ?>
-                </p>
+                <p style="white-space:pre-wrap;text-align:justify;"><?php echo $info->description;?></p>
               </div>
               <div class="section-right section-img">
                 <div>
