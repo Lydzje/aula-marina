@@ -2,6 +2,8 @@
 include "db/connection.php";
 include "php-functions/functions.php";
 
+getSpeciesYears($years);
+
 ?>
 
 <!DOCTYPE html>
@@ -38,18 +40,25 @@ include "php-functions/functions.php";
         </div>
       </div>
       <div class="lasted-species">
-        <div class="dropdonw">
-
-          <button class="button">
-            <b> AÑO  </b>
-            <div class="annio">
-              <a href="#"> 2018 </a>
-              <a href="#"> 2019 </a>
-              <a href="#"> 2020 </a>
-              <a href="#"> 2021 </a>
-              <a href="#"> 2022 </a>
-            </div>
-          </button>
+        <div class="dropdown">
+          <?php 
+          $year = 0;
+          if (!isset($_GET['year'])) {
+            $year = $years[0]->year;
+          } else {
+            $year = $_GET['year'];
+          }
+          ?>
+          <select id="year-selector" class="button" onchange="goToYear()">
+              <option selected="selected" style="display:none" value="<?php echo $year; ?>"><?php echo $year; ?></option>
+              <?php
+              for ($i=0; $i < count($years); $i++) { 
+                $y = $years[$i]->year;
+                echo "<option value='$y'>$y</option>";
+              }
+              ?>
+          </select>
+          <div class="arrow" onclick="triggerYearSelector()"><i class="fas fa-angle-down"></i></div>
         </div>
       <div>
         <a class="lasted-species-box" href="#">
@@ -123,6 +132,8 @@ include "php-functions/functions.php";
     <?php include "footer.php"?>
 
   </div>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>

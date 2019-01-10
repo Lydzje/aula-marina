@@ -58,6 +58,20 @@ function getSpecies(&$result)
     }
 }
 
+function getSpeciesYears(&$result)
+{
+    global $conn;
+    $sql = "SELECT DISTINCT year FROM species ORDER BY year DESC";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $index = 0;
+        while ($fila = $rec -> fetch_object()) {
+            $result[$index] = $fila;
+            $index++;
+        }
+    }
+}
+
 function getOneSpecies($id, &$result)
 {
     global $conn;

@@ -145,7 +145,7 @@ body {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/proyecto1.jpg");
+    background-image: url("../res/projects.jpg");
 }
 
 .bg-project {
@@ -319,15 +319,48 @@ body {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
-.button{
-background-color: rgba(0, 0, 0, 0.3);
-color: white;
-padding: 7px;
-margin-bottom: 10px;   
-font-size: 16px;
-cursor: pointer;
-width: 100%;
+.dropdown {
+    display: flex;
+    background-color: #03141F;
+    align-items: center;
 }
+
+.button{
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 7px 0;  
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    position: relative; 
+    right: -5px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    border: 0;
+    z-index: 10;
+}
+
+select option {
+    background-color: #03141F;
+    text-align: center;
+}
+
+.arrow {
+    background-color: #03141F;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    left: -20px;
+}
+/*
 .annio{
     background-color: rgba(0, 0, 0, 0.3);
     display: none;
@@ -344,10 +377,11 @@ padding: 3px;
 .dropdown:hover .annio{
     display: block;
 }
-.dropdown{
-    position: absolute;
+.dropdown {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
 }
-
+*/
 .lasted-species-box {
     text-align: center;
     display:inline-block;
