@@ -47,7 +47,7 @@ function updateFeatureds($id, $text, $link, $img)
 function getSpecies(&$result)
 {
     global $conn;
-    $sql = "SELECT * FROM species";
+    $sql = "SELECT * FROM species ORDER BY year DESC";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $index = 0;
