@@ -10,7 +10,8 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
-getProjects($projects);
+getSectionsOfProject($_GET['project_id'], $sections);
+getProject($_GET['project_id'], $project)
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ getProjects($projects);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina Admin | Proyectos </title>
+  <title>Aula Marina Admin | Secciones de <?php echo $project->name ?></title>
 
   <link rel="stylesheet" href="../css/admin.css">
 
@@ -62,14 +63,13 @@ getProjects($projects);
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
-        <span class="content-admin-title">PROYECTOS</span>
+        <span class="content-admin-title">SECCIONES DE <?php echo $project->name ?></span>
 
         <div class="admin-content">
-          <div class="newTE" onclick="window.location='new-project.php'"><i class="fas fa-plus"></i><span> Nuevo Proyecto</span></div>
+          <div class="newTE" onclick="window.location='new-section.php?project_id=<?php echo $project->id?>'"><i class="fas fa-plus"></i><span> Nueva Sección</span></div>
           <table>
             <thead>
               <tr>
-                <th style="width:32px;text-align:center;"><i class="fas fa-star"></i></th>
                 <th>NOMBRE</th>
                 <th style="width:32px;text-align:center;"></th>
               </tr>
@@ -77,15 +77,14 @@ getProjects($projects);
 
             <tbody>
               <?php  
-              $len = count($projects);
+              $len = count($sections);
               for ($i=0; $i < $len; $i++) { 
-                $id   = $projects[$i]->id;
-                $name = $projects[$i]->name;
+                $id   = $sections[$i]->id;
+                $title = $sections[$i]->title;
                 echo "
                   <tr>
-                      <td class='table-star'><i class='far fa-star'></i></td>
-                      <td onclick='window.location=\"edit-project.php?id=$id\"'>$name</td>
-                      <td class='table-open' onclick='window.location=\"edit-project.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
+                      <td onclick='window.location=\"edit-section.php?id=$id\"'>$title</td>
+                      <td class='table-open' onclick='window.location=\"edit-section.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
                   </tr>
                 ";
               }

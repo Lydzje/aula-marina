@@ -16,7 +16,7 @@ var imgLinkInputs = document.getElementsByClassName("img-link-input");
 var imageNav = document.getElementsByClassName("image-nav-option");
 var selectedImg = document.getElementsByClassName("selected-img")[0];
 
-var colabImg = document.getElementsByClassName("colab-img")[0];
+var colabImg = document.getElementsByClassName("colab-img");
 
 /*var fileButton = document.getElementById("file-button");
 var realFileButton = document.getElementById("real-file-button");
@@ -111,7 +111,7 @@ function loadSelectedImage() {
 }
 
 
-function loadColabImage() {
-    colabImg.src = imgLinks[0].value;
-    imgLinkInputs[0].value = imgLinks[0].value;
+function loadColabImage(index = 0) {
+    colabImg[index].src = imgLinks[index].value;
+    imgLinkInputs[index].value = imgLinks[index].value;
 }

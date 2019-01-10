@@ -10,7 +10,9 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
-getProjects($projects);
+if (isset($_POST['submit'])) {
+    insertProject($_POST['name'], $_POST['description'], $_POST['img-link'], $_POST['bg-link']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ getProjects($projects);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina Admin | Proyectos </title>
+  <title>Aula Marina Admin | Nuevo Proyecto </title>
 
   <link rel="stylesheet" href="../css/admin.css">
 
@@ -62,41 +64,54 @@ getProjects($projects);
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
-        <span class="content-admin-title">PROYECTOS</span>
-
+        <span class="content-admin-title">NUEVO PROYECTO</span>
         <div class="admin-content">
-          <div class="newTE" onclick="window.location='new-project.php'"><i class="fas fa-plus"></i><span> Nuevo Proyecto</span></div>
-          <table>
-            <thead>
-              <tr>
-                <th style="width:32px;text-align:center;"><i class="fas fa-star"></i></th>
-                <th>NOMBRE</th>
-                <th style="width:32px;text-align:center;"></th>
-              </tr>
-            </thead>
+          <div class="admin-form2-wrapper">
+            <div class="admin-form2-title">DATOS DEL PROYECTO</div>
+            <div class="admin-form2">
+              <form method="POST">
+                <div class="field2">
+                  <span>Título</span>
+                  <input name="name" type="text" placeholder="Nombre del proyecto" />
+                </div>
 
-            <tbody>
-              <?php  
-              $len = count($projects);
-              for ($i=0; $i < $len; $i++) { 
-                $id   = $projects[$i]->id;
-                $name = $projects[$i]->name;
-                echo "
-                  <tr>
-                      <td class='table-star'><i class='far fa-star'></i></td>
-                      <td onclick='window.location=\"edit-project.php?id=$id\"'>$name</td>
-                      <td class='table-open' onclick='window.location=\"edit-project.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
-                  </tr>
-                ";
-              }
-              ?>
-            </tbody>
-          </table>
+                <div class="field2">
+                    <span>Descripción</span>
+                    <textarea name="description" type="text" placeholder="Descripción del proyecto"></textarea>
+                </div>
 
+                <div class="img-cola" style="margin-top:0;width:100%;">
+                    <div class="img-cola-img-container" style="box-shadow:none">
+                    <img class="colab-img">
+                    <span><i class="far fa-image"></i>Imagen</span>
+
+                    <div class="select-file">
+                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage()">Cargar</span>
+                        <input class="img-link-input" type="hidden" name="img-link" />
+                    </div>
+                    </div>
+                    <div class="img-cola-img-container" style="box-shadow:none">
+                    <img class="colab-img">
+                    <span><i class="far fa-image"></i>Fondo</span>
+
+                    <div class="select-file">
+                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage(1)">Cargar</span>
+                        <input class="img-link-input" type="hidden" name="bg-link" />
+                    </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="submit2">
+                  <input name="submit" type="submit" value="GUARDAR" />
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <script src="../js/admin.js"></script>

@@ -150,10 +150,10 @@ function insertActivity($past, $title, $date, $ubication, $description, $img)
 }
 
 
-function getProyects(&$result)
+function getProjects(&$result)
 {
     global $conn;
-    $sql = "SELECT * FROM proyects";
+    $sql = "SELECT * FROM projects";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $index = 0;
@@ -162,6 +162,83 @@ function getProyects(&$result)
             $index++;
         }
     }
+}
+
+function getProject($id, &$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM projects WHERE id='$id'";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $result = mysqli_fetch_object($rec);
+    }
+}
+
+function updateProject($id, $name, $description, $img, $bg)
+{
+    global $conn;
+    $sql =
+        "UPDATE projects
+            SET name='$name', description='$description', img='$img', bg='$bg'
+            WHERE id='$id'
+        ";
+    $rec = $conn->query($sql);
+}
+
+function insertProject($name, $description, $img, $bg)
+{
+    global $conn;
+    $sql =
+        "INSERT INTO projects (name, description, img, bg)
+            VALUES ('$name', '$description', '$img', '$bg') 
+        ";
+    $rec = $conn->query($sql);
+}
+
+
+function getSectionsOfProject($idProj, &$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM sections WHERE id_proj='$idProj'";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $index = 0;
+        while ($fila = $rec -> fetch_object()) {
+            $result[$index] = $fila;
+            $index++;
+        }
+    }
+}
+
+function getSection($id, &$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM sections WHERE id='$id'";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $result = mysqli_fetch_object($rec);
+    }
+}
+
+function updateSection($id, $title, $description, $img1, $img2, $img3, $img4)
+{
+    global $conn;
+    $sql =
+        "UPDATE sections
+            SET title='$title', description='$description', img1='$img1', img2='$img2', img3='$img3', img4='$img4'
+            WHERE id='$id'
+        ";
+    $rec = $conn->query($sql);
+}
+
+function insertSection($projID, $title, $description, $img1, $img2, $img3, $img4)
+{
+    global $conn;
+    $sql =
+        "INSERT INTO sections (id_proj, title, description, img1, img2, img3, img4)
+            VALUES ('$projID', '$title', '$description', '$img1', '$img2', '$img3', '$img4') 
+        ";
+    $rec = $conn->query($sql);
 }
 
 
