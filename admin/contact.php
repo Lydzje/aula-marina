@@ -102,6 +102,17 @@ getContactInfo($info);
       </div>
     </div>
   </div>
+  <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+  <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+  <style>
+    .nicEdit-main {
+        font-size: 12px;
+        resize:both;
+        height: 10px;
+        overflow: auto !important;
+       
+    }
+  </style>
 </body>
 
 </html>

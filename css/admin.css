@@ -677,3 +677,10 @@ table tbody tr:hover .table-open i {
     background-repeat: no-repeat;
     background-position: center; 
 }
+
+.nicEdit-main {
+    font-size: 12px;
+    resize:both;
+    height: 140px;
+    overflow: auto !important;
+}
