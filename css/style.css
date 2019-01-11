@@ -621,24 +621,33 @@ padding: 3px;
 
 .title-act-gen{
     display: flex;
-    justify-content: space-between;
-    margin: 30px 32px;
+    margin: 32px;
 }
   
-.title-act a {
+.title-act {
+    background-color: rgba(0, 0, 0, 0.85);   
     color: white;
-    text-decoration: none;
-    padding: 20px;
+    padding: 20px 16px;
+    font-size: 14px;
     font-weight: bold;
     display: block;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
-    background-color: rgba(0, 0, 0, 0.9);   
+    margin-right: 16px;
+    cursor: pointer;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
-.title-act a:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+.title-act:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 8px 8px 2px rgba(0, 0, 0, 0.6);
     color: black;
+}
+
+.active {
+    background-color: rgba(0, 0, 0, 1) !important;   
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6) !important;
+    color: white !important;
 }
 
 .news-date {

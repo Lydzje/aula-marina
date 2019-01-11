@@ -53,7 +53,7 @@ getActivity($_GET['id'], $info);
           </div>
           <div class="section-right section-img">
             <div>
-              <img src="<?php echo $info->img ?>">
+              <img src="<?php echo $info->img1 ?>">
             </div>
             <div class="section-slider-buttons">
               <div class="slider-button"></div>
