@@ -35,9 +35,7 @@ getOneSpecies($_GET["id"], $info);
           <h1>
           <?php echo $info->comm_name ?> <br> (<?php echo $info->sci_name ?>)
           </h1>
-          <p>
-          <?php echo $info->description ?>
-          </p>
+          <p style="white-space:pre-wrap;text-align:justify;"><?php echo $info->description ?></p>
 	</div>
 
       </div>

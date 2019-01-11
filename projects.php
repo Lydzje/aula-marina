@@ -38,24 +38,23 @@ getProjects($info);
         $description = $info[$i]->description;
         $img         = $info[$i]->img;
         $bg          = $info[$i]->bg;
-      }
       
-      echo"
-      <a class=\"project-x\" href=\"project.php?id=$id\">
-        <div>
-          <img src=\"$img\">
-        </div>
-        <div class=\"text-projects\">
-          <h1>
-            $name
-          </h1>
-          <p>
-              $description
-          </p>
-        </div>
-      </a>
-      ";
-
+        echo"
+        <a class=\"project-x\" href=\"project.php?id=$id\">
+          <div>
+            <img src=\"$img\">
+          </div>
+          <div class=\"text-projects\">
+            <h1>
+              $name
+            </h1>
+            <p>
+                $description
+            </p>
+          </div>
+        </a>
+        ";
+      }
 
     ?>
     
