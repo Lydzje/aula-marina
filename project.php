@@ -53,15 +53,13 @@ getSectionsOfProject($info->id,$sections);
                 <div class=\"slider-button\"></div>
                 <div class=\"slider-button\"></div>
                 </div>
-                <div class=\img-desc\"></div>
+                <div class=\"img-desc\"></div>
                 </div>
                 <div class=\"text-project\">
                 <span>
                 $title
                 </span>
-                <p>
-                $description
-                </p>
+                <p style=\"white-space:pre-wrap;text-align:justify;\">$description</p>
                 </div>
                 </div>
                 ";
@@ -72,9 +70,7 @@ getSectionsOfProject($info->id,$sections);
                 <span>
                 $title
                 </span>
-                <p>
-                $description
-                </p>
+                <p style=\"white-space:pre-wrap;text-align:justify;\">$description</p>
                 </div>
                 <div>
                 

@@ -145,21 +145,21 @@ body {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/projects.jpg");
+    background-image: url("../res/news2.jpg");
 }
 
 .bg-project {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/proyecto2.jpg");
+    background-image: url("../res/news2.jpg");
 }
 
 .bg-news {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/noticias.png");
+    background-image: url("../res/news2.jpg");
 }
 
 .bg-contact {
@@ -376,28 +376,7 @@ select option {
     position: relative;
     left: -20px;
 }
-/*
-.annio{
-    background-color: rgba(0, 0, 0, 0.3);
-    display: none;
-}
-.annio a{
-text-decoration: none;
-color: white;
-display: block;
-padding: 3px;
-}
-.annio a:hover{
-    background-color: rgba(0, 0, 0, 0.3);
-}
-.dropdown:hover .annio{
-    display: block;
-}
-.dropdown {
-    display: block;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-*/
+
 .lasted-species-box {
     text-align: center;
     display:inline-block;
@@ -509,7 +488,7 @@ padding: 3px;
 }
 
 .section {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.88);
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -525,6 +504,7 @@ padding: 3px;
 
 .section:hover {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.97);
 }
 
 .section-top {
@@ -597,7 +577,7 @@ padding: 3px;
 }
 
 .section-left1 {  
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.85);
     padding: 16px 32px;
     color:white;
     text-align: justify;
@@ -610,7 +590,7 @@ padding: 3px;
 }
 
 .section-left1:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.97);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -663,7 +643,7 @@ padding: 3px;
 }
 
 .section-right1 {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.85);
     padding: 16px 32px;
     color:white;
     text-align: justify;
@@ -676,7 +656,7 @@ padding: 3px;
 }
 
 .section-right1:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.97);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -717,7 +697,7 @@ padding: 3px;
 }
 
 .project-x {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.95);
     padding: 2%;
     display: flex;
     width: 90%;
@@ -730,10 +710,15 @@ padding: 3px;
     transition: all 0.3s;
 }
 .project-x:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.99);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
     color: white;
     
+}
+
+.project-x-img {
+    display: flex;
+    align-items: center;
 }
 
 .project-x p {
@@ -790,7 +775,6 @@ padding: 3px;
 .img-project img {
     width: 30vw;
     height: 25vw;
-    border: white solid 1px;
     object-fit: cover;
 }
 
