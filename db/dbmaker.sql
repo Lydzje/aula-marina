@@ -124,14 +124,25 @@ CREATE TABLE contact(
 /* DATA */
 INSERT INTO users VALUES (1, "admin", "admin");
 
-INSERT INTO featureds VALUES (1, "CONOCE EL MAR ALMERIENSE", "https://google.com", "https://i.imgur.com/YeUOTLz.png");
-INSERT INTO featureds VALUES (2, "CONOCE NUESTRA ESPECIE DEL MES", "https://google.com", "https://i.imgur.com/olw4ZIu.png");
-INSERT INTO featureds VALUES (3, "APÚNTATE A NUESTRAS ACTIVIDADES", "https://google.com", "https://i.imgur.com/qtw1YpA.jpg");
-INSERT INTO featureds VALUES (4, "ECHA UN VISTAZO A NUESTRO LABORATORIO", "https://google.com", "https://i.imgur.com/rNNymSH.jpg");
+INSERT INTO featureds VALUES (1, "CONOCE EL MAR ALMERIENSE", "projects.php", "https://i.imgur.com/YeUOTLz.png");
+INSERT INTO featureds VALUES (2, "CONOCE NUESTRA ESPECIE DEL MES", "species-of-the-month.php", "https://i.imgur.com/olw4ZIu.png");
+INSERT INTO featureds VALUES (3, "APÚNTATE A NUESTRAS ACTIVIDADES", "activities.php", "https://i.imgur.com/qtw1YpA.jpg");
+INSERT INTO featureds VALUES (4, "ECHA UN VISTAZO A NUESTRO LABORATORIO", "facilities.php", "https://i.imgur.com/rNNymSH.jpg");
 
-INSERT INTO species VALUES (1, "Octopus vulgaris", "Pulpo", "descripción", "Noviembre", "2018", "https://i.imgur.com/4RaUdNJ.png");
-INSERT INTO species VALUES (2, "Aristeus antenmatus", "Gamba Roja", "descripción", "Diciembre", "2018", "https://i.imgur.com/QUaa9ao.png");
-INSERT INTO species VALUES (3, "Diplodus sargus", "Sargo Blanco", "descripción", "Enero", "2019", "https://i.imgur.com/t1Fi4jG.png");
+INSERT INTO species VALUES (1, "Octopus vulgaris", "Pulpo", "Muy conocida por sus usos culinarios, se trata de una especie carnívora principalmente nocturna, que se alimenta de crustáceos, bivalvos y peces. Es, por lo general, una especie solitaria y territorial con una gran capacidad de adaptación, llegando a cambiar su coloración en función del ambiente en el que se encuentre,
+
+Ha sido ampliamente utilizado con fines investigativos por poseer una gran inteligencia con capacidad de resolver problemas. Son capaces de distinguir el brillo, las formas y el tamaño entre los objetos, y tienen muy buena memoria.", "Noviembre", "2018", "https://i.imgur.com/4RaUdNJ.png");
+INSERT INTO species VALUES (2, "Aristeus antenmatus", "Gamba Roja", "Se trata de un crustáceo decápodo y macruro nadador de la familia Penaeidae. Habita en el talud continental desde los 200 a los 1000 metros de profundidad. Se alimenta de moluscos bivalvos así como de otros crustáceos.
+
+Se distribuye por todo el Mediterráneo y se pesca mediante técnicas de arrastre de fondo.
+
+Aunque se pesca en numerosos puertos a lo largo de las costas mediterráneas, es en los puertos de Garrucha y Roquetas donde se utiliza la denominación de Gamba roja de Garrucha como un distintivo de calidad, que hace de este un producto muy apreciado que puede alcanzar elevados precios de venta.", "Diciembre", "2018", "https://i.imgur.com/QUaa9ao.png");
+INSERT INTO species VALUES (3, "Diplodus sargus", "Sargo Blanco", "Pez plateado de cuerpo ovalado con entre 7 y 9 finas líneas transversales oscuras a lo largo de todo el cuerpo y una pequeña mancha tanto en la base de la cola como en la cara.
+
+Lo encontramos en zonas del litoral rocosas, arrecifes y praderas de Posidonia. De jóvenes viven en bancos cerca de la orilla y de adultos son solitarios. Son omnívoros y tienen una fuerte boca, armada con sólidos molares, con la que machacan la concha de moluscos, crustáceos e incluso erizos de mar.
+
+<b>Curiosidad:</b>
+Son hermafroditas proterándricos, es decir, pueden ser machos o hembras en distintas fases de su vida mediante un proceso de inversión sexual. La época reproductora se da en primavera.", "Enero", "2019", "https://i.imgur.com/t1Fi4jG.png");
 
 INSERT INTO activities VALUES (1, "Almería te pesca (Día Marítimo Europeo)", "El sábado 19 de mayo estuvimos celebrando en el Mercado Central de Almería el Día Marítimo Europeo. Allí conocimos diferentes aspectos de la pesca, gastronomía, valores nutricionales y biología de los productos pesqueros que nos ofrecen nuestros mares.", "2018-05-19", "Mercado Central de Almería", "https://previews.123rf.com/images/torwai/torwai1608/torwai160800233/64055464-juego-en-el-mar-las-vacaciones-de-verano-de-la-actividad-tur%C3%ADstica-en-la-playa-las-personas-y-un-barco.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", 1);
 INSERT INTO activities VALUES (2, "Actividad de Voluntariado Ambiental Parque Natural Cabo de Gata Nijar", "El pasado sábado 12 de mayo estuvimos en la playa de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar, ayudando en una limpieza de la playas junto con nuestros amigos de Ecocampus.", "2018-05-12", "Playa de Torregarcía", "https://www.javea.com/wp-content/uploads/2014/05/Actividad-de-deporte-acu%C3%A1tico-en-la-celebraci%C3%B3n-del-Festival-del-Mar-el-pasado-a%C3%B1o.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", "https://sadaendigital.files.wordpress.com/2015/01/cofradias.jpg", 1);
