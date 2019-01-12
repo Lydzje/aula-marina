@@ -10,8 +10,10 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$transactionDone = false;
 if (isset($_POST['submit'])) {
   updateContact($_POST['phone'], $_POST['email'], $_POST['hour'], $_POST['address'], $_POST['description']);
+  $transactionDone = true;
 }
 
 getContactInfo($info);
@@ -92,6 +94,17 @@ getContactInfo($info);
                   <span>Texto</span>
                   <textarea name="description" type="text" placeholder="Más detalles"><?php echo $info->description; ?></textarea>
                 </div>
+
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
+
                 <div class="submit2" style="display:block;text-align:right;">
                   <input name="submit" type="submit" value="GUARDAR" />
                 </div>

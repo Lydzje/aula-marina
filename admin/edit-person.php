@@ -12,12 +12,14 @@ include '../php-functions/functions.php';
 
 getPerson($_GET['id'], $info); // Necesario para saber si es main o no, ya se actualiza más abajo si toca
 
+$transactionDone = false;
 if (isset($_POST['submit'])) {
     if ($info->main == 1) {
         updatePerson($_GET['id'], true, $_POST['name'], $_POST['charge'], $_POST['description'], $_POST['img-link']);
     } else {
         updatePerson($_GET['id'], false, $_POST['name'], $_POST['charge'], "null", "null");
     }
+    $transactionDone = true;
 }
 
 getPerson($_GET['id'], $info);
@@ -108,6 +110,17 @@ getPerson($_GET['id'], $info);
                     ";
                 }
                 ?>
+
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
+
 
                 <div class="submit2">
                 <span class="cancel-button" onclick="window.location='people.php'">CANCELAR</span>

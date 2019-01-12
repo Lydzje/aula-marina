@@ -10,8 +10,10 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$transactionDone = false;
 if (isset($_POST['submit'])) { 
     updateProject($_GET['id'], $_POST['name'], $_POST['description'], $_POST['img-link'], $_POST['bg-link']);
+    $transactionDone = true;
 }
 
 getProject($_GET['id'], $info);
@@ -107,6 +109,17 @@ $id = $info->id;
                 <div class="field2">
                     <span class="manage-sections" onclick="window.location='sections.php?project_id=<?php echo $id ?>'"><i class="fas fa-cogs"></i> Gestionar Secciones</span>
                 </div>
+
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
+
 
                 <div class="submit2">
                 <span class="cancel-button" onclick="window.location='projects.php'">CANCELAR</span>

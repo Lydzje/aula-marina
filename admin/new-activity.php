@@ -10,12 +10,14 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$transactionDone = false;
 if (isset($_POST['submit'])) {
     if ($_GET['past'] == "0") {
         insertActivity(false, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     } else {
         insertActivity(true, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     }
+    $transactionDone = true;
 }
 ?>
 
@@ -134,6 +136,16 @@ if (isset($_POST['submit'])) {
                     </div>
                     </div>
                 </div>
+
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
 
 
                 <div class="submit2">

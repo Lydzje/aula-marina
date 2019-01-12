@@ -10,8 +10,10 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$transactionDone = false;
 if (isset($_POST['submit'])) {
     updateSpecies($_GET['id'], $_POST['sci_name'], $_POST['comm_name'], $_POST['description'], $_POST['month'], $_POST['year'], $_POST['img-link']);
+    $transactionDone = true;
 }
 
 getOneSpecies($_GET['id'], $info);
@@ -117,6 +119,17 @@ getOneSpecies($_GET['id'], $info);
                     </div>
                   </div>
                 </div>
+
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
+
 
                 <div class="submit2">
                 <span class="cancel-button" onclick="window.location='species-of-the-month.php'">CANCELAR</span>

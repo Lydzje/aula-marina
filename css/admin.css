@@ -96,6 +96,27 @@ body {
     border-color: aqua;
 }
 
+.error {
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    width: 95%;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #dd3939;
+}
+
+.success {
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    width: 50%;
+    padding: 5px;
+    margin: 16px auto;
+    font-weight: bold;
+    background-color: #55bb55;
+}
+
 .manage-sections {
     display: inline-block !important;
     padding: 5px;

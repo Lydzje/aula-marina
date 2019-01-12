@@ -10,8 +10,10 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$transactionDone = false;
 if (isset($_POST['submit'])) {
     updateAccount($_POST['username'], $_POST['password']);
+    $transactionDone = true;
 }
 
 getAccountInfo($info);
@@ -80,6 +82,17 @@ getAccountInfo($info);
                   <span>Contraseña</span>
                   <input name="password" type="password" value=<?php echo $info->password; ?> placeholder="Contraseña" />
                 </div>
+
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
+
                 <div class="submit2" style="display:block;text-align:right;">
                   <input name="submit" type="submit" value="APLICAR" />
                 </div>

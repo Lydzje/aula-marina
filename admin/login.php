@@ -6,12 +6,13 @@ if (session_status() == PHP_SESSION_NONE) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$error = false;
 if (isset($_POST['login'])) {
     if (verify_login($_POST['username'], $_POST['password'], $result) == 1) {
         $_SESSION['user'] = $result;
         header("location: home.php");
     } else {
-        echo '<div class="error">El usuario o la contraseña son incorrectos, inténtelo de nuevo</div>';
+        $error = true;
     }
 
 }
@@ -60,6 +61,20 @@ if (isset($_POST['login'])) {
 								<input type="password" placeholder="Contraseña" name="password" />
 							</div>
 
+							<?php 
+							if ($error) {
+								echo "
+								<div class=\"field\">
+								<div class=\"error\">El usuario o la contraseña son incorrectos, inténtelo de nuevo</div>
+								</div>
+								";
+							}
+							?>
+
+							<div class="field">
+							<div></div>
+							</div>
+
 							<div class="submit">
 								<input type="submit" value="CONFIRMAR" name="login" />
 							</div>
@@ -70,6 +85,7 @@ if (isset($_POST['login'])) {
 		</div>
 	</div>
 
+	<script type="text/javascript"><?php if($error) echo "var anim=false;"; else echo "var anim=true;"?></script>
 	<script src="../js/admin.js"></script>
 </body>
 

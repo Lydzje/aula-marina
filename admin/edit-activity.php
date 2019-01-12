@@ -12,12 +12,14 @@ include '../php-functions/functions.php';
 
 getActivity($_GET['id'], $info); // Necesario para saber si es past o no, ya se actualiza más abajo si toca
 
+$transactionDone = false;
 if (isset($_POST['submit'])) {
     if ($info->past == "0") {
         updateActivity($_GET['id'], false, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     } else {
         updateActivity($_GET['id'], true, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     }
+    $transactionDone = true;
 }
 
 getActivity($_GET['id'], $info);
@@ -135,6 +137,16 @@ getActivity($_GET['id'], $info);
                     </div>
                     </div>
                 </div>
+
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
 
 
                 <div class="submit2">

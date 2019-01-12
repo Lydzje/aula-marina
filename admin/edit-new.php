@@ -10,8 +10,10 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$transactionDone = false;
 if (isset($_POST['submit'])) {
     updateNew($_GET['id'], $_POST['title'], $_POST['date'], $_POST['link'], $_POST['description'], $_POST['img-link']);
+    $transactionDone = true;
 }
 
 getNew($_GET['id'], $info);
@@ -101,7 +103,16 @@ getNew($_GET['id'], $info);
                     </div>
                 </div>
                     
-                
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
+
 
                 <div class="submit2">
                 <span class="cancel-button" onclick="window.location='news.php'">CANCELAR</span>
