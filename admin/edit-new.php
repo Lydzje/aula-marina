@@ -66,7 +66,7 @@ getNew($_GET['id'], $info);
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
-        <span class="content-admin-title">NUEVA NOTICIA</span>
+        <span class="content-admin-title">EDITAR NOTICIA</span>
         <div class="admin-content">
           <div class="admin-form2-wrapper">
             <div class="admin-form2-title">DATOS DE LA NOTICIA</div>
@@ -116,6 +116,39 @@ getNew($_GET['id'], $info);
   </div>
 
   <script src="../js/admin.js"></script>
+  <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+  <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
+    <style>
+    .nicEdit-main {
+      font-size: 12px;
+      resize:both;
+      height: 10px;
+      overflow: auto !important;
+      background-color: white;
+      padding: 4px;
+      margin: 0 !important;
+    }
+
+    .nicEdit-panelContain {
+      border: 0 !important;
+      border-radius: 5px 5px 0 0 !important;
+    }
+
+    .field2 > div:nth-child(2) {
+      border: 2px solid #001534 !important;
+      border-bottom: 0 !important;
+      border-radius: 5px 5px 0 0;
+      width: 97.5% !important;
+    }
+
+    .field2 > div:nth-child(3) {
+      border: 2px solid #001534 !important;
+      border-top: 0 !important;
+      border-radius: 0 0 5px 5px;
+      width: 97.5% !important;
+    }
+  </style>
 </body>
 
 </html>

@@ -123,6 +123,18 @@ getAboutUsInfo($info);
   </div>
 
   <script src="../js/admin.js"></script>
+  <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+  <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+  <style>
+    .nicEdit-main {
+      font-size: 12px;
+      resize:both;
+      overflow: auto !important;
+      background-color: white;
+      padding: 4px;
+      margin: 0 !important;
+    }
+  </style>
 </body>
 
 </html>
