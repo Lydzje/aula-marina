@@ -10,10 +10,19 @@
             <div class="rrss-content">	    
                 <span>SÍGUENOS EN</span>
                 <div class="rrss-icons">
-                    <a href="https://www.facebook.com/AulaMarinaUnvAlm" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                    <a href="https://twitter.com/aulamarinaual" target="_blank"><i class="fab fa-twitter-square"></i></a>
-                    <a href="#"><i class="fab fa-youtube-square" target="_blank"></i></a>
-                    <a href="https://www.instagram.com/aula_marina/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <?php 
+                    getRRSS($rrss);
+                    $fc = $rrss[0]->link;
+                    $tw = $rrss[1]->link;
+                    $yt = $rrss[2]->link;
+                    $ig = $rrss[3]->link;
+                    echo "
+                        <a href=\"$fc\" target=\"_blank\"><i class=\"fab fa-facebook-square\"></i></a>
+                        <a href=\"$tw\" target=\"_blank\"><i class=\"fab fa-twitter-square\"></i></a>
+                        <a href=\"$yt\" target=\"_blank\"><i class=\"fab fa-youtube-square\" target=\"_blank\"></i></a>
+                        <a href=\"$ig\" target=\"_blank\"><i class=\"fab fa-instagram\"></i></a>
+                    ";
+                    ?>
                 </div>
              </div>
         </div>

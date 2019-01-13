@@ -1,6 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
+  session_start();
 }
 
 if (!isset($_SESSION['user'])) {
@@ -11,13 +11,15 @@ include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
 $transactionDone = false;
-if (isset($_POST['submit'])) { 
-    updateProject($_GET['id'], $_POST['name'], $_POST['description'], $_POST['img-link'], $_POST['bg-link']);
-    $transactionDone = true;
+if (isset($_POST['submit'])) {
+  updateRS(1, $_POST['fc']);
+  updateRS(2, $_POST['tw']);
+  updateRS(3, $_POST['yt']);
+  updateRS(4, $_POST['ig']);
+  $transactionDone = true;
 }
 
-getProject($_GET['id'], $info);
-$id = $info->id;
+getRRSS($rrss);
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +29,7 @@ $id = $info->id;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina Admin | Editar Proyecto </title>
+  <title>Aula Marina Admin | Redes Sociales </title>
 
   <link rel="stylesheet" href="../css/admin.css">
 
@@ -70,45 +72,27 @@ $id = $info->id;
     </div>
     <div class="wrapper-bot-side">
       <div class="content-admin">
-        <span class="content-admin-title">EDITAR PROYECTO</span>
+        <span class="content-admin-title">REDES SOCIALES</span>
         <div class="admin-content">
           <div class="admin-form2-wrapper">
-            <div class="admin-form2-title">DATOS DEL PROYECTO</div>
+            <div class="admin-form2-title">ENLACES A REDES SOCIALES</div>
             <div class="admin-form2">
               <form method="POST">
                 <div class="field2">
-                  <span>Título</span>
-                  <input name="name" type="text" placeholder="Nombre del proyecto" value="<?php echo $info->name ?>" />
+                  <span><i class="fab fa-facebook"></i> Facebook</span>
+                  <input name="fc" type="text" value="<?php echo $rrss[0]->link; ?>" placeholder="Enlace a Facebook" />
                 </div>
-
                 <div class="field2">
-                    <span>Descripción</span>
-                    <textarea name="description" type="text" placeholder="Descripción del proyecto"><?php echo $info->description ?></textarea>
+                  <span><i class="fab fa-twitter"></i> Twitter</span>
+                  <input name="tw" type="text" value="<?php echo $rrss[1]->link; ?>" placeholder="Enlace a Twitter" />
                 </div>
-
-                <div class="img-cola" style="margin-top:0;width:100%;">
-                    <div class="img-cola-img-container" style="box-shadow:none">
-                    <img class="colab-img" src="<?php echo $info->img ?>">
-                    <span><i class="far fa-image"></i>Imagen</span>
-
-                    <div class="select-file">
-                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage()">Cargar</span>
-                        <input class="img-link-input" type="hidden" name="img-link" value="<?php echo $info->img ?>" />
-                    </div>
-                    </div>
-                    <div class="img-cola-img-container" style="box-shadow:none">
-                    <img class="colab-img" src="<?php echo $info->bg ?>">
-                    <span><i class="far fa-image"></i>Fondo</span>
-
-                    <div class="select-file">
-                        <input class="img-link" type="text" placeholder="URL de la imagen"><span id="file-button" onclick="loadColabImage(1)">Cargar</span>
-                        <input class="img-link-input" type="hidden" name="bg-link" value="<?php echo $info->bg ?>" />
-                    </div>
-                    </div>
-                </div>
-
                 <div class="field2">
-                    <span class="manage-sections" onclick="window.location='sections.php?project_id=<?php echo $id ?>'"><i class="fas fa-cogs"></i> Gestionar Secciones</span>
+                  <span><i class="fab fa-youtube"></i> YouTube</span>
+                  <input name="yt" type="text" value="<?php echo $rrss[2]->link; ?>" placeholder="Enlace a YouTube" />
+                </div>
+                <div class="field2">
+                  <span><i class="fab fa-instagram"></i> Instagram</span>
+                  <input name="ig" type="text" value="<?php echo $rrss[3]->link; ?>" placeholder="Enlace a Instagram" />
                 </div>
 
                 <?php 
@@ -121,9 +105,7 @@ $id = $info->id;
                 }
                 ?>
 
-
-                <div class="submit2">
-                <span class="cancel-button" onclick="window.location='projects.php'">CANCELAR</span>
+                <div class="submit2" style="display:block;text-align:right;">
                   <input name="submit" type="submit" value="GUARDAR" />
                 </div>
               </form>
@@ -134,38 +116,6 @@ $id = $info->id;
     </div>
   </div>
 
-  <script src="../js/admin.js"></script>
-  <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-  <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-
-    <style>
-    .nicEdit-main {
-      font-size: 12px;
-      resize:both;
-      height: 10px;
-      overflow: auto !important;
-      background-color: white;
-      padding: 4px;
-      margin: 0 !important;
-    }
-
-    .nicEdit-panelContain {
-      border: 0 !important;
-      border-radius: 5px 5px 0 0 !important;
-    }
-
-    .field2 > div:nth-child(2) {
-      border: 2px solid #001534 !important;
-      border-bottom: 0 !important;
-      border-radius: 5px 5px 0 0;
-    }
-
-    .field2 > div:nth-child(3) {
-      border: 2px solid #001534 !important;
-      border-top: 0 !important;
-      border-radius: 0 0 5px 5px;
-    }
-  </style>
 </body>
 
 </html>

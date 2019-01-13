@@ -48,7 +48,7 @@ getActivity($_GET['id'], $info);
             </p>
             <p>
               <b>Fecha: </b>
-            <?php echo $info->date ?>
+            <?php echo date("d-m-Y", strtotime($info->date)); ?>
             </p>
           </div>
           <div class="section-right section-img">
