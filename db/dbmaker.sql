@@ -121,6 +121,13 @@ CREATE TABLE contact(
     description TEXT
 );
 
+DROP TABLE IF EXISTS rrss;
+CREATE TABLE rrss(
+	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(20),
+    link VARCHAR(2083)
+);
+
 /* DATA */
 INSERT INTO users VALUES (1, "admin", "admin");
 
@@ -205,3 +212,8 @@ La Cañada de San Urbano (Almería, España)
 
 Edificio Científico Técnico V (CITE-V) 
 2ª planta, despacho 2-08", "Si tienes alguna pregunta o duda, por favor, no dudes en contactar con nosotros por teléfono o correo electrónico y nos pondremos en contacto contigo tan pronto como sea posible.");
+
+INSERT INTO rrss VALUES (1, "Facebook", "https://www.facebook.com/AulaMarinaUnvAlm");
+INSERT INTO rrss VALUES (2, "Twitter", "https://twitter.com/aulamarinaual");
+INSERT INTO rrss VALUES (3, "YouTube", "");
+INSERT INTO rrss VALUES (4, "Instragram", "https://www.instagram.com/aula_marina/");

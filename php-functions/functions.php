@@ -441,3 +441,29 @@ function updateAccount($username, $password)
         ";
     $rec = $conn->query($sql);
 }
+
+
+function getRRSS(&$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM rrss";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $index = 0;
+        while ($fila = $rec -> fetch_object()) {
+            $result[$index] = $fila;
+            $index++;
+        }
+    }
+}
+
+function updateRS($id, $link)
+{
+    global $conn;
+    $sql =
+        "UPDATE rrss
+            SET link='$link' 
+            WHERE id = $id;
+        ";
+    $rec = $conn->query($sql);
+}

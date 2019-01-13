@@ -24,28 +24,32 @@ var fileVal = document.getElementById("file-val");*/
 
 var tableStars = document.getElementsByClassName("table-star");
 
-if (anim) {
-    setTimeout(
-        function () {
-            try {
-                logo.style.opacity = 1;
-            } catch (err) { }
-        },
-        500
-    );
-    
-    
-    setTimeout(
-        function () {
-            try {
-                form.style.opacity = 1;
-            } catch (err) { }
-        },
-        1500
-    );
-} else {
-    logo.style.opacity = 1;
-    form.style.opacity = 1;
+try {
+    if (anim) {
+        setTimeout(
+            function () {
+                try {
+                    logo.style.opacity = 1;
+                } catch (err) { }
+            },
+            500
+        );
+        
+        
+        setTimeout(
+            function () {
+                try {
+                    form.style.opacity = 1;
+                } catch (err) { }
+            },
+            1500
+        );
+    } else {
+        logo.style.opacity = 1;
+        form.style.opacity = 1;
+    }
+} catch (error) {
+    //
 }
 
 
