@@ -115,7 +115,9 @@ body {
 }
 
 .bg-people {
-    position: absolute;
+    position: fixed;
+    top:0;
+    left: 0;
     background-image: url("../res/personal.png");
 }
 
@@ -486,6 +488,53 @@ select option {
     background-color: rgba(0, 0, 0, 1);
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.4);
 }
+
+.people-left{
+    color: white;
+    background: linear-gradient(
+	to right,
+	rgba(0, 0, 0, 0.8),
+	rgba(0, 0, 0, 0)
+    );
+    display:flex;
+    margin:2% 5%;
+    justify-content: flex-start;
+}
+
+.people-img img{
+    height: 170px;
+    margin: 15px;
+    border-radius: 50%;
+    width: 170px;
+    object-fit: cover;    
+}
+.people-text{
+    margin: 24px;
+    display: inline-block; 
+}
+.people-title{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.people-right{
+    color: white;
+    background: linear-gradient(
+	to left,
+	rgba(0, 0, 0, 0.8),
+	rgba(0, 0, 0, 0)
+    );
+    display: flex;
+    right: 10px;
+    margin:2% 5%;  
+    justify-content: flex-end;
+
+}
+
+
+
+
 
 .section {
     background-color: rgba(0, 0, 0, 0.88);

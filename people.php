@@ -1,75 +1,151 @@
+<?php
+include "db/connection.php";
+include "php-functions/functions.php";
+
+getPeople(1, $mainPeople);
+getPeople(0,$colabs1);
+getColabsPhoto($colabsPhoto);
+
+?>
+
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Aula Marina | Personal</title>
 
-    
+
     <link rel="stylesheet" href="./css/style.css">
-    
+
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-          crossorigin="anonymous">
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="bg bg-people"></div>
     <div class="wrapper">
-      <?php include "nav.php"?>
-      <div class="content">
-        <div class="title">
-          <span>PERSONAL</span>     
+        <?php include "nav.php"?>
+        <div class="content">
+            <div class="title">
+                <span>PERSONAL</span>
+            </div>
+            <div class="people-content">
+                <?php
+              for ($i=0; $i < count($mainPeople); $i++) { 
+                $charge      = $mainPeople[$i]->charge;
+                $name        = $mainPeople[$i]->name;
+                $img         = $mainPeople[$i]->img;
+                $description = $mainPeople[$i]->description;
+
+                if($i%2==0){
+                echo "
+                <div class=\"people-left\">
+                <div class=\"people-img\">
+                    <img src=\"$img\">
+                </div>
+                <div class=\"people-text\">
+                    <div class=\"people-title\">
+                        <span>$charge</span>
+                    </div>
+                    <div class=\"people-description\">
+                        <p>$name</p>
+                        <p>$description</p>
+                    </div>
+                </div>
+            </div>
+
+                ";
+
+                }else{
+
+                  echo "
+                  <div class=\"people-right\">
+                    <div class=\"people-text\">
+                        <div class=\"people-title\">
+                            <span>$charge</span>
+                        </div>
+                        <div class=\"people-description\">
+                            <p>$name</p>
+                            <p>$description</p>
+                        </div>
+                    </div>
+                    <div class=\"people-img\">
+                        <img src=\"$img\">
+                    </div>
+                </div>
+                  ";
+                }
+              }
+            ?>
+                
+              
+
+
+
+            </div>
+            <div class="title">
+                COLABORADORES
+            </div>
+            <div class="colabs-content">
+              <?php
+              for ($i=0; $i < count($colabs1); $i++) { 
+                $charge     = $colabs1[$i]->charge;
+                $name     = $colabs1[$i]->name;
+                $img = $colabsPhoto->img;
+                if($i%2==0){
+                  echo "
+                  <div class=\"people-left\">
+                    <div class=\"people-img\">
+                        <img src=\"$img\" style=\"height:100px; width:100px;\">
+                    </div>
+                    <div class=\"people-text\">
+                        <div class=\"people-title\">
+                            <span>$charge</span>
+                        </div>
+                        <div class=\"people-description\">
+                            <p>$name</p>
+                        </div>
+                    </div>
+                </div>
+                  ";
+                }else{
+                  echo "
+                  <div class=\"people-right\">
+                    <div class=\"people-text\">
+                        <div class=\"people-title\">
+                            <span>$charge</span>
+                        </div>
+                        <div class=\"people-description\">
+                            <p>$name</p>
+                        </div>
+                    </div>
+                    <div class=\"people-img\">
+                        <img src=\"$img\" style=\"height:100px; width:100px;\">
+                    </div>
+
+
+                </div>
+                  ";
+                  
+                }
+
+              }
+              ?>             
+               
+            </div>
+
         </div>
 
-      	<div class="section">
-          <div class="section-top"></div>
-          <div class="section-bot">
-            <div class="section-left section-text">
-              <p>
-              <p>Director del Aula Marina:</p>
-              
-              Pedro Aguilera Aguilera. Profesor Titular de Universidad.
-              <p>Departamento: Biología y Geología </p>
-              <p>Área de conocimiento: Ecología</p>
-              <p>Correo electrónico: aguilera@ual.es</p>
-              <p>Tlf.: +34 950 01 59 33</p>
-              
-              
-              </p>
-              <p>
-              <p>Técnico superior de apoyo del Aula Marina:</p>
-              
-              Rosa María Fernández Ropero
-              <p>Categoría: Técnico superior de apoyo a la gestión y la I+D+i</p>
-              <p>Correo electrónico: aulamar@ual.es</p> 
-              <p>Tlf.: +34 950 21 47 71</p>
-              
-              </p>
-            </div>
-            <div class="section-right section-img">
-              <div>
-                <img src="./res/Mariano_Rajoy_Brey-Albert_Rivera-Cataluna-Politica_306483181_77355265_1024x576.jpg" alt="FOTO" width="100%">
-              </div>
-              <div class="section-slider-buttons">
-                <div class="slider-button"></div>
-                <div class="slider-button"></div>
-                <div class="slider-button"></div>
-                <div class="slider-button"></div>
-              </div>
-              <div class="img-desc">
-                PEDRO AGUILERA AGUILERA
-              </div>
-            </div>
-          </div>
-	</div>
-      </div>
+        <?php
+      $notFixed = true;
+      include "footer.php"
+      ?>
 
-      <?php include "footer.php"?>
-      
-  </body>
+</body>
 
 </html>
