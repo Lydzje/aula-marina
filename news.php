@@ -69,7 +69,7 @@ getNews($news);
     <?php
     $pos = "left1";
     for ($i=0; $i < count($news) ; $i++) { 
-      $date = $news[$i]->date;
+      $date = date("d-m-Y", strtotime($news[$i]->date));
       $title = $news[$i]->title;
       $description = $news[$i]->description;
       $link = $news[$i]->link;

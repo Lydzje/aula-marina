@@ -100,7 +100,7 @@ getActivities($past, $activities);
 
       echo "
         <div class=\"section-left1\" onclick=\"window.location='activity.php?id=$id'\">
-          <div class=\"img-desc\">
+          <div class=\"news-date\">
             <span>
               $date
             </span>
