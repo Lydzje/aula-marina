@@ -45,12 +45,23 @@ getActivities($past, $activities);
 
       <div class="section-bot">
         <div class="section-left">
-          <img src="./res/principal-act.jpg" alt="">
-          <div class="section-slider-buttons">
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
+        <div class="slider-content" style="width:100%">
+                <img src="res/ac1.jpeg">
+              </div>
+              <div class="slider-content" style="display:none;width:100%;opacity:0;">
+                <img src="res/ac2.jpeg" width="100%">
+              </div>
+              <div class="slider-content" style="display:none;width:100%;opacity:0;">
+                <img src="res/ac3.jpeg" width="100%">
+              </div>
+              <div class="slider-content" style="display:none;width:100%;opacity:0;">
+                <img src="res/ac4.jpeg" width="100%">
+              </div>
+              <div class="section-slider-buttons">
+                <div class="slider-button" onclick="showSlide(0)" style="background-color:white"></div>
+                <div class="slider-button" onclick="showSlide(1)"></div>
+                <div class="slider-button" onclick="showSlide(2)"></div>
+                <div class="slider-button" onclick="showSlide(3)"></div>
           </div>
           <div>
             <div class="img-desc">
@@ -82,7 +93,7 @@ getActivities($past, $activities);
     <?php 
     for ($i=0; $i < count($activities); $i++) { 
       $id          = $activities[$i]->id;
-      $date        = $activities[$i]->date;
+      $date        = date("d-m-Y", strtotime($activities[$i]->date));
       $title       = $activities[$i]->title;
       $description = $activities[$i]->description;
       $img         = $activities[$i]->img1;
@@ -116,7 +127,7 @@ getActivities($past, $activities);
   include "footer.php";
   ?>
   </div>
-
+  <script src="js/main.js"></script>
 </body>
 
 </html>

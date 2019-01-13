@@ -43,14 +43,10 @@ getNews($news);
         <div class="section-left section-img">
           <img src="./res/noticias-principal.jpg" alt="">
           <div class="section-slider-buttons">
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
+
           </div>
           <div>
             <div class="img-desc">
-              PLAYA DE TORREGARCÍA
             </div>
           </div>
         </div>
