@@ -140,7 +140,7 @@ body {
 
 .bg-activity {
     position: absolute;
-    background-image: url("../res/activities.png");
+    background-image: url("../res/activities.jpg");
 }
 
 .bg-projects {
@@ -777,7 +777,6 @@ select option {
 
 .project-x p {
     text-align: justify;
-    margin: 16px;
 }
 
 .project-x img {
@@ -789,13 +788,13 @@ select option {
 .project-x h1 {
     text-align: center;
     border-bottom: 2px solid;
-    margin: 16px;
-    padding: 4px;
+    margin-bottom: 16px;
     width: 100%;
 }
 
 .text-projects {
     width: 100%;
+    padding: 0 16px;
 }
 
 .content-project {

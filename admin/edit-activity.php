@@ -169,7 +169,7 @@ getActivity($_GET['id'], $info);
   <style>
     .nicEdit-main {
       font-size: 12px;
-      resize:both;
+      resize: vertical;
       height: 10px;
       overflow: auto !important;
       background-color: white;

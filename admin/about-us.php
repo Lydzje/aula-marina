@@ -142,7 +142,7 @@ getAboutUsInfo($info);
   <style>
     .nicEdit-main {
       font-size: 12px;
-      resize:both;
+      resize: vertical;
       overflow: auto !important;
       background-color: white;
       padding: 4px;
