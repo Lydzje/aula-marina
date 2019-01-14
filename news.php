@@ -3,6 +3,7 @@ include "db/connection.php";
 include "php-functions/functions.php";
 
 getNews($news);
+getFeaturedNew($featured);
 
 ?>
 
@@ -34,14 +35,14 @@ getNews($news);
       </div>
     </div>
 
-    <div class="section">
+    <div class="section" style="cursor:pointer;" onclick="window.open('<?php echo $featured->link ?>', '_blank');">
       <div class="section-top">
-        <span>NOTICIA DESTACADA</span>
+        <span><b>NOTICIA DESTACADA</b></span>
       </div>
 
       <div class="section-bot">
         <div class="section-left section-img">
-          <img src="./res/noticias-principal.jpg" alt="">
+          <img src="<?php echo $featured->img ?>" alt="">
           <div class="section-slider-buttons">
 
           </div>
@@ -52,14 +53,9 @@ getNews($news);
         </div>
 
         <div class="section-right section-text">
-          <div class="parr">
-            <span>
-              ACTIVIDAD DE VOLUNTARIADO AMBIENTAL PARQUE NATURAL CABO DE GATA
-            </span>
-            <p>
-              El pasado sábado 12 de mayo estuvimos en la playas de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar,
-              ayudando en una limpieza de la playas juento con nuestros amigos de Ecocampus.
-            </p>
+          <div class="par">
+            <span><?php echo $featured->title ?></span>
+            <p><?php echo $featured->description ?></p>
           </div>
         </div>
       </div>

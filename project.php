@@ -5,6 +5,11 @@ include "php-functions/functions.php";
 getProject($_GET["id"],$info);
 getSectionsOfProject($info->id,$sections);
 
+$bg = $info->bg;
+if($bg == ""){
+  $bg = "res/projects1.jpeg";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +29,7 @@ getSectionsOfProject($info->id,$sections);
   </head>
 
   <body>
-    <div class="bg bg-project"></div>
+    <div class="bg bg-project" style="background-image: url('<?php echo $bg ?>');"></div>
     <div class="wrapper">
       <?php include "nav.php"?>
       <div class="title">

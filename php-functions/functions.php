@@ -387,7 +387,7 @@ function getNew($id, &$result)
     }
 }
 
-function getFeaeturedNew(&$result)
+function getFeaturedNew(&$result)
 {
     global $conn;
     $sql = "SELECT * FROM news WHERE featured=1";

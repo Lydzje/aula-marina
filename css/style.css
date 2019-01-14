@@ -147,7 +147,7 @@ body {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/news2.jpg");
+    background-image: url("../res/projects1.jpeg");
 }
 
 .bg-project {
@@ -161,7 +161,7 @@ body {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/news4.jpg");
+    background-image: url("../res/news.jpeg");
 }
 
 .bg-contact {
