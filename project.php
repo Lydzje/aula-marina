@@ -7,7 +7,7 @@ getSectionsOfProject($info->id,$sections);
 
 $bg = $info->bg;
 if($bg == ""){
-  $bg = "res/projects1.jpeg";
+  $bg = "res/news2.jpg";
 }
 
 ?>
