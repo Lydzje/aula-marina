@@ -128,6 +128,16 @@ function getActivity($id, &$result)
     }
 }
 
+function getFeaturedActivity(&$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM activities WHERE featured=1";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $result = mysqli_fetch_object($rec);
+    }
+}
+
 function updateActivity($id, $past, $title, $date, $ubication, $description, $img1, $img2, $img3, $img4)
 {
     global $conn;
@@ -371,6 +381,16 @@ function getNew($id, &$result)
 {
     global $conn;
     $sql = "SELECT * FROM news WHERE id='$id'";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $result = mysqli_fetch_object($rec);
+    }
+}
+
+function getFeaeturedNew(&$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM news WHERE featured=1";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
