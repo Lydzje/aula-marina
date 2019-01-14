@@ -196,8 +196,8 @@ body {
 .slider-content {
     width: 50%;
     opacity: 1;
-    -webkit-transition: all 0.6s;
-    transition: all 0.6s;
+    -webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
 }
 
 .slider-content img {

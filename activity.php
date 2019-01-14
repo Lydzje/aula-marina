@@ -52,15 +52,23 @@ getActivity($_GET['id'], $info);
             </p>
           </div>
           <div class="section-right section-img">
-            <div>
-              <img src="<?php echo $info->img1 ?>">
+            <div class="slider-content" style="width:100%">
+              <img src="<?php echo $info->img1?>" width="100%">
+            </div>
+            <div class="slider-content" style="display:none;width:100%;opacity:0;">
+              <img src="<?php echo $info->img2?>" width="100%">
+            </div>
+            <div class="slider-content" style="display:none;width:100%;opacity:0;">
+              <img src="<?php echo $info->img3?>" width="100%">
+            </div>
+            <div class="slider-content" style="display:none;width:100%;opacity:0;">
+              <img src="<?php echo $info->img4?>" width="100%">
             </div>
             <div class="section-slider-buttons">
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-
+              <div class="slider-button" onclick="showSlide(0)" onmouseover="stopSlider()" onmouseout="resumeSlider()" style="background-color:white"></div>
+              <div class="slider-button" onclick="showSlide(1)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
+              <div class="slider-button" onclick="showSlide(2)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
+              <div class="slider-button" onclick="showSlide(3)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
             </div>
             <div class="img-desc"></div>
           </div>
@@ -70,7 +78,7 @@ getActivity($_GET['id'], $info);
 
 
     <?php include "footer.php";?>
-      
+    <script src="js/main.js"></script>
   </body>
 
 </html>

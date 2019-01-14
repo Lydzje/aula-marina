@@ -50,10 +50,10 @@ getFeatureds($featureds);
 				
 	
 				<div class="slider-buttons">
-					<div class="slider-button" onclick="showSlide(0)" style="background-color:white"></div>
-					<div class="slider-button" onclick="showSlide(1)"></div>
-					<div class="slider-button" onclick="showSlide(2)"></div>
-					<div class="slider-button" onclick="showSlide(3)"></div>
+					<div class="slider-button" onclick="showSlide(0)" onmouseover="stopSlider()" onmouseout="resumeSlider()" style="background-color:white"></div>
+					<div class="slider-button" onclick="showSlide(1)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
+					<div class="slider-button" onclick="showSlide(2)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
+					<div class="slider-button" onclick="showSlide(3)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
 				</div>
       </div>
     </div>

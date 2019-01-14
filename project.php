@@ -44,14 +44,25 @@ getSectionsOfProject($info->id,$sections);
                 echo "
                 <div class=\"section-project\">
                 <div>
-                <div class=\"img-project\">
-                <img src=\"$img1\">
+                <div class=\"img-project slider\">
+                <div class=\"slider-content\" style=\"width:100%\">
+                  <img src=\"$img1\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img2\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img3\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img4\">
+                </div>
                 </div>
                 <div class=\"section-slider-buttons\">
-                <div class=\"slider-button\"></div>
-                <div class=\"slider-button\"></div>
-                <div class=\"slider-button\"></div>
-                <div class=\"slider-button\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(0, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\" style=\"background-color:white\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(1, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(2, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(3, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
                 </div>
                 <div class=\"img-desc\"></div>
                 </div>
@@ -74,14 +85,25 @@ getSectionsOfProject($info->id,$sections);
                 </div>
                 <div>
                 
-                <div class=\"img-project\">
-                <img src=\"$img1\">
+                <div class=\"img-project slider\">
+                <div class=\"slider-content\" style=\"width:100%\">
+                  <img src=\"$img1\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img2\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img3\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img4\">
+                </div>
                 </div>
                 <div class=\"section-slider-buttons\">
-              <div class=\"slider-button\"></div>
-              <div class=\"slider-button\"></div>
-              <div class=\"slider-button\"></div>
-              <div class=\"slider-button\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(0, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\" style=\"background-color:white\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(1, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(2, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(3, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
               </div>
               <div class=\"img-desc\"></div>
               </div>
@@ -97,6 +119,8 @@ getSectionsOfProject($info->id,$sections);
       $notFixed = true;
       include "footer.php";
       ?>
+
+    <script src="js/main.js"></script>
   </body>
 
 </html>
