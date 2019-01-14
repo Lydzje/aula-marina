@@ -54,6 +54,7 @@ getColabsPhoto($colabsPhoto);
                     </div>
                     <div class=\"people-description\">
                         <p>$name</p>
+                        <div><br></div>
                         <p>$description</p>
                     </div>
                 </div>
@@ -71,6 +72,7 @@ getColabsPhoto($colabsPhoto);
                         </div>
                         <div class=\"people-description\">
                             <p>$name</p>
+                            <div><br></div>
                             <p>$description</p>
                         </div>
                     </div>

@@ -180,14 +180,13 @@ INSERT INTO sections VALUES (4, 2, "Sección de ejemplo2", " Lorem ipsum dolor s
 Duis pulvinar quam a urna fringilla vulputate. Etiam erat sapien, congue nec facilisis eget, efficitur ac massa. Fusce laoreet malesuada aliquam. Vivamus eleifend, massa at consectetur aliquam, risus erat condimentum neque, ut vulputate tortor risus nec erat. Aenean luctus ipsum et tempor posuere. In sapien arcu, mollis sit amet ullamcorper vel, pellentesque non neque. Etiam in odio in magna rutrum egestas sed in massa. Quisque pulvinar massa est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin nec massa vel mi rutrum aliquam fermentum eget enim. Nam viverra in nibh at accumsan. Praesent sit amet interdum sapien. Phasellus mattis, risus at pharetra pellentesque, nulla urna molestie mauris, at malesuada est magna aliquam sapien. Integer at pretium arcu. Sed eget vestibulum est. Nam gravida nunc et velit porta, eu placerat mauris rhoncus. ", "https://cdn.theatlantic.com/assets/media/img/mt/2018/01/07/lead_720_405.jpg?mod=1533691921", "https://cdn.theatlantic.com/assets/media/img/mt/2018/01/07/lead_720_405.jpg?mod=1533691921", "https://cdn.theatlantic.com/assets/media/img/mt/2018/01/07/lead_720_405.jpg?mod=1533691921", "https://cdn.theatlantic.com/assets/media/img/mt/2018/01/07/lead_720_405.jpg?mod=1533691921");
 
 INSERT INTO colabsPhoto VALUES (1, "https://i.imgur.com/NotW8Sw.jpg");
-INSERT INTO people VALUES (1, "Pedro Aguilera Aguilera", "Director del Aula Marina", 1, "../res/nino.png", "Profesor Titular de Universidad.
-Departamento: Biología y Geología 
-Área de conocimiento: Ecología
-Correo electrónico: aguilera@ual.es
-Tlf.: +34 950 01 59 33");
-INSERT INTO people VALUES (2, "Rosa María Fernández Ropero", "Técnico Superior de Apoyo del Aula Marina", 1, "../res/nina.png", "Categoría: Técnico superior de apoyo a la gestión y la I+D+i
-Correo electrónico: aulamar@ual.es
-Tlf.: +34 950 21 47 71");
+INSERT INTO people VALUES (1, "Pedro Aguilera Aguilera", "Director del Aula Marina", 1, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/250px-Gatto_europeo4.jpg", "<div>Profesor Titular de Universidad. <br></div><div>Departamento: Biología y Geología <br></div><div>
+
+
+Área de conocimiento: Ecología <br></div><div>
+
+Correo electrónico: aguilera@ual.es <br></div><div>Tlf.: +34 950 01 59 33</div>");
+INSERT INTO people VALUES (2, "Rosa María Fernández Ropero", "Técnico Superior de Apoyo del Aula Marina", 1, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUR946RRGfx_qQQ5B5PKPqyIqTxx6MkNfcUluxZmAa38RfN1TQ_w", "<div><br></div><div>Categoría: Técnico superior de apoyo a la gestión y la I+D+i <br></div><div>Correo electrónico: aulamar@ual.es <br></div><div>Tlf.: +34 950 21 47 71</div>");
 INSERT INTO people VALUES (3, "John Doe", "Cargo", 0, "null", "null");
 INSERT INTO people VALUES (4, "John Doe", "Cargo", 0, "null", "null");
 INSERT INTO people VALUES (5, "John Doe", "Cargo", 0, "null", "null");
