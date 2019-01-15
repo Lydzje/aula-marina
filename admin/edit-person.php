@@ -136,7 +136,7 @@ getPerson($_GET['id'], $info);
   </div>
 
   <script src="../js/admin.js"></script>
-  <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+  <script src="../js/nicEdit-latest.js" type="text/javascript"></script>
   <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 
     <style>
