@@ -122,6 +122,9 @@ getPerson($_GET['id'], $info);
                 }
                 ?>
 
+                <div class="field2">                                   
+                    <span class="manage-sections" onclick="confirmRemove(<?php echo $info->id ?>, 'people', 'people.php')"><i class="fas fa-trash"> </i> Borrar Persona</span>
+                </div>
 
                 <div class="submit2">
                 <span class="cancel-button" onclick="window.location='people.php'">CANCELAR</span>
