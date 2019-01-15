@@ -90,9 +90,10 @@ getActivities(true, $pastActivities);
                     $id    = $nextActivities[$i]->id;
                     $title = $nextActivities[$i]->title;
                     $date  = $nextActivities[$i]->date;
+                    $starClass = $nextActivities[$i]->featured == 1 ? "fas fa-star" : "far fa-star";
                     echo "
                       <tr>
-                          <td class='table-star'><i class='far fa-star'></i></td>
+                          <td class='table-star'><i class='$starClass' onclick=\"star($id, 'activities', 'activities.php')\"></i></td>
                           <td onclick='window.location=\"edit-activity.php?id=$id\"'>$date</td>
                           <td onclick='window.location=\"edit-activity.php?id=$id\"'>$title</td>
                           <td class='table-open' onclick='window.location=\"edit-activity.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
@@ -124,9 +125,10 @@ getActivities(true, $pastActivities);
                     $id    = $pastActivities[$i]->id;
                     $title = $pastActivities[$i]->title;
                     $date  = $pastActivities[$i]->date;
+                    $starClass = $pastActivities[$i]->featured == 1 ? "fas fa-star" : "far fa-star";
                     echo "
                       <tr>
-                          <td class='table-star'><i class='far fa-star'></i></td>
+                      <td class='table-star'><i class='$starClass' onclick=\"star($id, 'activities', 'activities.php')\"></i></td>
                           <td onclick='window.location=\"edit-activity.php?id=$id\"'>$date</td>
                           <td onclick='window.location=\"edit-activity.php?id=$id\"'>$title</td>
                           <td class='table-open' onclick='window.location=\"edit-activity.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
