@@ -110,6 +110,9 @@ $id = $info->id;
                 <div class="field2">
                     <span class="manage-sections" onclick="window.location='sections.php?project_id=<?php echo $id ?>'"><i class="fas fa-cogs"></i> Gestionar Secciones</span>
                 </div>
+                <div class="field2">                                   
+                    <span class="manage-sections" onclick="confirmRemove(<?php echo $info->id ?>, 'projects', 'projects.php')"><i class="fas fa-trash"> </i> Borrar Proyecto</span>
+                </div>
 
                 <?php 
                 if ($transactionDone) {

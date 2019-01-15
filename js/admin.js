@@ -70,7 +70,7 @@ try {
 }*/
 
 
-try {
+/*try {
     for (let index = 0; index < tableStars.length; index++) {
         tableStars[index].onclick = function () {
             var starClass = tableStars[index].children[0].className;
@@ -80,7 +80,7 @@ try {
     }
 } catch (error) {
     //
-}
+}*/
 
 
 function active(act) {
@@ -124,3 +124,17 @@ function loadColabImage(index = 0) {
     colabImg[index].src = imgLinks[index].value;
     imgLinkInputs[index].value = imgLinks[index].value;
 }
+
+
+
+function confirmRemove(id, table, url){
+    var ok = confirm("¿Está seguro de que quiere eliminar?");
+    if(ok){
+        window.location='remove.php?id='+ id + '&table='+ table + '&url='+ url;
+    }
+}
+
+function star(id, table, url){
+    window.location='star.php?id='+ id + '&table='+ table + '&url='+ url;
+}
+
