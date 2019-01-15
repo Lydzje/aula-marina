@@ -86,9 +86,10 @@ getNews($news);
                 $date  = $news[$i]->date;
                 $title = $news[$i]->title;
                 $link  = $news[$i]->link;
+                $starClass = $news[$i]->featured == 1 ? "fas fa-star" : "far fa-star";
                 echo "
                   <tr>
-                      <td class='table-star'><i class='far fa-star'></i></td>
+                  <td class='table-star'><i class='$starClass' onclick=\"star($id, 'news', 'news.php')\"></i></td>
                       <td onclick='window.location=\"edit-new.php?id=$id\"'>$date</td>
                       <td onclick='window.location=\"edit-new.php?id=$id\"'>$title</td>
                       <td><a href='$link' target='_blank'>Enlace</a></td>
