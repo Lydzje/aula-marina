@@ -11,7 +11,7 @@ body {
 }
 
 .login-site {
-    background-image: url("../res/login.jpg");
+    background-image: url("../res/min/login.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -177,7 +177,7 @@ body {
     width: 100%;
     height: 100%;
     position: fixed;
-    background-image: url("../res/admin.png");
+    background-image: url("../res/min/admin.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
