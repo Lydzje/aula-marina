@@ -116,7 +116,7 @@ getContactInfo($info);
       </div>
     </div>
   </div>
-  <script src="../js/nicEdit-latest.js" type="text/javascript"></script>
+  <script src="../js/nicEdit.js" type="text/javascript"></script>
   <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
   
   <style>

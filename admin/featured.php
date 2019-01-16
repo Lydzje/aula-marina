@@ -81,14 +81,7 @@ getFeatureds($featureds);
             </div>
             <div class="featureds">
               <form class="featured show-div" method="POST">
-                <div class="featured-image">
-                  <img class="featured-img" src="<?php echo $featureds[0]->img ?>" />
-                  <div class="select-file">
-                    <input class='img-link' type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadImage(0)'>Cargar</span>
-                    <input class="img-link-input" type="hidden" name="img-link" value="<?php echo $featureds[0]->img ?>"/>
-                  </div>
-                </div>
-
+                
                 <div class="admin-form2-featured">
                   <input name="id" type="hidden" value="1">
 
@@ -118,13 +111,7 @@ getFeatureds($featureds);
                 </div>
               </form>
 
-              <form class="featured show-div" style="display:none" method="POST">
-                <div class="featured-image">
-                  <img class="featured-img" src="<?php echo $featureds[1]->img ?>" />
-                  <div class="select-file">
-                    <input class='img-link' name="img-link" type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadImage(1)'>Cargar</span>
-                  </div>
-                </div>
+              <form class="featured show-div" style="display:none" method="POST">   
 
                 <div class="admin-form2-featured">
                   <input name="id" type="hidden" value="2">
@@ -146,12 +133,6 @@ getFeatureds($featureds);
               </form>
 
               <form class="featured show-div" style="display:none" method="POST">
-                <div class="featured-image">
-                  <img class="featured-img" src="<?php echo $featureds[2]->img ?>" />
-                  <div class="select-file">
-                    <input class='img-link' name="img-link" type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadImage(2)'>Cargar</span>
-                  </div>
-                </div>
 
                 <div class="admin-form2-featured">
                   <input name="id" type="hidden" value="3">
@@ -173,12 +154,6 @@ getFeatureds($featureds);
               </form>
 
               <form class="featured show-div" style="display:none" method="POST">
-                <div class="featured-image">
-                  <img class="featured-img" src="<?php echo $featureds[3]->img ?>" />
-                  <div class="select-file">
-                    <input class='img-link' name="img-link" type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadImage(3)'>Cargar</span>
-                  </div>
-                </div>
 
                 <div class="admin-form2-featured">
                   <input name="id" type="hidden" value="4">

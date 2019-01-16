@@ -70,7 +70,6 @@ getSpecies($species);
           <table>
             <thead>
               <tr>
-                <th style="width:32px;text-align:center;"><i class="fas fa-star"></i></th>
                 <th>NOMBRE CIENTÍFICO</th>
                 <th>NOMBRE COMÚN</th>
                 <th>MES</th>
@@ -90,7 +89,6 @@ getSpecies($species);
                 $year      = $species[$i]->year;
                 echo "
                   <tr>
-                      <td class='table-star'><i class='far fa-star'></i></td>
                       <td onclick='window.location=\"edit-species.php?id=$id\"'>$sci_name</td>
                       <td onclick='window.location=\"edit-species.php?id=$id\"'>$comm_name</td>
                       <td onclick='window.location=\"edit-species.php?id=$id\"'>$month</td>

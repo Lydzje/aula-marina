@@ -70,7 +70,6 @@ getProjects($projects);
           <table>
             <thead>
               <tr>
-                <th style="width:32px;text-align:center;"><i class="fas fa-star"></i></th>
                 <th>NOMBRE</th>
                 <th style="width:32px;text-align:center;"></th>
               </tr>
@@ -84,7 +83,6 @@ getProjects($projects);
                 $name = $projects[$i]->name;
                 echo "
                   <tr>
-                      <td class='table-star'><i class='far fa-star'></i></td>
                       <td onclick='window.location=\"edit-project.php?id=$id\"'>$name</td>
                       <td class='table-open' onclick='window.location=\"edit-project.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
                   </tr>
