@@ -89,7 +89,7 @@ getActivities(true, $pastActivities);
                   for ($i=0; $i < $len; $i++) { 
                     $id    = $nextActivities[$i]->id;
                     $title = $nextActivities[$i]->title;
-                    $date  = $nextActivities[$i]->date;
+                    $date  = date("d-m-Y", strtotime($nextActivities[$i]->date));
                     $starClass = $nextActivities[$i]->featured == 1 ? "fas fa-star" : "far fa-star";
                     echo "
                       <tr>

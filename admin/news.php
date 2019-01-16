@@ -83,7 +83,7 @@ getNews($news);
               $len = count($news);
               for ($i=0; $i < $len; $i++) { 
                 $id    = $news[$i]->id;
-                $date  = $news[$i]->date;
+                $date  = date("d-m-Y", strtotime($news[$i]->date)); 
                 $title = $news[$i]->title;
                 $link  = $news[$i]->link;
                 $starClass = $news[$i]->featured == 1 ? "fas fa-star" : "far fa-star";
