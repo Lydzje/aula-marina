@@ -42,7 +42,7 @@ getFeaturedNew($featured);
 
       <div class="section-bot">
         <div class="section-left section-img">
-          <img src="<?php echo $featured->img ?>" alt="">
+          <img src="<?php echo $featured->img ?>" height="275px" alt="">
           <div class="section-slider-buttons">
 
           </div>
