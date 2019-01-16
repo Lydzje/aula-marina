@@ -91,84 +91,9 @@ body {
     color: black;
 }
 
-
 .header-resp{
-    display: flex;
-    justify-content: space-between;
-    padding: 150px;
-    background-color: #001534;
+    display: none;
 }
-
-.header-resp a {
-    color: white;
-    text-align: right;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-
-.logo-resp {
-    display: inline-block;
-}
-
-.logo-resp img {
-    width: 50px;
-}
-
-.nav-resp {
-    background-color: rgba(0, 0, 0, 0.35);
-    display: inline-block;
-    margin-left: 32px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
-}
-
-.nav-resp:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
-}
-
-.lang-resp {
-    display: inline-block;
-    color: white;
-    font-weight: bold;
-}
-
-.lang-resp a {
-    color: white;
-    text-align: right;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.lang-resp a:hover {
-    text-decoration: underline;
-}
-
-.nav-resp ul {
-    list-style: none;
-    font-size: 0px;
-}
-
-.nav-resp a {
-    display: inline-block;
-    padding: 12px;
-    font-size: 14px;
-    -webkit-transition: all 0.4s;
-    transition: all 0.2s;
-}
-
-.nav-resp a:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
-}
-
-
-
-
-
-
 
 .bg {
     width: 100%;
@@ -446,7 +371,7 @@ select {
     text-indent: 1px;
     text-overflow: '';
     border: 0;
-    z-index: 10;
+    z-index: 9;
 }
 
 select option {
@@ -1093,4 +1018,66 @@ footer {
 .footer-bot {
     padding: 20px 0px;
     text-align: center;
+}
+
+
+@media only screen and (max-width: 1050px) {
+    .header{
+        display: none;
+    }
+
+    .header-resp{
+        display: block;
+        background-color: #001534;
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    .logo-button-resp{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px;
+    }
+
+    .logo-resp img{
+        height: 25px;
+    }
+
+    .button-resp {
+        color: white;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    .nav-resp{
+        position: fixed;
+        top: 53.75px;
+        bottom: 0px;
+        background-color: #001534;
+        width: 100%;
+        z-index: 10;
+        display: none;
+    }
+
+    .nav-resp a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 30px 10px;
+        text-align: center;
+        font-size: 20px;
+        background-color: #001534;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s;
+    }
+
+    .nav-resp a:hover{
+        background-color: #2a4b7a;
+    }
+
+
 }

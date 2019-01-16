@@ -1,5 +1,7 @@
 "use strict";
 
+var navResp = document.getElementsByClassName("nav-resp")[0];
+var buttonNavResps = document.getElementsByClassName("button-nav-resp");
 
 var sliders = document.getElementsByClassName("slider");
 var sliderContents = document.getElementsByClassName("slider-content");
@@ -104,3 +106,18 @@ function goToYear() {
 	var year = yearSelector.options[yearSelector.selectedIndex].value;
 	window.location = "species-of-the-month.php?year=" + year;
 }
+
+
+function toggleNavResp(){
+	var display = navResp.style.display;
+	if (display == 'none') {
+		navResp.style.display = 'block';
+		buttonNavResps[0].style.display = 'block';
+		buttonNavResps[1].style.display = 'none';
+	} else {
+		navResp.style.display = 'none';
+		buttonNavResps[0].style.display = 'none';
+		buttonNAvResps[1].style.display = 'block';
+	}
+}
+
