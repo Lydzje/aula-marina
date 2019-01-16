@@ -43,6 +43,7 @@ getOneSpecies($_GET["id"], $info);
       <?php include "footer.php"?>
 
     </div>
+    <script src="js/main.js"></script>
   </body>
 
 </html>

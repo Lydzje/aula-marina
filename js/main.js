@@ -1,5 +1,7 @@
 "use strict";
 
+var body = document.getElementsByTagName("body")[0];
+
 var navResp = document.getElementsByClassName("nav-resp")[0];
 var buttonNavResps = document.getElementsByClassName("button-nav-resp");
 
@@ -110,14 +112,16 @@ function goToYear() {
 
 function toggleNavResp(){
 	var display = navResp.style.display;
-	if (display == 'none') {
+	if (display == '' || display == 'none') {
+		body.style.overflowY = "hidden";
 		navResp.style.display = 'block';
-		buttonNavResps[0].style.display = 'block';
-		buttonNavResps[1].style.display = 'none';
-	} else {
-		navResp.style.display = 'none';
 		buttonNavResps[0].style.display = 'none';
-		buttonNAvResps[1].style.display = 'block';
+		buttonNavResps[1].style.display = 'inline-block';
+	} else {
+		body.style.overflowY = "auto";
+		navResp.style.display = 'none';
+		buttonNavResps[0].style.display = 'inline-block';
+		buttonNavResps[1].style.display = 'none';
 	}
 }
 

@@ -110,5 +110,6 @@ getFeaturedNew($featured);
   include "footer.php";
   ?>
   </div>
+  <script src="js/main.js"></script>
 </body>
 </html>

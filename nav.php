@@ -34,7 +34,7 @@
         </div>
         <div class="button-resp" onclick="toggleNavResp()">
             <i class="fas fa-bars button-nav-resp"></i>
-            <i class="fas fa-times button-nav-resp" style="display:none;"></i>
+            <i class="fas fa-times button-nav-resp" style="display:none"></i>
         </div>
     </div>
     <div class="nav-resp">
