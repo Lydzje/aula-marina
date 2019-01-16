@@ -107,7 +107,7 @@ function updateSpecies($id, $sci_name, $comm_name, $description, $month, $year, 
 function getActivities($past, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM activities WHERE past='$past'";
+    $sql = "SELECT * FROM activities WHERE past='$past' ORDER BY date DESC";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $index = 0;
@@ -163,7 +163,7 @@ function insertActivity($past, $title, $date, $ubication, $description, $img1, $
 function getProjects(&$result)
 {
     global $conn;
-    $sql = "SELECT * FROM projects";
+    $sql = "SELECT * FROM projects ORDER BY name";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $index = 0;
@@ -366,7 +366,7 @@ function updateAboutUs($img1, $img2, $img3, $img4, $description)
 function getNews(&$result)
 {
     global $conn;
-    $sql = "SELECT * FROM news";
+    $sql = "SELECT * FROM news ORDER BY date DESC";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $index = 0;

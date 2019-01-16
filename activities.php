@@ -9,6 +9,9 @@ if (isset($_GET['past']) == 1) {
 
 getActivities($past, $activities);
 getFeaturedActivity($featured);
+if ($featured == null) {
+  $featured = $activities[count($activities)-1];
+}
 
 ?>
 

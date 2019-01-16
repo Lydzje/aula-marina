@@ -4,6 +4,9 @@ include "php-functions/functions.php";
 
 getNews($news);
 getFeaturedNew($featured);
+if ($featured == null) {
+  $featured = $news[count($news)-1];
+}
 
 ?>
 
