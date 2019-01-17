@@ -107,72 +107,72 @@ body {
 
 .bg-index {
     position: absolute;
-    background-image: url("../res/contacto2.png");
+    background-image: url("../res/min/index.jpg");
 }
 
 .bg-species-of-the-month, .bg-species {
     position: absolute;
-    background-image: url("../res/dustin-haney-435483-unsplash.jpg");
+    background-image: url("../res/min/species.jpg");
 }
 
 .bg-aula-marina {
     position: absolute;
-    background-image: url("../res/aula-marina.jpg");
+    background-image: url("../res/min/aula-marina.jpg");
 }
 
 .bg-people {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/personal.png");
+    background-image: url("../res/min/people.jpg");
 }
 
 .bg-facilities {
     position: absolute;
-    background-image: url("../res/anna-nurek-1248910-unsplash.jpg");
+    background-image: url("../res/min/facilities.jpg");
 }
 
 .bg-about-us {
     position: absolute;
-    background-image: url("../res/roquetas.jpg");
+    background-image: url("../res/min/about-us.jpg");
 }
 
 .bg-activities {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/activities.jpg");
+    background-image: url("../res/min/activities.jpg");
 }
 
 .bg-activity {
     position: absolute;
-    background-image: url("../res/activities.jpg");
+    background-image: url("../res/min/activities.jpg");
 }
 
 .bg-projects {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/news2.jpg");
+    background-image: url("../res/min/projects.jpg");
 }
 
 .bg-project {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/news2.jpg");
+    background-image: url("../res/min/projects.jpg");
 }
 
 .bg-news {
     position: fixed;
     top:0;
     left: 0;
-    background-image: url("../res/news.jpeg");
+    background-image: url("../res/min/news.jpg");
 }
 
 .bg-contact {
     position: absolute;
-    background-image: url("../res/antoine-similon-1165697-unsplash.jpg");
+    background-image: url("../res/min/contact.jpg");
 }
 
 .index-content {
