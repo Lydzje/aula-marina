@@ -10,10 +10,19 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$error = null;
 $transactionDone = false;
 if (isset($_POST['submit'])) {
-    updateAccount($_POST['username'], $_POST['password']);
-    $transactionDone = true;
+    if ($_POST['password'] == $_POST['rep-password']) {
+      if ($_POST['password'] == '') {
+        $error = "cadenaVacía";
+      }else{
+        updateAccount($_POST['username'], $_POST['password']);
+        $transactionDone = true;
+      }
+    }else {
+      $error = "passDiferentes";
+    }
 }
 
 getAccountInfo($info);
@@ -81,7 +90,11 @@ getAccountInfo($info);
                 </div>
                 <div class="field2">
                   <span>Contraseña</span>
-                  <input name="password" type="password" value=<?php echo $info->password; ?> placeholder="Contraseña" />
+                  <input name="password" type="password" placeholder="Contraseña">
+                </div>
+                <div class="field2">
+                  <span>Repetir Contraseña</span>
+                  <input name="rep-password" type="password" placeholder="Repetir Contraseña" />
                 </div>
 
                 <?php 
@@ -93,10 +106,33 @@ getAccountInfo($info);
                   ";
                 }
                 ?>
+              <div style="margin-top: 16px"></div>
+              <?php 
+							if ($error == "cadenaVacía") {
+								echo "
+								<div class=\"field2\">
+								<div class=\"error\">La contraseña no debe de ser una cadena vacía</div>
+								</div>
+								";
+							}else if ($error == "passDiferentes") {
+								echo "
+								<div class=\"field2\">
+								<div class=\"error\">Las contraseñas deben de coincidir</div>
+								</div>
+								";
+							}
+              ?>
+              
+							
+
+
 
                 <div class="submit2" style="display:block;text-align:right;">
                   <input name="submit" type="submit" value="APLICAR" />
                 </div>
+
+
+
               </form>
             </div>
           </div>
