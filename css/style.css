@@ -1137,6 +1137,11 @@ footer {
         
     }
 
+    .ind-species-img img{
+        width: 100%;
+        height: 200px;
+    }
+
     .lasted-species div:nth-of-type(2) { 
         overflow-x: auto;
         white-space: nowrap;
