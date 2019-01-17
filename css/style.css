@@ -1165,7 +1165,7 @@ footer {
     .people-right {
         align-items: flex-end;
     }
-
+    
     .section {
         width: 70%;
     }
@@ -1184,12 +1184,17 @@ footer {
     
     .class2 {
         flex-direction: column;
+        width: 90%;
     }
 
     .class2 img {
         width: 100%;
         height: 120px;
         margin-bottom: 8px;
+    }
+
+    .pepito { 
+        width: 90%;
     }
 
     .project-x {
