@@ -27,6 +27,9 @@ getOneSpecies($_GET["id"], $info);
     <div class="wrapper">
     <?php include "nav.php"?>
     <div class="content">
+      <div class="title">
+        <span><?php echo $info->comm_name?></span>
+      </div>
       <div class="ind-species-box">
 	<div class="ind-species-img">
           <img src="<?php echo $info->img ?>">
