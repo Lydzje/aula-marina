@@ -1,3 +1,8 @@
+<?php 
+include "db/connection.php";
+include "php-functions/functions.php";
+?>
+
 <!DOCTYPE html>
 <html>
 

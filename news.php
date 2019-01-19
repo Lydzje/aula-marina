@@ -3,6 +3,10 @@ include "db/connection.php";
 include "php-functions/functions.php";
 
 getNews($news);
+getFeaturedNew($featured);
+if ($featured == null) {
+  $featured = $news[count($news)-1];
+}
 
 ?>
 
@@ -34,36 +38,27 @@ getNews($news);
       </div>
     </div>
 
-    <div class="section">
+    <div class="section" style="cursor:pointer;" onclick="window.open('<?php echo $featured->link ?>', '_blank');">
       <div class="section-top">
-        <span>NOTICIA DESTACADA</span>
+        <span><b>NOTICIA DESTACADA</b></span>
       </div>
 
       <div class="section-bot">
         <div class="section-left section-img">
-          <img src="./res/noticias-principal.jpg" alt="">
+          <img src="<?php echo $featured->img ?>" height="275px" alt="">
           <div class="section-slider-buttons">
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
+
           </div>
           <div>
             <div class="img-desc">
-              PLAYA DE TORREGARCÍA
             </div>
           </div>
         </div>
 
         <div class="section-right section-text">
-          <div class="parr">
-            <span>
-              ACTIVIDAD DE VOLUNTARIADO AMBIENTAL PARQUE NATURAL CABO DE GATA
-            </span>
-            <p>
-              El pasado sábado 12 de mayo estuvimos en la playas de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar,
-              ayudando en una limpieza de la playas juento con nuestros amigos de Ecocampus.
-            </p>
+          <div class="par">
+            <span><?php echo $featured->title ?></span>
+            <p><?php echo $featured->description ?></p>
           </div>
         </div>
       </div>
@@ -73,7 +68,7 @@ getNews($news);
     <?php
     $pos = "left1";
     for ($i=0; $i < count($news) ; $i++) { 
-      $date = $news[$i]->date;
+      $date = date("d-m-Y", strtotime($news[$i]->date));
       $title = $news[$i]->title;
       $description = $news[$i]->description;
       $link = $news[$i]->link;
@@ -87,7 +82,7 @@ getNews($news);
 
       echo "
       <div class=\"$pos\" onclick=\"window.open('$link', '_blank');\">
-        <div class=\"img-desc\">
+        <div class=\"news-date\">
           <span>
             $date
           </span>
@@ -118,5 +113,6 @@ getNews($news);
   include "footer.php";
   ?>
   </div>
+  <script src="js/main.js"></script>
 </body>
 </html>

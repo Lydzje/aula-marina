@@ -64,6 +64,7 @@ getColabsPhoto($colabsPhoto);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="rrss.php"><i class="fab fa-instagram"></i><span>REDES SOCIALES</span></a>
       <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
@@ -141,7 +142,7 @@ getColabsPhoto($colabsPhoto);
                   </table>
                 </div>
 
-                <form class="img-cola" method="POST">
+                <form class="img-cola" style="display:block;" method="POST">
                   <div class="img-cola-img-container">
                     <img class="colab-img" src="<?php echo $colabsPhoto->img ?>">
                     <span><i class="far fa-image"></i> Foto Colabs.</span>

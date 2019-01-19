@@ -10,12 +10,14 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$transactionDone = false;
 if (isset($_POST['submit'])) {
     if ($_GET['main'] == 1) {
         insertPerson(true, $_POST['name'], $_POST['charge'], $_POST['description'], $_POST['img-link']);
     } else {
         insertPerson(false, $_POST['name'], $_POST['charge'], "null", "null");
     }
+    $transactionDone = true;
 }
 ?>
 
@@ -64,6 +66,7 @@ if (isset($_POST['submit'])) {
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="rrss.php"><i class="fab fa-instagram"></i><span>REDES SOCIALES</span></a>
       <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
@@ -105,7 +108,19 @@ if (isset($_POST['submit'])) {
                 }
                 ?>
 
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
+
+
                 <div class="submit2">
+                <span class="cancel-button" onclick="window.location='people.php'">CANCELAR</span>
                   <input name="submit" type="submit" value="GUARDAR" />
                 </div>
               </form>
@@ -117,6 +132,40 @@ if (isset($_POST['submit'])) {
   </div>
 
   <script src="../js/admin.js"></script>
+  <script src="../js/nicEdit.js" type="text/javascript"></script>
+  <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
+    <style>
+    .nicEdit-main {
+      font-size: 12px;
+      resize: vertical;
+      height: 10px;
+      overflow: auto !important;
+      background-color: white;
+      padding: 4px;
+      margin: 0 !important;
+    }
+
+    .nicEdit-panelContain {
+      border: 0 !important;
+      border-radius: 5px 5px 0 0 !important;
+    }
+
+    .field2 > div:nth-child(2) {
+      border: 2px solid #001534 !important;
+      border-bottom: 0 !important;
+      border-radius: 5px 5px 0 0;
+      width: 97.5% !important;
+    }
+
+    .field2 > div:nth-child(3) {
+      border: 2px solid #001534 !important;
+      border-top: 0 !important;
+      border-radius: 0 0 5px 5px;
+      width: 97.5% !important;
+    }
+  </style>
+
 </body>
 
 </html>

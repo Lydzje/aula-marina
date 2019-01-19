@@ -58,6 +58,7 @@ getNews($news);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="rrss.php"><i class="fab fa-instagram"></i><span>REDES SOCIALES</span></a>
       <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
@@ -82,12 +83,13 @@ getNews($news);
               $len = count($news);
               for ($i=0; $i < $len; $i++) { 
                 $id    = $news[$i]->id;
-                $date  = $news[$i]->date;
+                $date  = date("d-m-Y", strtotime($news[$i]->date)); 
                 $title = $news[$i]->title;
                 $link  = $news[$i]->link;
+                $starClass = $news[$i]->featured == 1 ? "fas fa-star" : "far fa-star";
                 echo "
                   <tr>
-                      <td class='table-star'><i class='far fa-star'></i></td>
+                  <td class='table-star'><i class='$starClass' onclick=\"star($id, 'news', 'news.php')\"></i></td>
                       <td onclick='window.location=\"edit-new.php?id=$id\"'>$date</td>
                       <td onclick='window.location=\"edit-new.php?id=$id\"'>$title</td>
                       <td><a href='$link' target='_blank'>Enlace</a></td>

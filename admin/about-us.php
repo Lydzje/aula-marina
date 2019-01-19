@@ -10,8 +10,10 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$transactionDone = false;
 if (isset($_POST['submit'])) {
   updateAboutUs($_POST['img1'], $_POST['img2'], $_POST['img3'], $_POST['img4'], $_POST['description']);
+  $transactionDone = true;
 }
 
 getAboutUsInfo($info);
@@ -62,6 +64,7 @@ getAboutUsInfo($info);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="rrss.php"><i class="fab fa-instagram"></i><span>REDES SOCIALES</span></a>
       <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
@@ -109,7 +112,18 @@ getAboutUsInfo($info);
                   <span>Descripción</span>
                   <textarea name="description" type="text" placeholder="Descripción sobre nosotros"><?php echo $info->description ?></textarea>
                 </div>
-                <div class="submit2">
+
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
+
+                <div class="submit2" style="display:block;text-align:right;">
                   <input name="submit" type="submit" value="GUARDAR" />
                 </div>
               </div>
@@ -123,6 +137,18 @@ getAboutUsInfo($info);
   </div>
 
   <script src="../js/admin.js"></script>
+  <script src="../js/nicEdit.js" type="text/javascript"></script>
+  <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+  <style>
+    .nicEdit-main {
+      font-size: 12px;
+      resize: vertical;
+      overflow: auto !important;
+      background-color: white;
+      padding: 4px;
+      margin: 0 !important;
+    }
+  </style>
 </body>
 
 </html>

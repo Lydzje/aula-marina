@@ -59,6 +59,7 @@ getActivities(true, $pastActivities);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="rrss.php"><i class="fab fa-instagram"></i><span>REDES SOCIALES</span></a>
       <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
@@ -88,10 +89,11 @@ getActivities(true, $pastActivities);
                   for ($i=0; $i < $len; $i++) { 
                     $id    = $nextActivities[$i]->id;
                     $title = $nextActivities[$i]->title;
-                    $date  = $nextActivities[$i]->date;
+                    $date  = date("d-m-Y", strtotime($nextActivities[$i]->date));
+                    $starClass = $nextActivities[$i]->featured == 1 ? "fas fa-star" : "far fa-star";
                     echo "
                       <tr>
-                          <td class='table-star'><i class='far fa-star'></i></td>
+                          <td class='table-star'><i class='$starClass' onclick=\"star($id, 'activities', 'activities.php')\"></i></td>
                           <td onclick='window.location=\"edit-activity.php?id=$id\"'>$date</td>
                           <td onclick='window.location=\"edit-activity.php?id=$id\"'>$title</td>
                           <td class='table-open' onclick='window.location=\"edit-activity.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
@@ -123,9 +125,10 @@ getActivities(true, $pastActivities);
                     $id    = $pastActivities[$i]->id;
                     $title = $pastActivities[$i]->title;
                     $date  = $pastActivities[$i]->date;
+                    $starClass = $pastActivities[$i]->featured == 1 ? "fas fa-star" : "far fa-star";
                     echo "
                       <tr>
-                          <td class='table-star'><i class='far fa-star'></i></td>
+                      <td class='table-star'><i class='$starClass' onclick=\"star($id, 'activities', 'activities.php')\"></i></td>
                           <td onclick='window.location=\"edit-activity.php?id=$id\"'>$date</td>
                           <td onclick='window.location=\"edit-activity.php?id=$id\"'>$title</td>
                           <td class='table-open' onclick='window.location=\"edit-activity.php?id=$id\"'><i class='fas fa-angle-right'></i></td>

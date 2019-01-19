@@ -29,7 +29,7 @@ getSpecies($species);
   <div class="content">
     <div class="title">ESPECIE DEL MES</div>
     <div class="species-box">
-      <div class="recent-species">
+      <div class="recent-species" onclick="window.location='species.php?id=<?php echo $species[0]->id; ?>'">
         <div class="recent-month">
           <?php echo $species[0]->month?>
         </div>

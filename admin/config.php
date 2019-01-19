@@ -10,8 +10,19 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$error = null;
+$transactionDone = false;
 if (isset($_POST['submit'])) {
-    updateAccount($_POST['username'], $_POST['password']);
+    if ($_POST['password'] == $_POST['rep-password']) {
+      if ($_POST['password'] == '') {
+        $error = "cadenaVacía";
+      }else{
+        updateAccount($_POST['username'], $_POST['password']);
+        $transactionDone = true;
+      }
+    }else {
+      $error = "passDiferentes";
+    }
 }
 
 getAccountInfo($info);
@@ -62,6 +73,7 @@ getAccountInfo($info);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="rrss.php"><i class="fab fa-instagram"></i><span>REDES SOCIALES</span></a>
       <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
@@ -78,11 +90,49 @@ getAccountInfo($info);
                 </div>
                 <div class="field2">
                   <span>Contraseña</span>
-                  <input name="password" type="password" value=<?php echo $info->password; ?> placeholder="Contraseña" />
+                  <input name="password" type="password" placeholder="Contraseña">
                 </div>
-                <div class="submit2">
+                <div class="field2">
+                  <span>Repetir Contraseña</span>
+                  <input name="rep-password" type="password" placeholder="Repetir Contraseña" />
+                </div>
+
+                <?php 
+                if ($transactionDone) {
+                  echo "
+                  <div class=\"field2\">
+                  <div class=\"success\"> La operación se ha realizado con éxito</div>
+                  </div>
+                  ";
+                }
+                ?>
+              <div style="margin-top: 16px"></div>
+              <?php 
+							if ($error == "cadenaVacía") {
+								echo "
+								<div class=\"field2\">
+								<div class=\"error\">La contraseña no debe de ser una cadena vacía</div>
+								</div>
+								";
+							}else if ($error == "passDiferentes") {
+								echo "
+								<div class=\"field2\">
+								<div class=\"error\">Las contraseñas deben de coincidir</div>
+								</div>
+								";
+							}
+              ?>
+              
+							
+
+
+
+                <div class="submit2" style="display:block;text-align:right;">
                   <input name="submit" type="submit" value="APLICAR" />
                 </div>
+
+
+
               </form>
             </div>
           </div>

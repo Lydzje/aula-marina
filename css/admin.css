@@ -11,7 +11,7 @@ body {
 }
 
 .login-site {
-    background-image: url("../res/login.jpg");
+    background-image: url("../res/min/login.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -96,6 +96,60 @@ body {
     border-color: aqua;
 }
 
+.error {
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    width: 95%;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #dd3939;
+}
+
+.success {
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    width: 50%;
+    padding: 5px;
+    margin: 16px auto;
+    font-weight: bold;
+    background-color: #55bb55;
+}
+
+.manage-sections {
+    display: inline-block !important;
+    padding: 5px;
+    width: auto !important;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.manage-sections:hover {
+    color: #2a4b7a;
+}
+
+.cancel-button {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 7px;
+    border: 2px solid #dd3939;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #dd3939;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.cancel-button:hover {
+    background-color: #dd3939;
+    color: white;
+}
+
 .submit {
     width: 100%;
     margin-top: 5%;
@@ -123,7 +177,7 @@ body {
     width: 100%;
     height: 100%;
     position: fixed;
-    background-image: url("../res/admin.png");
+    background-image: url("../res/min/admin.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -224,6 +278,7 @@ body {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 32px;
+    text-transform: uppercase;
 } 
 
 .content-nav {
@@ -349,7 +404,7 @@ body {
 }
 
 .admin-form2-featured {
-    width: 60%;
+    width: 100%;
     margin: 0 16px;
 }
 
@@ -398,7 +453,8 @@ body {
 .submit2 {
     width: 100%;
     margin-top: 16px;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
 }
 
 .submit2 input {
@@ -607,8 +663,10 @@ table tbody tr:hover .table-open i {
 }
 
 .img-cola {
+    display: flex;
     width: 150px;
     margin-top: 30px;
+    justify-content: space-between;
 }
 
 .img-cola-img-container {
@@ -639,4 +697,11 @@ table tbody tr:hover .table-open i {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
+}
+
+.nicEdit-main {
+    font-size: 12px;
+    resize:both;
+    height: 140px;
+    overflow: auto !important;
 }

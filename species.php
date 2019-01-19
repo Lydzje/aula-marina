@@ -27,6 +27,9 @@ getOneSpecies($_GET["id"], $info);
     <div class="wrapper">
     <?php include "nav.php"?>
     <div class="content">
+      <div class="title">
+        <span><?php echo $info->comm_name?></span>
+      </div>
       <div class="ind-species-box">
 	<div class="ind-species-img">
           <img src="<?php echo $info->img ?>">
@@ -35,9 +38,7 @@ getOneSpecies($_GET["id"], $info);
           <h1>
           <?php echo $info->comm_name ?> <br> (<?php echo $info->sci_name ?>)
           </h1>
-          <p>
-          <?php echo $info->description ?>
-          </p>
+          <p style="white-space:pre-wrap;text-align:justify;"><?php echo $info->description ?></p>
 	</div>
 
       </div>
@@ -45,6 +46,7 @@ getOneSpecies($_GET["id"], $info);
       <?php include "footer.php"?>
 
     </div>
+    <script src="js/main.js"></script>
   </body>
 
 </html>

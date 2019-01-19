@@ -16,7 +16,7 @@ var imgLinkInputs = document.getElementsByClassName("img-link-input");
 var imageNav = document.getElementsByClassName("image-nav-option");
 var selectedImg = document.getElementsByClassName("selected-img")[0];
 
-var colabImg = document.getElementsByClassName("colab-img")[0];
+var colabImg = document.getElementsByClassName("colab-img");
 
 /*var fileButton = document.getElementById("file-button");
 var realFileButton = document.getElementById("real-file-button");
@@ -24,24 +24,33 @@ var fileVal = document.getElementById("file-val");*/
 
 var tableStars = document.getElementsByClassName("table-star");
 
-setTimeout(
-    function () {
-        try {
-            logo.style.opacity = 1;
-        } catch (err) { }
-    },
-    500
-);
-
-
-setTimeout(
-    function () {
-        try {
-            form.style.opacity = 1;
-        } catch (err) { }
-    },
-    1500
-);
+try {
+    if (anim) {
+        setTimeout(
+            function () {
+                try {
+                    logo.style.opacity = 1;
+                } catch (err) { }
+            },
+            500
+        );
+        
+        
+        setTimeout(
+            function () {
+                try {
+                    form.style.opacity = 1;
+                } catch (err) { }
+            },
+            1500
+        );
+    } else {
+        logo.style.opacity = 1;
+        form.style.opacity = 1;
+    }
+} catch (error) {
+    //
+}
 
 
 /*try {
@@ -61,7 +70,7 @@ setTimeout(
 }*/
 
 
-try {
+/*try {
     for (let index = 0; index < tableStars.length; index++) {
         tableStars[index].onclick = function () {
             var starClass = tableStars[index].children[0].className;
@@ -71,7 +80,7 @@ try {
     }
 } catch (error) {
     //
-}
+}*/
 
 
 function active(act) {
@@ -111,7 +120,21 @@ function loadSelectedImage() {
 }
 
 
-function loadColabImage() {
-    colabImg.src = imgLinks[0].value;
-    imgLinkInputs[0].value = imgLinks[0].value;
+function loadColabImage(index = 0) {
+    colabImg[index].src = imgLinks[index].value;
+    imgLinkInputs[index].value = imgLinks[index].value;
 }
+
+
+
+function confirmRemove(id, table, url){
+    var ok = confirm("¿Está seguro de que quiere eliminar?");
+    if(ok){
+        window.location='remove.php?id='+ id + '&table='+ table + '&url='+ url;
+    }
+}
+
+function star(id, table, url){
+    window.location='star.php?id='+ id + '&table='+ table + '&url='+ url;
+}
+

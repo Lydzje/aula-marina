@@ -107,7 +107,7 @@ function updateSpecies($id, $sci_name, $comm_name, $description, $month, $year, 
 function getActivities($past, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM activities WHERE past='$past'";
+    $sql = "SELECT * FROM activities WHERE past='$past' ORDER BY date DESC";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $index = 0;
@@ -128,32 +128,42 @@ function getActivity($id, &$result)
     }
 }
 
-function updateActivity($id, $past, $title, $date, $ubication, $description, $img)
+function getFeaturedActivity(&$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM activities WHERE featured=1";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $result = mysqli_fetch_object($rec);
+    }
+}
+
+function updateActivity($id, $past, $title, $date, $ubication, $description, $img1, $img2, $img3, $img4)
 {
     global $conn;
     $sql =
         "UPDATE activities
-            SET past='$past', title='$title', date='$date', ubication='$ubication', description='$description', img='$img'
+            SET past='$past', title='$title', date='$date', ubication='$ubication', description='$description', img1='$img1', img2='$img2', img3='$img3', img4='$img4'
             WHERE id='$id'
         ";
     $rec = $conn->query($sql);
 }
 
-function insertActivity($past, $title, $date, $ubication, $description, $img)
+function insertActivity($past, $title, $date, $ubication, $description, $img1, $img2, $img3, $img4)
 {
     global $conn;
     $sql =
-        "INSERT INTO activities (past, title, date, ubication, description, img)
-            VALUES ('$past', '$title', '$date', '$ubication', '$description', '$img') 
+        "INSERT INTO activities (past, title, date, ubication, description, img1, img2, img3, img4)
+            VALUES ('$past', '$title', '$date', '$ubication', '$description', '$img1', '$img2', '$img3', '$img4') 
         ";
     $rec = $conn->query($sql);
 }
 
 
-function getProyects(&$result)
+function getProjects(&$result)
 {
     global $conn;
-    $sql = "SELECT * FROM proyects";
+    $sql = "SELECT * FROM projects ORDER BY name";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $index = 0;
@@ -162,6 +172,83 @@ function getProyects(&$result)
             $index++;
         }
     }
+}
+
+function getProject($id, &$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM projects WHERE id='$id'";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $result = mysqli_fetch_object($rec);
+    }
+}
+
+function updateProject($id, $name, $description, $img, $bg)
+{
+    global $conn;
+    $sql =
+        "UPDATE projects
+            SET name='$name', description='$description', img='$img', bg='$bg'
+            WHERE id='$id'
+        ";
+    $rec = $conn->query($sql);
+}
+
+function insertProject($name, $description, $img, $bg)
+{
+    global $conn;
+    $sql =
+        "INSERT INTO projects (name, description, img, bg)
+            VALUES ('$name', '$description', '$img', '$bg') 
+        ";
+    $rec = $conn->query($sql);
+}
+
+
+function getSectionsOfProject($idProj, &$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM sections WHERE id_proj='$idProj'";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $index = 0;
+        while ($fila = $rec -> fetch_object()) {
+            $result[$index] = $fila;
+            $index++;
+        }
+    }
+}
+
+function getSection($id, &$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM sections WHERE id='$id'";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $result = mysqli_fetch_object($rec);
+    }
+}
+
+function updateSection($id, $title, $description, $img1, $img2, $img3, $img4)
+{
+    global $conn;
+    $sql =
+        "UPDATE sections
+            SET title='$title', description='$description', img1='$img1', img2='$img2', img3='$img3', img4='$img4'
+            WHERE id='$id'
+        ";
+    $rec = $conn->query($sql);
+}
+
+function insertSection($projID, $title, $description, $img1, $img2, $img3, $img4)
+{
+    global $conn;
+    $sql =
+        "INSERT INTO sections (id_proj, title, description, img1, img2, img3, img4)
+            VALUES ('$projID', '$title', '$description', '$img1', '$img2', '$img3', '$img4') 
+        ";
+    $rec = $conn->query($sql);
 }
 
 
@@ -279,7 +366,7 @@ function updateAboutUs($img1, $img2, $img3, $img4, $description)
 function getNews(&$result)
 {
     global $conn;
-    $sql = "SELECT * FROM news";
+    $sql = "SELECT * FROM news ORDER BY date DESC";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $index = 0;
@@ -294,6 +381,16 @@ function getNew($id, &$result)
 {
     global $conn;
     $sql = "SELECT * FROM news WHERE id='$id'";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $result = mysqli_fetch_object($rec);
+    }
+}
+
+function getFeaturedNew(&$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM news WHERE featured=1";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
@@ -361,6 +458,32 @@ function updateAccount($username, $password)
         "UPDATE users
             SET username='$username', password='$password' 
             WHERE id = 1;
+        ";
+    $rec = $conn->query($sql);
+}
+
+
+function getRRSS(&$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM rrss";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $index = 0;
+        while ($fila = $rec -> fetch_object()) {
+            $result[$index] = $fila;
+            $index++;
+        }
+    }
+}
+
+function updateRS($id, $link)
+{
+    global $conn;
+    $sql =
+        "UPDATE rrss
+            SET link='$link' 
+            WHERE id = $id;
         ";
     $rec = $conn->query($sql);
 }

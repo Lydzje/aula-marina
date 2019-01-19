@@ -1,3 +1,17 @@
+<?php
+include "db/connection.php";
+include "php-functions/functions.php";
+
+getProject($_GET["id"],$info);
+getSectionsOfProject($info->id,$sections);
+
+$bg = $info->bg;
+if($bg == ""){
+  $bg = "res/min/projects.jpg";
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +19,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aula Marina | Name </title>
+    <title>Aula Marina | <?php echo "$info->name"?></title>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -15,111 +29,103 @@
   </head>
 
   <body>
-    <div class="bg bg-project"></div>
+    <div class="bg bg-project" style="background-image: url('<?php echo $bg ?>');"></div>
     <div class="wrapper">
       <?php include "nav.php"?>
       <div class="title">
-	<span>NAME</span>
+	<span><?php echo "$info->name"?></span>
       </div>
 
       <div class="content-project">
-	<div class="section-project">
-          <div>
-
-            <div class="img-project">
-              <img src="./res/proyecto3.jpg">
-            </div>
-            <div class="section-slider-buttons">
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-            </div>
-            <div class="img-desc"></div>
-          </div>
-          <div class="text-project">
-            <span>
-              TITULO
-            </span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Pellentesque rutrum velit
-              vitae arcu tempus, vel facilisis urna pellentesque.
-              Ut dignissim ut odio et placerat. Phasellus justo
-              leo, malesuada blandit leo eget, placerat euismod
-              nunc. Pellentesque et nisi nulla. Fusce congue nunc
-              ae arcu vestibulum, quis laoreet nunc dignissim.
-              Curabitur posuere.
-            </p>
-          </div>
-	</div>
-	<div class="section-project">
-          <div class="text-project">
-            <span>
-              TITULO
-            </span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Pellentesque rutrum velit
-              vitae arcu tempus, vel facilisis urna pellentesque.
-              Ut dignissim ut odio et placerat. Phasellus justo
-              leo, malesuada blandit leo eget, placerat euismod
-              nunc. Pellentesque et nisi nulla. Fusce congue nunc
-              ae arcu vestibulum, quis laoreet nunc dignissim.
-              Curabitur posuere.
-            </p>
-          </div>
-          <div>
-
-            <div class="img-project">
-              <img src="./res/proyecto3.jpg">
-            </div>
-            <div class="section-slider-buttons">
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-            </div>
-            <div class="img-desc"></div>
-          </div>
-	</div>
-	<div class="section-project">
-          <div>
-
-            <div class="img-project">
-              <img src="./res/proyecto3.jpg">
-            </div>
-            <div class="section-slider-buttons">
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-              <div class="slider-button"></div>
-            </div>
-            <div class="img-desc"></div>
+          <?php
+             for ($i=0; $i < count($sections) ; $i++) { 
+              $title       = $sections[$i]->title;
+              $description = $sections[$i]->description;
+              $img1        = $sections[$i]->img1;
+              $img2        = $sections[$i]->img2;
+              $img3        = $sections[$i]->img3;
+              $img4        = $sections[$i]->img4;
+              if ($i%2==0) {
+                echo "
+                <div class=\"section-project\">
+                <div>
+                <div class=\"img-project slider\">
+                <div class=\"slider-content\" style=\"width:100%\">
+                  <img src=\"$img1\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img2\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img3\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img4\">
+                </div>
+                </div>
+                <div class=\"section-slider-buttons\">
+                <div class=\"slider-button\" onclick=\"showSlide(0, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\" style=\"background-color:white\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(1, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(2, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(3, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
+                </div>
+                <div class=\"img-desc\"></div>
+                </div>
+                <div class=\"text-project\">
+                <span>
+                $title
+                </span>
+                <p style=\"white-space:pre-wrap;text-align:justify;\">$description</p>
+                </div>
+                </div>
+                ";
+              }else{
+                echo"
+                <div class=\"section-project\">
+                <div class=\"text-project\">
+                <span>
+                $title
+                </span>
+                <p style=\"white-space:pre-wrap;text-align:justify;\">$description</p>
+                </div>
+                <div>
+                
+                <div class=\"img-project slider\">
+                <div class=\"slider-content\" style=\"width:100%\">
+                  <img src=\"$img1\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img2\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img3\">
+                </div>
+                <div class=\"slider-content\" style=\"display:none;width:100%;opacity:0;\">
+                  <img src=\"$img4\">
+                </div>
+                </div>
+                <div class=\"section-slider-buttons\">
+                <div class=\"slider-button\" onclick=\"showSlide(0, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\" style=\"background-color:white\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(1, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(2, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
+                <div class=\"slider-button\" onclick=\"showSlide(3, $i)\" onmouseover=\"stopSlider($i)\" onmouseout=\"resumeSlider($i)\"></div>
+              </div>
+              <div class=\"img-desc\"></div>
+              </div>
+              </div>
+              ";
+               }
+            }
+            ?>
+	
 </div>
-          <div class="text-project">
-            <span>
-              TITULO
-            </span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Pellentesque rutrum velit
-              vitae arcu tempus, vel facilisis urna pellentesque.
-              Ut dignissim ut odio et placerat. Phasellus justo
-              leo, malesuada blandit leo eget, placerat euismod
-              nunc. Pellentesque et nisi nulla. Fusce congue nunc
-              ae arcu vestibulum, quis laoreet nunc dignissim.
-              Curabitur posuere.
-            </p>
-          </div>
-	</div>
 
-      </div>
-
-      <?php 
+<?php 
       $notFixed = true;
       include "footer.php";
       ?>
+
+    <script src="js/main.js"></script>
   </body>
 
 </html>

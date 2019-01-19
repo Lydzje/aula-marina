@@ -1,3 +1,10 @@
+<?php
+include "db/connection.php";
+include "php-functions/functions.php";
+
+getProjects($info);
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -24,54 +31,39 @@
     </div>
 
     <div class="content-projects">
-      <a class="project-x" href="project.php?id=1">
-        <div>
-          <img src="./res/beach.jpg">
-        </div>
-        <div class="text-projects">
-          <h1>
-            LAS SALINAS DE CABO DE GATA
-          </h1>
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae nibh non metus tempus congue. Mauris vitae eleifend arcu, at bibendum nibh. Nulla convallis sed orci eget tincidunt. Fusce velit nisl, mattis sed pharetra ac, pretium nec ante. Curabitur consequat purus dui, vitae luctus ipsum aliquam vitae. Aenean commodo posuere magna, a luctus dolor. Quisque dictum tincidunt commodo. Mauris commodo placerat iaculis. Fusce semper velit sit amet urna euismod malesuada non et dolor. Curabitur at ipsum nulla. Nunc cursus consectetur dui non malesuada. Duis vehicula rutrum cursus. Fusce turpis dui, blandit vehicula bibendum vitae, hendrerit sed massa. Phasellus varius augue.
-          </p>
-        </div>
-      </a>
-      <a class="project-x" href="project.php?id=1">
-        <div>
-          <img src="./res/beach.jpg">
-        </div>
-        <div class="text-projects">
-          <h1>
-            NUESTRAS ESPECIES DISECADAS
-          </h1>
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae nibh non metus tempus congue. Mauris vitae eleifend arcu, at bibendum nibh. Nulla convallis sed orci eget tincidunt. Fusce velit nisl, mattis sed pharetra ac, pretium nec ante. Curabitur consequat purus dui, vitae luctus ipsum aliquam vitae. Aenean commodo posuere magna, a luctus dolor. Quisque dictum tincidunt commodo. Mauris commodo placerat iaculis. Fusce semper velit sit amet urna euismod malesuada non et dolor. Curabitur at ipsum nulla. Nunc cursus consectetur dui non malesuada. Duis vehicula rutrum cursus. Fusce turpis dui, blandit vehicula bibendum vitae, hendrerit sed massa. Phasellus varius augue.
-          </p>
-        </div>
-      </a>
-      <a class="project-x" href="project.php?id=1">
-        <div>
-          <img src="./res/beach.jpg">
-        </div>
-        <div class="text-projects">
-          <h1>
-            PROYECTO X
-          </h1>
-          <p>
-             hendrerit sed massa. Phasellus varius augue.
-          </p>
-        </div>
-      </a>
+    <?php
+      for ($i=0; $i < count($info) ; $i++) { 
+        $id          = $info[$i]->id;
+        $name        = $info[$i]->name;
+        $description = $info[$i]->description;
+        $img         = $info[$i]->img;
+        $bg          = $info[$i]->bg;
+      
+        echo"
+        <a class=\"project-x\" href=\"project.php?id=$id\">
+          <div class=\"project-x-img\">
+            <img src=\"$img\">
+          </div>
+          <div class=\"text-projects\">
+            <h1>
+              $name
+            </h1>
+            <p style=\"white-space:pre-wrap;text-align:justify;\">$description</p>
+          </div>
+        </a>
+        ";
+      }
+
+    ?>
+    
     </div>
     </div>
-
-
 
   <?php 
   $notFixed = true;
   include "footer.php"
   ;?>
+<script src="js/main.js"></script>
 </body>
 
 </html>

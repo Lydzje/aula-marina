@@ -1,3 +1,20 @@
+<?php 
+include "db/connection.php";
+include "php-functions/functions.php";
+
+$past = false;
+if (isset($_GET['past']) == 1) {
+  $past = true;
+}
+
+getActivities($past, $activities);
+getFeaturedActivity($featured);
+if ($featured == null) {
+  $featured = $activities[count($activities)-1];
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -25,121 +42,91 @@
       </div>
     </div>
 
-    <div class="section">
-      <div class="section-top">
-        <span>ÚLTIMAS ACTIVIDADES </span>
+    <div class="section" style="cursor:pointer;">
+      <div class="section-top" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
+        <span><b>ACTIVIDAD DESTACADA</b></span>
 
       </div>
 
       <div class="section-bot">
         <div class="section-left">
-          <img src="./res/principal-act.jpg" alt="">
-          <div class="section-slider-buttons">
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
-            <div class="slider-button"></div>
+        <div class="slider-content" style="width:100%" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
+                <img src="<?php echo $featured->img1 ?>" >
+              </div>
+              <div class="slider-content" style="display:none;width:100%;opacity:0;" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
+                <img src="<?php echo $featured->img2 ?>" width="100%">
+              </div>
+              <div class="slider-content" style="display:none;width:100%;opacity:0;" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
+                <img src="<?php echo $featured->img3 ?>" width="100%">
+              </div>
+              <div class="slider-content" style="display:none;width:100%;opacity:0;" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
+                <img src="<?php echo $featured->img4 ?>" width="100%">
+              </div>
+              <div class="section-slider-buttons" style="cursor:auto;">
+                <div class="slider-button" onclick="showSlide(0)" onmouseover="stopSlider()" onmouseout="resumeSlider()" style="background-color:white"></div>
+                <div class="slider-button" onclick="showSlide(1)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
+                <div class="slider-button" onclick="showSlide(2)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
+                <div class="slider-button" onclick="showSlide(3)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
           </div>
           <div>
             <div class="img-desc">
-              PLAYA DE TORREGARCÍA
             </div>
           </div>
 
         </div>
 
-        <div class="section-right section-text">
+        <div class="section-right section-text" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
           <div class="par">
-            <span>
-              ACTIVIDAD DE VOLUNTARIADO AMBIENTAL PARQUE NATURAL CABO DE GATA
-            </span>
-            <p>
-              El pasado sábado 12 de mayo estuvimos en la playas de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar,
-              ayudando en una limpieza de la playas juento con nuestros amigos de Ecocampus.
-            </p>
+            <span><?php echo $featured->title ?></span>
+            <p><?php echo $featured->description ?></p>
           </div>
         </div>
       </div>
     </div>
     <div class="title-act-gen">
-      <div class="title-act">
-        <a href="#">
-          ACTIVIDADES REALIZADAS
-        </a>
-      </div>
-      <div class="title-act">
-        <a href="#">
-          ACTIVIDADES PROGRAMADAS
-        </a>
-      </div>
+      <div class="title-act <?php if(!$past) echo 'active'?>" onclick="window.location='activities.php'">ACTIVIDADES PROGRAMADAS</div>
+      <div class="title-act <?php if($past) echo 'active'?>" onclick="window.location='activities.php?past'">ACTIVIDADES REALIZADAS</div>
     </div>
-    <div class="pepito" onclick="window.location='activity.php?id=1'">
-      <div class="section-left1">
-        <div class="img-desc">
-          <span>
-            25/12/2015
-          </span>
-        </div>
-        <div class="class2">
-          <img src="./res/principal-act.jpg" alt="">
-          <div class="section-left3">
-            <div>
-
-              <span>
-                ACTIVIDAD DE VOLUNTARIADO AMBIENTAL PARQUE NATURAL CABO DE GATA
-              </span>
-            </div>
-
-            <p>
-              El pasado sábado 12 de mayo estuvimos en la playas de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar,
-              ayudando en una limpieza de la playas juento con nuestros amigos de Ecocampus.
-            </p>
-
-
-          </div>
-
-        </div>
-      </div>
-      <div class="section-right1">
-        <div class="img-desc">
-          <span>
-            25/12/2015
-          </span>
-        </div>
-        <div class="class2">
-          <img src="./res/principal-act.jpg" alt="">
-          <div class="section-right3">
-            <div>
-
-              <span>
-                ACTIVIDAD DE VOLUNTARIADO AMBIENTAL PARQUE NATURAL CABO DE GATA
-              </span>
-            </div>
-
-            <p>
-              El pasado sábado 12 de mayo estuvimos en la playas de Torregarcía, dentro de los límites del Parque Natural Cabo de Gata-Nijar,
-              ayudando en una limpieza de la playas juento con nuestros amigos de Ecocampus.
-            </p>
-
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-
-
-    </div>
-
     
+    <div class="pepito">
+    <?php 
+    for ($i=0; $i < count($activities); $i++) { 
+      $id          = $activities[$i]->id;
+      $date        = date("d-m-Y", strtotime($activities[$i]->date));
+      $title       = $activities[$i]->title;
+      $description = $activities[$i]->description;
+      $img         = $activities[$i]->img1;
+
+      echo "
+        <div class=\"section-left1\" onclick=\"window.location='activity.php?id=$id'\">
+          <div class=\"news-date\">
+            <span>
+              $date
+            </span>
+          </div>
+          <div class=\"class2\">
+            <img src=\"$img\" alt=\"\">
+            <div class=\"section-left3\">
+              <div>
+                <span>
+                  $title
+                </span>
+              </div>
+              <p style=\"white-space:pre-wrap;text-align:justify;\">$description</p>
+            </div>
+          </div>
+        </div>
+      ";
+    }
+    ?>
+
+    </div>
     <?php 
   $notFixed = true;
   include "footer.php";
   ?>
   </div>
-
+  <script src="js/main.js"></script>
 </body>
 
 </html>

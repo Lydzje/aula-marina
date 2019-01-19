@@ -58,6 +58,7 @@ getSpecies($species);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="rrss.php"><i class="fab fa-instagram"></i><span>REDES SOCIALES</span></a>
       <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
@@ -69,7 +70,6 @@ getSpecies($species);
           <table>
             <thead>
               <tr>
-                <th style="width:32px;text-align:center;"><i class="fas fa-star"></i></th>
                 <th>NOMBRE CIENTÍFICO</th>
                 <th>NOMBRE COMÚN</th>
                 <th>MES</th>
@@ -89,7 +89,6 @@ getSpecies($species);
                 $year      = $species[$i]->year;
                 echo "
                   <tr>
-                      <td class='table-star'><i class='far fa-star'></i></td>
                       <td onclick='window.location=\"edit-species.php?id=$id\"'>$sci_name</td>
                       <td onclick='window.location=\"edit-species.php?id=$id\"'>$comm_name</td>
                       <td onclick='window.location=\"edit-species.php?id=$id\"'>$month</td>

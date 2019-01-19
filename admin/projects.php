@@ -10,7 +10,7 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
-getProyects($proyects);
+getProjects($projects);
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +58,7 @@ getProyects($proyects);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="rrss.php"><i class="fab fa-instagram"></i><span>REDES SOCIALES</span></a>
       <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
@@ -65,11 +66,10 @@ getProyects($proyects);
         <span class="content-admin-title">PROYECTOS</span>
 
         <div class="admin-content">
-          <div class="newTE"><i class="fas fa-plus"></i><span> Nuevo Proyecto</span></div>
+          <div class="newTE" onclick="window.location='new-project.php'"><i class="fas fa-plus"></i><span> Nuevo Proyecto</span></div>
           <table>
             <thead>
               <tr>
-                <th style="width:32px;text-align:center;"><i class="fas fa-star"></i></th>
                 <th>NOMBRE</th>
                 <th style="width:32px;text-align:center;"></th>
               </tr>
@@ -77,15 +77,14 @@ getProyects($proyects);
 
             <tbody>
               <?php  
-              $len = count($proyects);
+              $len = count($projects);
               for ($i=0; $i < $len; $i++) { 
-                $id   = $proyects[$i]->id;
-                $name = $proyects[$i]->name;
+                $id   = $projects[$i]->id;
+                $name = $projects[$i]->name;
                 echo "
                   <tr>
-                      <td class='table-star'><i class='far fa-star'></i></td>
-                      <td>$name</td>
-                      <td class='table-open'><i class='fas fa-angle-right'></i></td>
+                      <td onclick='window.location=\"edit-project.php?id=$id\"'>$name</td>
+                      <td class='table-open' onclick='window.location=\"edit-project.php?id=$id\"'><i class='fas fa-angle-right'></i></td>
                   </tr>
                 ";
               }

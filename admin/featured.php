@@ -10,8 +10,10 @@ if (!isset($_SESSION['user'])) {
 include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
+$transactionDone = false;
 if (isset($_POST['submit'])) {
     updateFeatureds($_POST['id'], $_POST['text'], $_POST['link'], $_POST['img-link']);
+    $transactionDone = true;
 }
 
 getFeatureds($featureds);
@@ -62,6 +64,7 @@ getFeatureds($featureds);
       <a href="about-us.php"><i class="fas fa-smile-beam"></i><span>SOBRE NOSOTROS</span></a>
       <a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
       <a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
+      <a href="rrss.php"><i class="fab fa-instagram"></i><span>REDES SOCIALES</span></a>
       <a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
     </div>
     <div class="wrapper-bot-side">
@@ -78,14 +81,7 @@ getFeatureds($featureds);
             </div>
             <div class="featureds">
               <form class="featured show-div" method="POST">
-                <div class="featured-image">
-                  <img class="featured-img" src="<?php echo $featureds[0]->img ?>" />
-                  <div class="select-file">
-                    <input class='img-link' type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadImage(0)'>Cargar</span>
-                    <input class="img-link-input" type="hidden" name="img-link" value="<?php echo $featureds[0]->img ?>"/>
-                  </div>
-                </div>
-
+                
                 <div class="admin-form2-featured">
                   <input name="id" type="hidden" value="1">
 
@@ -99,19 +95,23 @@ getFeatureds($featureds);
                     <input name="link" type="text" value="<?php echo $featureds[0]->link ?>" placeholder="Enlace del destacado" />
                   </div>
 
-                  <div class="submit2">
+                  <?php 
+                  if ($transactionDone) {
+                    echo "
+                    <div class=\"field2\">
+                    <div class=\"success\"> La operación se ha realizado con éxito</div>
+                    </div>
+                    ";
+                  }
+                  ?>
+
+                  <div class="submit2" style="display:block;text-align:right;">
                     <input name="submit" type="submit" value="GUARDAR" />
                   </div>
                 </div>
               </form>
 
-              <form class="featured show-div" style="display:none" method="POST">
-                <div class="featured-image">
-                  <img class="featured-img" src="<?php echo $featureds[1]->img ?>" />
-                  <div class="select-file">
-                    <input class='img-link' name="img-link" type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadImage(1)'>Cargar</span>
-                  </div>
-                </div>
+              <form class="featured show-div" style="display:none" method="POST">   
 
                 <div class="admin-form2-featured">
                   <input name="id" type="hidden" value="2">
@@ -126,19 +126,13 @@ getFeatureds($featureds);
                     <input name="link" type="text" value="<?php echo $featureds[1]->link ?>" placeholder="Enlace del destacado" />
                   </div>
 
-                  <div class="submit2">
+                  <div class="submit2" style="display:block;text-align:right;">
                     <input name="submit" type="submit" value="GUARDAR" />
                   </div>
                 </div>
               </form>
 
               <form class="featured show-div" style="display:none" method="POST">
-                <div class="featured-image">
-                  <img class="featured-img" src="<?php echo $featureds[2]->img ?>" />
-                  <div class="select-file">
-                    <input class='img-link' name="img-link" type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadImage(2)'>Cargar</span>
-                  </div>
-                </div>
 
                 <div class="admin-form2-featured">
                   <input name="id" type="hidden" value="3">
@@ -153,19 +147,13 @@ getFeatureds($featureds);
                     <input name="link" type="text" value="<?php echo $featureds[2]->link ?>" placeholder="Enlace del destacado" />
                   </div>
 
-                  <div class="submit2">
+                  <div class="submit2" style="display:block;text-align:right;">
                     <input name="submit" type="submit" value="GUARDAR" />
                   </div>
                 </div>
               </form>
 
               <form class="featured show-div" style="display:none" method="POST">
-                <div class="featured-image">
-                  <img class="featured-img" src="<?php echo $featureds[3]->img ?>" />
-                  <div class="select-file">
-                    <input class='img-link' name="img-link" type="text" placeholder="URL de la imagen"><span id='file-button' onclick='loadImage(3)'>Cargar</span>
-                  </div>
-                </div>
 
                 <div class="admin-form2-featured">
                   <input name="id" type="hidden" value="4">
@@ -180,7 +168,7 @@ getFeatureds($featureds);
                     <input name="link" type="text" value="<?php echo $featureds[3]->link ?>" placeholder="Enlace del destacado" />
                   </div>
 
-                  <div class="submit2">
+                  <div class="submit2" style="display:block;text-align:right;">
                     <input name="submit" type="submit" value="GUARDAR" />
                   </div>
                 </div>
