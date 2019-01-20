@@ -29,7 +29,7 @@ getFeatureds($featureds);
               "http://https://twitter.com/aulamarinaual",
               "https://www.instagram.com/aula_marina/"
           ],
-          "logo": "url/absoluta/a/logo"
+          "logo": "https://aula-marina.000webhostapp.com/res/logoTransparente.png"
       }
     </script>
     
