@@ -139,6 +139,10 @@ getActivity($_GET['id'], $info);
                     </div>
                 </div>
 
+                <div class="field2">                                   
+                    <span class="manage-sections" onclick="confirmRemove(<?php echo $info->id ?>, 'activities', 'activities.php')"><i class="fas fa-trash"> </i> Borrar Actividad</span>
+                </div>
+                
                 <?php 
                 if ($transactionDone) {
                   echo "
@@ -148,11 +152,6 @@ getActivity($_GET['id'], $info);
                   ";
                 }
                 ?>
-
-                  
-                <div class="field2">                                   
-                    <span class="manage-sections" onclick="confirmRemove(<?php echo $info->id ?>, 'activities', 'activities.php')"><i class="fas fa-trash"> </i> Borrar Actividad</span>
-                </div>
 
                 <div class="submit2">
                 <span class="cancel-button" onclick="window.location='activities.php'">CANCELAR</span>

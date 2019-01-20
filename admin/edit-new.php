@@ -104,6 +104,10 @@ getNew($_GET['id'], $info);
                     </div>
                 </div>
                     
+                <div class="field2">                                   
+                    <span class="manage-sections" onclick="confirmRemove(<?php echo $info->id ?>, 'news', 'news.php')"><i class="fas fa-trash"> </i> Borrar Noticia</span>
+                </div>
+
                 <?php 
                 if ($transactionDone) {
                   echo "
@@ -113,10 +117,6 @@ getNew($_GET['id'], $info);
                   ";
                 }
                 ?>
-
-                <div class="field2">                                   
-                    <span class="manage-sections" onclick="confirmRemove(<?php echo $info->id ?>, 'news', 'news.php')"><i class="fas fa-trash"> </i> Borrar Noticia</span>
-                </div>
 
                 <div class="submit2">
                 <span class="cancel-button" onclick="window.location='news.php'">CANCELAR</span>

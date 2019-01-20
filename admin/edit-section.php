@@ -126,6 +126,10 @@ $projId = $project->id;
                     </div>
                 </div>
 
+                <div class="field2">                                   
+                    <span class="manage-sections" onclick="confirmRemove(<?php echo $section->id ?>, 'sections', 'sections.php?project_id=<?php echo $projId ?>')"><i class="fas fa-trash"> </i> Borrar Sección</span>
+                </div>
+
                 <?php 
                 if ($transactionDone) {
                   echo "
@@ -135,7 +139,6 @@ $projId = $project->id;
                   ";
                 }
                 ?>
-
 
                 <div class="submit2">
                     <span class="cancel-button" onclick="window.location='sections.php?project_id=<?php echo $projId ?>'">CANCELAR</span>
