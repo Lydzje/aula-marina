@@ -18,6 +18,21 @@ getFeatureds($featureds);
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <script type="application/ld+json">
+      {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "url": "https://aula-marina.000webhostapp.com",
+          "sameAs": [
+              "https://www.facebook.com/AulaMarinaUnvAlm",
+              "http://https://twitter.com/aulamarinaual",
+              "https://www.instagram.com/aula_marina/"
+          ],
+          "logo": "url/absoluta/a/logo"
+      }
+    </script>
+    
   </head>
 
   <body>
