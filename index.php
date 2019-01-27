@@ -61,28 +61,28 @@ if (isset($_GET['lan'])) {
             
             if ($i==0) {
               echo "
-            <div class=\"text slider-content\" style=\"cursor:pointer;\" onclick=\"window.location='$link'\">
-            <span>$text</span>
-          </div>
-            ";
-            }else{
+              <div class=\"text slider-content\" style=\"cursor:pointer;\" onclick=\"window.location='$link'\">
+                <span>$text</span>
+              </div>
+              ";
+            } else {
               echo "
-            <div class=\"text slider-content\" style=\"display:none;opacity:0;cursor:pointer;\" onclick=\"window.location='$link'\">
-            <span>$text</span>
-          </div>
+              <div class=\"text slider-content\" style=\"display:none;opacity:0;cursor:pointer;\" onclick=\"window.location='$link'\">
+                <span>$text</span>
+              </div>
             ";
             }
             
         }
         ?>
 				
-	
 				<div class="slider-buttons">
 					<div class="slider-button" onclick="showSlide(0)" onmouseover="stopSlider()" onmouseout="resumeSlider()" style="background-color:white"></div>
 					<div class="slider-button" onclick="showSlide(1)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
 					<div class="slider-button" onclick="showSlide(2)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
 					<div class="slider-button" onclick="showSlide(3)" onmouseover="stopSlider()" onmouseout="resumeSlider()"></div>
 				</div>
+        
       </div>
     </div>
 		<?php include "footer.php"?>

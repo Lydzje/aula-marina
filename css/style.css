@@ -1026,6 +1026,8 @@ footer {
 
 
 @media only screen and (max-width: 1090px) {
+    body, html { overflow-x:hidden; }
+
     .bg {
         position: fixed;
         top:0;
@@ -1097,7 +1099,7 @@ footer {
     }
 
     .title {
-        margin-top: 64px;
+        margin: 64px auto 0 auto;
     }
 
     .text.slider-content{
@@ -1113,6 +1115,8 @@ footer {
 
     .species-box {
         flex-direction: column;
+        margin: 20px auto 20px auto;
+        width: 90%;
     }
 
     .recent-species {
@@ -1174,6 +1178,7 @@ footer {
     
     .section {
         width: 70%;
+        margin: 10px auto 0 auto;
     }
     
     .section-bot {
@@ -1199,8 +1204,22 @@ footer {
         margin-bottom: 8px;
     }
 
+    .title-act-gen {
+        margin: 64px auto 32px auto;
+        justify-content: space-around;
+    }
+    
+    .title-act {
+        width: 35%;
+        padding: 20px 8px;
+        margin: 0;
+        text-align: center;
+    }
+    
     .pepito { 
         width: 90%;
+        margin: auto;
+        justify-content: center;
     }
 
     .project-x {
