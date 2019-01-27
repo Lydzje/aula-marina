@@ -562,3 +562,39 @@ function updateRS($id, $link)
         ";
     $rec = $conn->query($sql);
 }
+
+
+function getBg($id, &$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM bgs WHERE id='$id'";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $result = mysqli_fetch_object($rec);
+    }
+}
+
+function getBgs(&$result)
+{
+    global $conn;
+    $sql = "SELECT * FROM bgs";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $index = 0;
+        while ($fila = $rec -> fetch_object()) {
+            $result[$index] = $fila;
+            $index++;
+        }
+    }
+}
+
+function updateBg($id, $link)
+{
+    global $conn;
+    $sql =
+        "UPDATE bgs
+            SET link='$link' 
+            WHERE id = $id;
+        ";
+    $rec = $conn->query($sql);
+}

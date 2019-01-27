@@ -2,6 +2,11 @@
 
 var body = document.getElementsByTagName("body")[0];
 
+var bg = document.getElementsByClassName("bg")[0];
+if (!bglink.startsWith("../res") && bglink != "") {
+	bg.style.background = "url('" + bglink + "')";
+}
+
 var lang           = document.getElementsByClassName("lang-resp")[0];
 var navResp        = document.getElementsByClassName("nav-resp")[0];
 var buttonNavResps = document.getElementsByClassName("button-nav-resp");

@@ -2,6 +2,13 @@
 include "db/connection.php";
 include "php-functions/functions.php";
 
+getBg(3, $bg);
+if ($bg) {
+  $bg = $bg->link;
+} else {
+  $bg = "";
+}
+
 $peopleText     = "PERSONAL";
 $facilitiesText = "INSTALACIONES";
 $aboutUsText    = "SOBRE NOSOTROS";
@@ -32,6 +39,7 @@ if (isset($_GET['lan'])) {
 
 <body>
   <div class="bg bg-aula-marina"></div>
+  <script>var bglink = "<?php echo $bg ?>";</script>
   <div class="wrapper">
     <?php include "nav.php"?>
     <div class="content" style="height:100%">

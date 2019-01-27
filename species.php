@@ -2,6 +2,13 @@
 include "db/connection.php";
 include "php-functions/functions.php";
 
+getBg(2, $bg);
+if ($bg) {
+  $bg = $bg->link;
+} else {
+  $bg = "";
+}
+
 getOneSpecies($_GET["id"], $info);
 
 $comm_name   = $info->comm_name;
@@ -32,6 +39,7 @@ if (isset($_GET['lan'])) {
 
   <body>
     <div class="bg bg-species"></div>
+    <script>var bglink = "<?php echo $bg ?>";</script>
     <div class="wrapper">
     <?php include "nav.php"?>
     <div class="content">

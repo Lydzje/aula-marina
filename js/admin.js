@@ -18,6 +18,18 @@ var selectedImg = document.getElementsByClassName("selected-img")[0];
 
 var colabImg = document.getElementsByClassName("colab-img");
 
+var defBgs = [];
+defBgs[0] = "../res/min/index.jpg";
+defBgs[1] = "../res/min/species.jpg";
+defBgs[2] = "../res/min/aula-marina.jpg";
+defBgs[3] = "../res/min/people.jpg";
+defBgs[4] = "../res/min/facilities.jpg";
+defBgs[5] = "../res/min/about-us.jpg";
+defBgs[6] = "../res/min/activities.jpg";
+defBgs[7] = "../res/min/projects.jpg";
+defBgs[8] = "../res/min/news.jpg";
+defBgs[9] = "../res/min/contact.jpg";
+
 /*var fileButton = document.getElementById("file-button");
 var realFileButton = document.getElementById("real-file-button");
 var fileVal = document.getElementById("file-val");*/
@@ -125,7 +137,10 @@ function loadColabImage(index = 0) {
     imgLinkInputs[index].value = imgLinks[index].value;
 }
 
-
+function defaultBg(index = 0) {
+    colabImg[index].src = defBgs[index];
+    imgLinkInputs[index].value = defBgs[index];
+}
 
 function confirmRemove(id, table, url){
     var ok = confirm("¿Está seguro de que quiere eliminar?");

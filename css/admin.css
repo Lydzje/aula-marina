@@ -699,6 +699,27 @@ table tbody tr:hover .table-open i {
     background-position: center; 
 }
 
+.bgs .img-cola-img-container {
+    width: 47%;
+}
+
+.bgs img {
+    height: 70px !important;
+}
+
+.bgs i {
+    font-size: 16px;
+    padding: 2px;
+    cursor: pointer;
+    vertical-align: middle;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.bgs i:hover {
+    color: #2a4b7a;
+}
+
 .nicEdit-main {
     font-size: 12px;
     resize:both;

@@ -2,6 +2,13 @@
 include "db/connection.php";
 include "php-functions/functions.php";
 
+getBg(10, $bg);
+if ($bg) {
+  $bg = $bg->link;
+} else {
+  $bg = "";
+}
+
 getContactInfo($info);
 
 $titleText     = "Contacto";
@@ -40,6 +47,7 @@ if (isset($_GET['lan'])) {
 
   <body>
     <div class="bg bg-contact"></div>
+    <script>var bglink = "<?php echo $bg ?>";</script>
     <div class="wrapper">
       <?php include "nav.php"?>
       <div class="content">

@@ -53,6 +53,7 @@ if (!isset($_SESSION['user'])) {
 			<a href="news.php"><i class=" fas fa-newspaper"></i><span>NOTICIAS</span></a>
 			<a href="contact.php"><i class="fas fa-phone"></i><span>CONTACTO</span></a>
 			<a href="rrss.php"><i class="fab fa-instagram"></i><span>REDES SOCIALES</span></a>
+			<a href="backgrounds.php"><i class="fas fa-images"></i><span>IMÁGENES DE FONDO</span></a>
 			<a href="config.php"><i class="fas fa-cog"></i><span>CONFIGURACIÓN DE CUENTA</span></a>
 		</div>
 

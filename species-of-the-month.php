@@ -2,6 +2,13 @@
 include "db/connection.php";
 include "php-functions/functions.php";
 
+getBg(2, $bg);
+if ($bg) {
+  $bg = $bg->link;
+} else {
+  $bg = "";
+}
+
 getSpeciesYears($years);
 getLastSpecies($last);
 getSpecies($species);
@@ -36,6 +43,7 @@ if (isset($_GET['lan'])) {
 
 <body>
   <div class="bg bg-species-of-the-month"></div>
+  <script>var bglink = "<?php echo $bg ?>";</script>
   <div class="wrapper">
   <?php include "nav.php"?>
   <div class="content">

@@ -11,7 +11,12 @@ if (!$sections) {
 
 $bg = $info->bg;
 if($bg == ""){
-  $bg = "res/min/projects.jpg";
+  getBg(8, $bg);
+  if ($bg) {
+    $bg = $bg->link;
+  } else {
+    $bg = "";
+  }
 }
 
 $name        = $info->name;
@@ -43,7 +48,8 @@ if (isset($_GET['lan'])) {
   </head>
 
   <body>
-    <div class="bg bg-project" style="background-image: url('<?php echo $bg ?>');"></div>
+    <div class="bg bg-project"></div>
+    <script>var bglink = "<?php echo $bg ?>";</script>
     <div class="wrapper">
       <?php include "nav.php"?>
       <div class="title">

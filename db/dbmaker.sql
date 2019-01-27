@@ -147,6 +147,13 @@ CREATE TABLE rrss(
     link VARCHAR(2083)
 );
 
+DROP TABLE IF EXISTS bgs;
+CREATE TABLE bgs(
+	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    link VARCHAR(2083)
+);
+
+
 /* DATA */
 INSERT INTO users VALUES (1, "admin", "admin");
 
@@ -217,3 +224,14 @@ INSERT INTO rrss VALUES (1, "Facebook", "https://www.facebook.com/AulaMarinaUnvA
 INSERT INTO rrss VALUES (2, "Twitter", "https://twitter.com/aulamarinaual");
 INSERT INTO rrss VALUES (3, "YouTube", "");
 INSERT INTO rrss VALUES (4, "Instragram", "https://www.instagram.com/aula_marina/");
+
+INSERT INTO bgs VALUES (1, "");
+INSERT INTO bgs VALUES (2, "");
+INSERT INTO bgs VALUES (3, "");
+INSERT INTO bgs VALUES (4, "");
+INSERT INTO bgs VALUES (5, "");
+INSERT INTO bgs VALUES (6, "");
+INSERT INTO bgs VALUES (7, "");
+INSERT INTO bgs VALUES (8, "");
+INSERT INTO bgs VALUES (9, "");
+INSERT INTO bgs VALUES (10, "");

@@ -2,6 +2,13 @@
 include "db/connection.php";
 include "php-functions/functions.php";
 
+getBg(4, $bg);
+if ($bg) {
+  $bg = $bg->link;
+} else {
+  $bg = "";
+}
+
 getPeople(1, $mainPeople);
 getPeople(0,$colabs);
 getColabsPhoto($colabsPhoto);
@@ -37,6 +44,7 @@ if (isset($_GET['lan'])) {
 
 <body>
     <div class="bg bg-people"></div>
+    <script>var bglink = "<?php echo $bg ?>";</script>
     <div class="wrapper">
         <?php include "nav.php"?>
         <div class="content">

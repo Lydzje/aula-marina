@@ -2,6 +2,13 @@
 include_once 'db/connection.php';
 include 'php-functions/functions.php';
 
+getBg(7, $bg);
+if ($bg) {
+  $bg = $bg->link;
+} else {
+  $bg = "";
+}
+
 getActivity($_GET['id'], $info);
 
 $title       = $info->title;
@@ -36,6 +43,7 @@ if (isset($_GET['lan'])) {
 
   <body>
     <div class="bg bg-activity"></div>
+    <script>var bglink = "<?php echo $bg ?>";</script>
     <div class="wrapper">
 
       <?php include "nav.php"?>
