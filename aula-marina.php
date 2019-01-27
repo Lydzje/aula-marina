@@ -1,6 +1,17 @@
 <?php 
 include "db/connection.php";
 include "php-functions/functions.php";
+
+$peopleText     = "PERSONAL";
+$facilitiesText = "INSTALACIONES";
+$aboutUsText    = "SOBRE NOSOTROS";
+if (isset($_GET['lan'])) {
+  if ( $_GET['lan'] == 'en') {
+    $peopleText     = "PEOPLE";
+    $facilitiesText = "FACILITIES";
+    $aboutUsText    = "ABOUT US";
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +39,9 @@ include "php-functions/functions.php";
       <div class="title">AULA MARINA</div>
       <div class="content-aula-marina">
         <div class="aula-marina-links">
-          <div class="personal"><a href="people.php">PERSONAL</a></div>
-          <div class="instalaciones"><a href="facilities.php">INSTALACIONES</a></div>
-          <div class="sobre-nosotros"><a href="about-us.php">SOBRE NOSOTROS</a></div>
+          <div class="personal"><a href="people.php"><?php echo $peopleText ?></a></div>
+          <div class="instalaciones"><a href="facilities.php"><?php echo $facilitiesText ?></a></div>
+          <div class="sobre-nosotros"><a href="about-us.php"><?php echo $aboutUsText ?></a></div>
         </div>
       </div>
     </div>

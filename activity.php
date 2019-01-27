@@ -4,6 +4,17 @@ include 'php-functions/functions.php';
 
 getActivity($_GET['id'], $info);
 
+$title       = $info->title;
+$description = $info->description;
+$ubication   = $info->ubication;
+
+if (isset($_GET['lan'])) {
+  if ( $_GET['lan'] == 'en') {
+    $title       = $info->en_title;
+    $description = $info->en_description;
+    $ubication   = $info->en_ubication;
+  }
+}
 ?>
 
 
@@ -14,7 +25,7 @@ getActivity($_GET['id'], $info);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aula Marina | <?php echo $info->title ?></title>
+    <title>Aula Marina | <?php echo $title ?></title>
 
     <link rel="stylesheet" href="./css/style.css">
 
@@ -31,7 +42,7 @@ getActivity($_GET['id'], $info);
 
       <div class="content">
         <div class="title">
-          <span><?php echo $info->title ?></span>
+          <span><?php echo $title ?></span>
           
         </div>
 
@@ -40,11 +51,11 @@ getActivity($_GET['id'], $info);
         <div class="section-bot">
           <div class="section-left section-text">
             <p>
-              <?php echo $info->description ?>
+              <?php echo $description ?>
             </p>
             <p>
              <b>Ubicación: </b> 
-               <?php echo $info->ubication ?>
+               <?php echo $ubication ?>
             </p>
             <p>
               <b>Fecha: </b>

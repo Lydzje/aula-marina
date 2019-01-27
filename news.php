@@ -8,6 +8,15 @@ if ($featured == null) {
   $featured = $news[count($news)-1];
 }
 
+$titleText      = "Noticias";
+$featuredText   = "NOTICIA DESTACADA";
+
+if (isset($_GET['lan'])) {
+  if ( $_GET['lan'] == 'en') {
+    $titleText      = "News";
+    $featuredText   = "FEATURED NEW";
+  }
+}
 ?>
 
 
@@ -19,7 +28,7 @@ if ($featured == null) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina | Noticias</title>
+  <title>Aula Marina | <?php echo $titleText ?></title>
 
   <link rel="stylesheet" href="./css/style.css">
 
@@ -34,13 +43,13 @@ if ($featured == null) {
     <?php include "nav.php"?>
     <div class="content">
       <div class="title">
-        <span>NOTICIAS</span>
+        <span><?php echo $titleText ?></span>
       </div>
     </div>
 
     <div class="section" style="cursor:pointer;" onclick="window.open('<?php echo $featured->link ?>', '_blank');">
       <div class="section-top">
-        <span><b>NOTICIA DESTACADA</b></span>
+        <span><b><?php echo $featuredText ?></b></span>
       </div>
 
       <div class="section-bot">

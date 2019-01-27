@@ -13,9 +13,9 @@ include '../php-functions/functions.php';
 $transactionDone = false;
 if (isset($_POST['submit'])) {
     if ($_GET['main'] == 1) {
-        insertPerson(true, $_POST['name'], $_POST['charge'], $_POST['description'], $_POST['img-link']);
+        insertPerson(true, $_POST['name'], $_POST['charge'], $_POST['en_charge'], $_POST['description'], $_POST['en_description'], $_POST['img-link']);
     } else {
-        insertPerson(false, $_POST['name'], $_POST['charge'], "null", "null");
+        insertPerson(false, $_POST['name'], $_POST['charge'], $_POST['en_charge'], "", "", "");
     }
     $transactionDone = true;
 }
@@ -85,12 +85,21 @@ if (isset($_POST['submit'])) {
                   <span>Cargo</span>
                   <input name="charge" type="text" placeholder="Cargo" />
                 </div>
+                <div class="field2">
+                  <span>Cargo en inglés</span>
+                  <input name="en_charge" type="text" placeholder="Cargo en inglés" />
+                </div>
                 <?php
                 if ($_GET['main'] == "1") {
                     echo '
                     <div class="field2">
                     <span>Descripción</span>
                     <textarea name="description" type="text" placeholder="Más detalles"></textarea>
+                    </div>
+
+                    <div class="field2">
+                    <span>Descripción en inglés</span>
+                    <textarea name="en_description" type="text" placeholder="Más detalles en inglés"></textarea>
                     </div>
 
                     <div class="img-cola" style="margin-top:0;width:100%;">

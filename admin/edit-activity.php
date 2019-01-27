@@ -15,9 +15,9 @@ getActivity($_GET['id'], $info); // Necesario para saber si es past o no, ya se 
 $transactionDone = false;
 if (isset($_POST['submit'])) {
     if ($info->past == "0") {
-        updateActivity($_GET['id'], false, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
+        updateActivity($_GET['id'], false, $_POST['title'], $_POST['en_title'], $_POST['date'], $_POST['ubication'], $_POST['en_ubication'], $_POST['description'], $_POST['en_description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     } else {
-        updateActivity($_GET['id'], true, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
+        updateActivity($_GET['id'], true, $_POST['title'], $_POST['en_title'], $_POST['date'], $_POST['ubication'], $_POST['en_ubication'], $_POST['description'], $_POST['en_description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     }
     $transactionDone = true;
 }
@@ -86,6 +86,10 @@ getActivity($_GET['id'], $info);
                   <input name="title" type="text" placeholder="Título de la actividad" value="<?php echo $info->title ?>" />
                 </div>
                 <div class="field2">
+                  <span>Título en inglés</span>
+                  <input name="en_title" type="text" placeholder="Título de la actividad en inglés" value="<?php echo $info->en_title ?>" />
+                </div>
+                <div class="field2">
                   <span>Fecha</span>
                   <input name="date" type="date" placeholder="Fecha" value="<?php echo $info->date ?>" />
                 </div>
@@ -96,8 +100,18 @@ getActivity($_GET['id'], $info);
                 </div>
 
                 <div class="field2">
+                    <span>Ubicación en inglés</span>
+                    <textarea name="en_ubication" type="text" placeholder="Ubicación de la actividad en inglés"><?php echo $info->en_ubication ?></textarea>
+                </div>
+
+                <div class="field2">
                     <span>Descripción</span>
                     <textarea name="description" type="text" placeholder="Descripción de la actividad"><?php echo $info->description ?></textarea>
+                </div>
+
+                <div class="field2">
+                    <span>Descripción en inglés</span>
+                    <textarea name="en_description" type="text" placeholder="Descripción de la actividad en inglés"><?php echo $info->en_description ?></textarea>
                 </div>
 
                 <div class="img-cola" style="margin-top:0;width:100%;">

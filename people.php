@@ -3,9 +3,18 @@ include "db/connection.php";
 include "php-functions/functions.php";
 
 getPeople(1, $mainPeople);
-getPeople(0,$colabs1);
+getPeople(0,$colabs);
 getColabsPhoto($colabsPhoto);
 
+$titleText       = "Personal";
+$colabsTitleText = "Colaboradores";
+
+if (isset($_GET['lan'])) {
+  if ( $_GET['lan'] == 'en') {
+    $titleText  = "People";
+    $colabsTitleText = "Colaborators";
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +24,7 @@ getColabsPhoto($colabsPhoto);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aula Marina | Personal</title>
+    <title>Aula Marina | <?php echo $titleText ?></title>
 
 
     <link rel="stylesheet" href="./css/style.css">
@@ -32,7 +41,7 @@ getColabsPhoto($colabsPhoto);
         <?php include "nav.php"?>
         <div class="content">
             <div class="title">
-                <span>PERSONAL</span>
+                <span><?php echo $titleText ?></span>
             </div>
             <div class="people-content">
                 <?php
@@ -42,6 +51,13 @@ getColabsPhoto($colabsPhoto);
                 $img         = $mainPeople[$i]->img;
                 $description = $mainPeople[$i]->description;
 
+                if (isset($_GET['lan'])) {
+                    if ( $_GET['lan'] == 'en') {
+                      $charge     = $mainPeople[$i]->en_charge;
+                      $description = $mainPeople[$i]->en_description;
+                    }
+                }
+                
                 if($i%2==0){
                 echo "
                 <div class=\"people-left\">
@@ -90,15 +106,20 @@ getColabsPhoto($colabsPhoto);
 
 
             </div>
-            <div class="title">
-                COLABORADORES
-            </div>
+            <div class="title"><?php echo $colabsTitleText ?></div>
             <div class="colabs-content">
               <?php
-              for ($i=0; $i < count($colabs1); $i++) { 
-                $charge     = $colabs1[$i]->charge;
-                $name     = $colabs1[$i]->name;
-                $img = $colabsPhoto->img;
+              for ($i=0; $i < count($colabs); $i++) { 
+                $charge     = $colabs[$i]->charge;
+                $name       = $colabs[$i]->name;
+                $img        = $colabsPhoto->img;
+
+                if (isset($_GET['lan'])) {
+                    if ( $_GET['lan'] == 'en') {
+                      $charge     = $colabs[$i]->en_charge;
+                    }
+                }
+                
                 if($i%2==0){
                   echo "
                   <div class=\"people-left\">

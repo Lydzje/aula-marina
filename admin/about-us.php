@@ -12,7 +12,7 @@ include '../php-functions/functions.php';
 
 $transactionDone = false;
 if (isset($_POST['submit'])) {
-  updateAboutUs($_POST['img1'], $_POST['img2'], $_POST['img3'], $_POST['img4'], $_POST['description']);
+  updateAboutUs($_POST['img1'], $_POST['img2'], $_POST['img3'], $_POST['img4'], $_POST['description'], $_POST['en_description']);
   $transactionDone = true;
 }
 
@@ -111,6 +111,11 @@ getAboutUsInfo($info);
                 <div class="field2">
                   <span>Descripción</span>
                   <textarea name="description" type="text" placeholder="Descripción sobre nosotros"><?php echo $info->description ?></textarea>
+                </div>
+
+                <div class="field2">
+                  <span>Descripción en inglés</span>
+                  <textarea name="en_description" type="text" placeholder="Descripción sobre nosotros en inglés"><?php echo $info->en_description ?></textarea>
                 </div>
 
                 <?php 

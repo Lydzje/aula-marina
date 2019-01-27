@@ -13,6 +13,10 @@ include '../php-functions/functions.php';
 getSectionsOfProject($_GET['project_id'], $sections);
 getProject($_GET['project_id'], $project);
 $idProj = $project->id;
+
+if (!$sections) {
+  $sections = [];
+}
 ?>
 
 <!DOCTYPE html>

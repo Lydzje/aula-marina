@@ -11,6 +11,10 @@ include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
 getNews($news);
+
+if (!$news) {
+  $news = [];
+}
 ?>
 
 <!DOCTYPE html>

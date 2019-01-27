@@ -17,6 +17,14 @@ if (isset($_POST['submit'])) {
 getPeople(1, $main);
 getPeople(0, $colabs);
 getColabsPhoto($colabsPhoto);
+
+if (!$main) {
+  $main = [];
+}
+
+if (!$colabs) {
+  $colabs = [];
+}
 ?>
 
 <!DOCTYPE html>

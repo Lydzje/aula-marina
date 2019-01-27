@@ -15,9 +15,9 @@ getPerson($_GET['id'], $info); // Necesario para saber si es main o no, ya se ac
 $transactionDone = false;
 if (isset($_POST['submit'])) {
     if ($info->main == 1) {
-        updatePerson($_GET['id'], true, $_POST['name'], $_POST['charge'], $_POST['description'], $_POST['img-link']);
+        updatePerson($_GET['id'], true, $_POST['name'], $_POST['charge'], $_POST['en_charge'], $_POST['description'], $_POST['en_description'], $_POST['img-link']);
     } else {
-        updatePerson($_GET['id'], false, $_POST['name'], $_POST['charge'], "null", "null");
+        updatePerson($_GET['id'], false, $_POST['name'], $_POST['charge'], $_POST['en_charge'], "", "", "");
     }
     $transactionDone = true;
 }
@@ -89,12 +89,21 @@ getPerson($_GET['id'], $info);
                   <span>Cargo</span>
                   <input name="charge" type="text" placeholder="Cargo" value="<?php echo $info->charge?>" />
                 </div>
+                <div class="field2">
+                  <span>Cargo en inglés</span>
+                  <input name="en_charge" type="text" placeholder="Cargo en inglés" value="<?php echo $info->en_charge?>" />
+                </div>
                 <?php
                 if ($info->main == "1") {
                     echo "
                     <div class=\"field2\">
                     <span>Descripción</span>
                     <textarea name=\"description\" type=\"text\" placeholder=\"Más detalles\">$info->description</textarea>
+                    </div>
+
+                    <div class=\"field2\">
+                    <span>Descripción en inglés</span>
+                    <textarea name=\"en_description\" type=\"text\" placeholder=\"Más detalles en inglés\">$info->en_description</textarea>
                     </div>
 
                     <div class=\"img-cola\" style=\"margin-top:0;width:100%;\">

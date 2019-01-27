@@ -12,7 +12,7 @@ include '../php-functions/functions.php';
 
 $transactionDone = false;
 if (isset($_POST['submit'])) {
-    insertSpecies($_POST['sci_name'], $_POST['comm_name'], $_POST['description'], $_POST['month'], $_POST['year'], $_POST['img-link']);
+    insertSpecies($_POST['sci_name'], $_POST['comm_name'], $_POST['en_comm_name'], $_POST['description'], $_POST['en_description'], $_POST['month'], $_POST['year'], $_POST['img-link']);
     $transactionDone = true;
 }
 ?>
@@ -103,8 +103,16 @@ if (isset($_POST['submit'])) {
                   <input name="comm_name" type="text" placeholder="Nombre común" />
                 </div>
                 <div class="field2">
+                  <span>Nombre común en inglés</span>
+                  <input name="en_comm_name" type="text" placeholder="Nombre común en inglés" />
+                </div>
+                <div class="field2">
                   <span>Descripción</span>
                   <textarea name="description" type="text" placeholder="Más detalles"></textarea>
+                </div>
+                <div class="field2">
+                  <span>Descripción en inglés</span>
+                  <textarea name="en_description" type="text" placeholder="Más detalles en inglés"></textarea>
                 </div>
 
                 <div class="img-cola" style="margin-top:0;width:100%;">

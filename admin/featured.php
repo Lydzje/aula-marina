@@ -12,11 +12,15 @@ include '../php-functions/functions.php';
 
 $transactionDone = false;
 if (isset($_POST['submit'])) {
-    updateFeatureds($_POST['id'], $_POST['text'], $_POST['link'], $_POST['img-link']);
+    updateFeatureds($_POST['id'], $_POST['text'], $_POST['en_text'], $_POST['link'], $_POST['img-link']);
     $transactionDone = true;
 }
 
 getFeatureds($featureds);
+
+if (!$featureds) {
+  $featureds = [];
+}
 ?>
 
 <!DOCTYPE html>
@@ -91,6 +95,11 @@ getFeatureds($featureds);
                   </div>
 
                   <div class="field2">
+                    <span>Texto en inglés</span>
+                    <input name="en_text" type="text" value="<?php echo $featureds[0]->en_text ?>" placeholder="Texto del destacado en inglés" />
+                  </div>
+
+                  <div class="field2">
                     <span>Enlace</span>
                     <input name="link" type="text" value="<?php echo $featureds[0]->link ?>" placeholder="Enlace del destacado" />
                   </div>
@@ -122,6 +131,11 @@ getFeatureds($featureds);
                   </div>
 
                   <div class="field2">
+                    <span>Texto en inglés</span>
+                    <input name="en_text" type="text" value="<?php echo $featureds[1]->en_text ?>" placeholder="Texto del destacado en inglés" />
+                  </div>
+
+                  <div class="field2">
                     <span>Enlace</span>
                     <input name="link" type="text" value="<?php echo $featureds[1]->link ?>" placeholder="Enlace del destacado" />
                   </div>
@@ -143,6 +157,11 @@ getFeatureds($featureds);
                   </div>
 
                   <div class="field2">
+                    <span>Texto en inglés</span>
+                    <input name="en_text" type="text" value="<?php echo $featureds[2]->en_text ?>" placeholder="Texto del destacado en inglés" />
+                  </div>
+
+                  <div class="field2">
                     <span>Enlace</span>
                     <input name="link" type="text" value="<?php echo $featureds[2]->link ?>" placeholder="Enlace del destacado" />
                   </div>
@@ -161,6 +180,11 @@ getFeatureds($featureds);
                   <div class="field2">
                     <span>Texto</span>
                     <input name="text" type="text" value="<?php echo $featureds[3]->text ?>" placeholder="Texto del destacado" />
+                  </div>
+
+                  <div class="field2">
+                    <span>Texto en inglés</span>
+                    <input name="en_text" type="text" value="<?php echo $featureds[3]->en_text ?>" placeholder="Texto del destacado en inglés" />
                   </div>
 
                   <div class="field2">

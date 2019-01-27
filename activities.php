@@ -13,6 +13,24 @@ if ($featured == null) {
   $featured = $activities[count($activities)-1];
 }
 
+$titleText      = "Actividades";
+$featuredText   = "ACTIVIDAD DESTACADA";
+$programmedText = "ACTIVIDADES PROGRAMADAS";
+$pastText       = "ACTIVIDADES REALIZADAS";
+
+$featuredTitle  = $featured->title;
+$featuredDesc   = $featured->description;
+
+if (isset($_GET['lan'])) {
+  if ( $_GET['lan'] == 'en') {
+    $titleText      = "Activities";
+    $featuredText   = "FEATURED ACTIVITY";
+    $programmedText = "NEXT ACTIVITIES";
+    $pastText       = "PAST ACTIVITIES";
+    $featuredTitle  = $featured->en_title;
+    $featuredDesc   = $featured->en_description;
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +40,7 @@ if ($featured == null) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina | Actividades</title>
+  <title>Aula Marina | <?php echo $titleText ?></title>
 
   <link rel="stylesheet" href="./css/style.css">
 
@@ -38,28 +56,28 @@ if ($featured == null) {
     <?php include "nav.php"?>
     <div class="content">
       <div class="title">
-        <span>ACTIVIDADES</span>
+        <span><?php echo $titleText ?></span>
       </div>
     </div>
 
     <div class="section" style="cursor:pointer;">
-      <div class="section-top" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
-        <span><b>ACTIVIDAD DESTACADA</b></span>
+      <div class="section-top" onclick="window.location='activity.php<?php echo $lanVar ?>&id=<?php echo $featured->id ?>'">
+        <span><b><?php echo $featuredText ?></b></span>
 
       </div>
 
       <div class="section-bot">
         <div class="section-left">
-        <div class="slider-content" style="width:100%" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
+        <div class="slider-content" style="width:100%" onclick="window.location='activity.php<?php echo $lanVar ?>&id=<?php echo $featured->id ?>'">
                 <img src="<?php echo $featured->img1 ?>" >
               </div>
-              <div class="slider-content" style="display:none;width:100%;opacity:0;" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
+              <div class="slider-content" style="display:none;width:100%;opacity:0;" onclick="window.location='activity.php<?php echo $lanVar ?>&id=<?php echo $featured->id ?>'">
                 <img src="<?php echo $featured->img2 ?>" width="100%">
               </div>
-              <div class="slider-content" style="display:none;width:100%;opacity:0;" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
+              <div class="slider-content" style="display:none;width:100%;opacity:0;" onclick="window.location='activity.php<?php echo $lanVar ?>&id=<?php echo $featured->id ?>'">
                 <img src="<?php echo $featured->img3 ?>" width="100%">
               </div>
-              <div class="slider-content" style="display:none;width:100%;opacity:0;" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
+              <div class="slider-content" style="display:none;width:100%;opacity:0;" onclick="window.location='activity.php<?php echo $lanVar ?>&id=<?php echo $featured->id ?>'">
                 <img src="<?php echo $featured->img4 ?>" width="100%">
               </div>
               <div class="section-slider-buttons" style="cursor:auto;">
@@ -75,17 +93,17 @@ if ($featured == null) {
 
         </div>
 
-        <div class="section-right section-text" onclick="window.location='activity.php?id=<?php echo $featured->id ?>'">
+        <div class="section-right section-text" onclick="window.location='activity.php<?php echo $lanVar ?>&id=<?php echo $featured->id ?>'">
           <div class="par">
-            <span><?php echo $featured->title ?></span>
-            <p><?php echo $featured->description ?></p>
+            <span><?php echo $featuredTitle ?></span>
+            <p><?php echo $featuredDesc ?></p>
           </div>
         </div>
       </div>
     </div>
     <div class="title-act-gen">
-      <div class="title-act <?php if(!$past) echo 'active'?>" onclick="window.location='activities.php'">ACTIVIDADES PROGRAMADAS</div>
-      <div class="title-act <?php if($past) echo 'active'?>" onclick="window.location='activities.php?past'">ACTIVIDADES REALIZADAS</div>
+      <div class="title-act <?php if(!$past) echo 'active'?>" onclick="window.location='activities.php<?php echo $lanVar ?>'"><?php echo $programmedText ?></div>
+      <div class="title-act <?php if($past) echo 'active'?>" onclick="window.location='activities.php<?php echo $lanVar ?>&past'"><?php echo $pastText ?></div>
     </div>
     
     <div class="pepito">
@@ -97,8 +115,15 @@ if ($featured == null) {
       $description = $activities[$i]->description;
       $img         = $activities[$i]->img1;
 
+      if (isset($_GET['lan'])) {
+        if ( $_GET['lan'] == 'en') {
+          $title       = $activities[$i]->en_title;
+          $description = $activities[$i]->en_description;
+        }
+      }
+      
       echo "
-        <div class=\"section-left1\" onclick=\"window.location='activity.php?id=$id'\">
+        <div class=\"section-left1\" onclick=\"window.location='activity.php$lanVar&id=$id'\">
           <div class=\"news-date\">
             <span>
               $date

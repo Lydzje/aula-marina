@@ -40,7 +40,7 @@ if (isset($_POST['login'])) {
 			<div class="wrapper-admin-login">
 				<div class="content-admin-login">
 					<div class="login-logo">
-						<a href="../index.html">
+						<a href="../index.php">
 							<img alt="Logo del Aula Marina" src="../res/aula-marina-logo.png" />
 						</a>
 					</div>

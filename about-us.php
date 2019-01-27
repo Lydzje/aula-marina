@@ -3,6 +3,16 @@ include "db/connection.php";
 include "php-functions/functions.php";
 
 getAboutUsInfo($info);
+
+$titleText   = "Sobre Nosotros";
+$description = $info->description;
+
+if (isset($_GET['lan'])) {
+  if ( $_GET['lan'] == 'en') {
+    $titleText   = "About Us";
+    $description = $info->en_description;
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +22,7 @@ getAboutUsInfo($info);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aula Marina | Sobre Nosotros</title>
+    <title>Aula Marina | <?php echo $titleText ?></title>
 
     <link rel="stylesheet" href="./css/style.css">
 
@@ -29,7 +39,7 @@ getAboutUsInfo($info);
       <?php include "nav.php"?>
         <div class="content">
           <div class="title">
-            <span>SOBRE NOSOTROS</span>
+            <span><?php echo $titleText ?></span>
             
           </div>
 
@@ -37,7 +47,7 @@ getAboutUsInfo($info);
             <div class="section-top"></div>
             <div class="section-bot">
               <div class="section-left section-text">
-                <p style="white-space:pre-wrap;text-align:justify;"><?php echo $info->description;?></p>
+                <p style="white-space:pre-wrap;text-align:justify;"><?php echo $description;?></p>
               </div>
               <div class="section-right section-img">
                 <div class="slider-content" style="width:100%">

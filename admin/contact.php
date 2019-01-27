@@ -12,7 +12,7 @@ include '../php-functions/functions.php';
 
 $transactionDone = false;
 if (isset($_POST['submit'])) {
-  updateContact($_POST['phone'], $_POST['email'], $_POST['hour'], $_POST['address'], $_POST['description']);
+  updateContact($_POST['phone'], $_POST['email'], $_POST['hour'], $_POST['address'], $_POST['description'], $_POST['en_description']);
   $transactionDone = true;
 }
 
@@ -94,6 +94,10 @@ getContactInfo($info);
                 <div class="field2">
                   <span>Texto</span>
                   <textarea name="description" type="text" placeholder="Más detalles"><?php echo $info->description; ?></textarea>
+                </div>
+                <div class="field2">
+                  <span>Texto en inglés</span>
+                  <textarea name="en_description" type="text" placeholder="Más detalles en inglés"><?php echo $info->en_description; ?></textarea>
                 </div>
 
                 <?php 

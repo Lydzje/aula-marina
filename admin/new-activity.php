@@ -13,9 +13,9 @@ include '../php-functions/functions.php';
 $transactionDone = false;
 if (isset($_POST['submit'])) {
     if ($_GET['past'] == "0") {
-        insertActivity(false, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
+        insertActivity(false, $_POST['title'], $_POST['en_title'], $_POST['date'], $_POST['ubication'], $_POST['en_ubication'], $_POST['description'], $_POST['en_description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     } else {
-        insertActivity(true, $_POST['title'], $_POST['date'], $_POST['ubication'], $_POST['description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
+        insertActivity(true, $_POST['title'], $_POST['en_title'], $_POST['date'], $_POST['ubication'], $_POST['en_ubication'], $_POST['description'], $_POST['en_description'], $_POST['img-link1'], $_POST['img-link2'], $_POST['img-link3'], $_POST['img-link4']);
     }
     $transactionDone = true;
 }
@@ -82,6 +82,10 @@ if (isset($_POST['submit'])) {
                   <input name="title" type="text" placeholder="Título de la actividad" />
                 </div>
                 <div class="field2">
+                  <span>Título en inglés</span>
+                  <input name="en_title" type="text" placeholder="Título de la actividad en inglés" />
+                </div>
+                <div class="field2">
                   <span>Fecha</span>
                   <input name="date" type="date" placeholder="Fecha" />
                 </div>
@@ -92,8 +96,18 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <div class="field2">
+                    <span>Ubicación en inglés</span>
+                    <textarea name="en_ubication" type="text" placeholder="Ubicación de la actividad en inglés"></textarea>
+                </div>
+
+                <div class="field2">
                     <span>Descripción</span>
                     <textarea name="description" type="text" placeholder="Descripción de la actividad"></textarea>
+                </div>
+
+                <div class="field2">
+                    <span>Descripción en inglés</span>
+                    <textarea name="en_description" type="text" placeholder="Descripción de la actividad en inglés"></textarea>
                 </div>
 
                 <div class="img-cola" style="margin-top:0;width:100%;">

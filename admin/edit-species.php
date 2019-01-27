@@ -12,7 +12,7 @@ include '../php-functions/functions.php';
 
 $transactionDone = false;
 if (isset($_POST['submit'])) {
-    updateSpecies($_GET['id'], $_POST['sci_name'], $_POST['comm_name'], $_POST['description'], $_POST['month'], $_POST['year'], $_POST['img-link']);
+    updateSpecies($_GET['id'], $_POST['sci_name'], $_POST['comm_name'], $_POST['en_comm_name'], $_POST['description'], $_POST['en_description'], $_POST['month'], $_POST['year'], $_POST['img-link']);
     $transactionDone = true;
 }
 
@@ -105,8 +105,16 @@ getOneSpecies($_GET['id'], $info);
                   <input name="comm_name" type="text" placeholder="Nombre común" value="<?php echo "$info->comm_name"; ?>" />
                 </div>
                 <div class="field2">
+                  <span>Nombre común en inglés</span>
+                  <input name="en_comm_name" type="text" placeholder="Nombre común en inglés" value="<?php echo "$info->en_comm_name"; ?>" />
+                </div>
+                <div class="field2">
                   <span>Descripción</span>
                   <textarea name="description" type="text" placeholder="Más detalles"><?php echo "$info->description"; ?></textarea>
+                </div>
+                <div class="field2">
+                  <span>Descripción en inglés</span>
+                  <textarea name="en_description" type="text" placeholder="Más detalles en inglés"><?php echo "$info->en_description"; ?></textarea>
                 </div>
 
                 <div class="img-cola" style="margin-top:0;width:100%;">

@@ -32,12 +32,12 @@ function getFeatureds(&$result)
     }
 }
 
-function updateFeatureds($id, $text, $link, $img)
+function updateFeatureds($id, $text, $en_text, $link, $img)
 {
     global $conn;
     $sql =
         "UPDATE featureds
-            SET text='$text', link='$link', img='$img'
+            SET text='$text', en_text='$en_text', link='$link', img='$img'
             WHERE id = '$id';
         ";
     $rec = $conn->query($sql);
@@ -82,22 +82,66 @@ function getOneSpecies($id, &$result)
     }
 }
 
-function insertSpecies($sci_name, $comm_name, $description, $month, $year, $img)
+function getLastSpecies(&$result)
 {
     global $conn;
+    $sql = "SELECT * FROM species ORDER BY id DESC LIMIT 1";
+    $rec = $conn->query($sql);
+    if ($rec->num_rows > 0) {
+        $result = mysqli_fetch_object($rec);
+    }
+}
+
+function translateMonthToEn($month)
+{
+    $en_month = "";
+    if ($month == "Enero") {
+        $en_month = "January";
+    } elseif ($month == "Febrero") {
+        $en_month = "February";
+    } elseif ($month == "Marzo") {
+        $en_month = "March";
+    } elseif ($month == "Abril") {
+        $en_month = "April";
+    } elseif ($month == "Mayo") {
+        $en_month = "May";
+    } elseif ($month == "Junio") {
+        $en_month = "June";
+    } elseif ($month == "Julio") {
+        $en_month = "July";
+    } elseif ($month == "Agosto") {
+        $en_month = "August";
+    } elseif ($month == "Septiembre") {
+        $en_month = "September";
+    } elseif ($month == "Octubre") {
+        $en_month = "October";
+    } elseif ($month == "Noviembre") {
+        $en_month = "November";
+    } elseif ($month == "Diciembre") {
+        $en_month = "December";
+    }
+
+    return $en_month;
+}
+
+function insertSpecies($sci_name, $comm_name, $en_comm_name, $description, $en_description, $month, $year, $img)
+{
+    $en_month = translateMonthToEn($month);
+    global $conn;
     $sql =
-        "INSERT INTO species (sci_name, comm_name, description, month, year, img)
-            VALUES ('$sci_name', '$comm_name', '$description', '$month', '$year', '$img') 
+        "INSERT INTO species (sci_name, comm_name, en_comm_name, description, en_description, month, en_month, year, img)
+            VALUES ('$sci_name', '$comm_name', '$en_comm_name', '$description', '$en_description', '$month', '$en_month', '$year', '$img') 
         ";
     $rec = $conn->query($sql);
 }
 
-function updateSpecies($id, $sci_name, $comm_name, $description, $month, $year, $img)
+function updateSpecies($id, $sci_name, $comm_name, $en_comm_name, $description, $en_description, $month, $year, $img)
 {
+    $en_month = translateMonthToEn($month);
     global $conn;
     $sql =
         "UPDATE species
-            SET sci_name='$sci_name', comm_name='$comm_name', description='$description', month='$month', year='$year', img='$img'
+            SET sci_name='$sci_name', comm_name='$comm_name', en_comm_name='$en_comm_name', description='$description', en_description='$en_description', month='$month', en_month='$en_month', year='$year', img='$img'
             WHERE id='$id'
         ";
     $rec = $conn->query($sql);
@@ -138,23 +182,23 @@ function getFeaturedActivity(&$result)
     }
 }
 
-function updateActivity($id, $past, $title, $date, $ubication, $description, $img1, $img2, $img3, $img4)
+function updateActivity($id, $past, $title, $en_title, $date, $ubication, $en_ubication, $description, $en_description, $img1, $img2, $img3, $img4)
 {
     global $conn;
     $sql =
         "UPDATE activities
-            SET past='$past', title='$title', date='$date', ubication='$ubication', description='$description', img1='$img1', img2='$img2', img3='$img3', img4='$img4'
+            SET title='$title', en_title='$en_title', date='$date', ubication='$ubication', en_ubication='$en_ubication', description='$description', en_description='$en_description', img1='$img1', img2='$img2', img3='$img3', img4='$img4'
             WHERE id='$id'
         ";
     $rec = $conn->query($sql);
 }
 
-function insertActivity($past, $title, $date, $ubication, $description, $img1, $img2, $img3, $img4)
+function insertActivity($past, $title, $en_title, $date, $ubication, $en_ubication, $description, $en_description, $img1, $img2, $img3, $img4)
 {
     global $conn;
     $sql =
-        "INSERT INTO activities (past, title, date, ubication, description, img1, img2, img3, img4)
-            VALUES ('$past', '$title', '$date', '$ubication', '$description', '$img1', '$img2', '$img3', '$img4') 
+        "INSERT INTO activities (past, title, en_title, date, ubication, en_ubication, description, en_description, img1, img2, img3, img4)
+            VALUES ('$past', '$title', '$en_title', '$date', '$ubication', '$en_ubication', '$description', '$en_description', '$img1', '$img2', '$img3', '$img4') 
         ";
     $rec = $conn->query($sql);
 }
@@ -184,23 +228,23 @@ function getProject($id, &$result)
     }
 }
 
-function updateProject($id, $name, $description, $img, $bg)
+function updateProject($id, $name, $en_name, $description, $en_description, $img, $bg)
 {
     global $conn;
     $sql =
         "UPDATE projects
-            SET name='$name', description='$description', img='$img', bg='$bg'
+            SET name='$name', en_name='$en_name', description='$description', en_description='$en_description', img='$img', bg='$bg'
             WHERE id='$id'
         ";
     $rec = $conn->query($sql);
 }
 
-function insertProject($name, $description, $img, $bg)
+function insertProject($name, $en_name, $description, $en_description, $img, $bg)
 {
     global $conn;
     $sql =
-        "INSERT INTO projects (name, description, img, bg)
-            VALUES ('$name', '$description', '$img', '$bg') 
+        "INSERT INTO projects (name, en_name, description, en_description, img, bg)
+            VALUES ('$name', '$en_name', '$description', '$en_description', '$img', '$bg') 
         ";
     $rec = $conn->query($sql);
 }
@@ -230,23 +274,23 @@ function getSection($id, &$result)
     }
 }
 
-function updateSection($id, $title, $description, $img1, $img2, $img3, $img4)
+function updateSection($id, $title, $en_title, $description, $en_description, $img1, $img2, $img3, $img4)
 {
     global $conn;
     $sql =
         "UPDATE sections
-            SET title='$title', description='$description', img1='$img1', img2='$img2', img3='$img3', img4='$img4'
+            SET title='$title', en_title='$en_title', description='$description', en_description='$en_description', img1='$img1', img2='$img2', img3='$img3', img4='$img4'
             WHERE id='$id'
         ";
     $rec = $conn->query($sql);
 }
 
-function insertSection($projID, $title, $description, $img1, $img2, $img3, $img4)
+function insertSection($projID, $title, $en_title, $description, $en_description, $img1, $img2, $img3, $img4)
 {
     global $conn;
     $sql =
-        "INSERT INTO sections (id_proj, title, description, img1, img2, img3, img4)
-            VALUES ('$projID', '$title', '$description', '$img1', '$img2', '$img3', '$img4') 
+        "INSERT INTO sections (id_proj, title, en_title, description, en_description, img1, img2, img3, img4)
+            VALUES ('$projID', '$title', '$en_title', '$description', '$en_description', '$img1', '$img2', '$img3', '$img4') 
         ";
     $rec = $conn->query($sql);
 }
@@ -276,23 +320,23 @@ function getPerson($id, &$result)
     }
 }
 
-function updatePerson($id, $main, $name, $charge, $description, $img)
+function updatePerson($id, $main, $name, $charge, $en_charge, $description, $en_description, $img)
 {
     global $conn;
     $sql =
         "UPDATE people
-            SET main='$main', name='$name', charge='$charge', description='$description', img='$img'
+            SET main='$main', name='$name', charge='$charge', en_charge='$en_charge', description='$description', en_description='$en_description', img='$img'
             WHERE id='$id'
         ";
     $rec = $conn->query($sql);
 }
 
-function insertPerson($main, $name, $charge, $description, $img)
+function insertPerson($main, $name, $charge, $en_charge, $description, $en_description, $img)
 {
     global $conn;
     $sql =
-        "INSERT INTO people (main, name, charge, description, img)
-            VALUES ('$main', '$name', '$charge', '$description', '$img') 
+        "INSERT INTO people (main, name, charge, en_charge, description, en_description, img)
+            VALUES ('$main', '$name', '$charge', '$en_charge', '$description', '$en_description', '$img') 
         ";
     $rec = $conn->query($sql);
 }
@@ -329,12 +373,12 @@ function getFacilitiesInfo(&$result)
     }
 }
 
-function updateFacilities($img1, $img2, $img3, $img4, $description)
+function updateFacilities($img1, $img2, $img3, $img4, $description, $en_description)
 {
     global $conn;
     $sql =
         "UPDATE facilities
-            SET img1='$img1', img2='$img2', img3='$img3', img4='$img4', description='$description' 
+            SET img1='$img1', img2='$img2', img3='$img3', img4='$img4', description='$description', en_description='$en_description' 
             WHERE id = 1;
         ";
     $rec = $conn->query($sql);
@@ -351,12 +395,12 @@ function getAboutUsInfo(&$result)
     }
 }
 
-function updateAboutUs($img1, $img2, $img3, $img4, $description)
+function updateAboutUs($img1, $img2, $img3, $img4, $description, $en_description)
 {
     global $conn;
     $sql =
         "UPDATE aboutUs
-            SET img1='$img1', img2='$img2', img3='$img3', img4='$img4', description='$description' 
+            SET img1='$img1', img2='$img2', img3='$img3', img4='$img4', description='$description', en_description='$en_description' 
             WHERE id = 1;
         ";
     $rec = $conn->query($sql);
@@ -429,12 +473,12 @@ function getContactInfo(&$result)
     }
 }
 
-function updateContact($phone, $email, $hour, $address, $description)
+function updateContact($phone, $email, $hour, $address, $description, $en_description)
 {
     global $conn;
     $sql =
         "UPDATE contact
-            SET phone='$phone', email='$email', hour='$hour', address='$address', description='$description' 
+            SET phone='$phone', email='$email', hour='$hour', address='$address', description='$description', en_description='$en_description'  
             WHERE id = 1;
         ";
     $rec = $conn->query($sql);

@@ -104,9 +104,9 @@ function showSlide(target, section = 0) {
 }
 
 
-function goToYear() {
+function goToYear(lan) {
 	var year = yearSelector.options[yearSelector.selectedIndex].value;
-	window.location = "species-of-the-month.php?year=" + year;
+	window.location = "species-of-the-month.php" + lan + "&year=" + year;
 }
 
 

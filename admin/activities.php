@@ -12,6 +12,14 @@ include '../php-functions/functions.php';
 
 getActivities(false, $nextActivities);
 getActivities(true, $pastActivities);
+
+if (!$nextActivities) {
+  $nextActivities = [];
+}
+
+if (!$pastActivities) {
+  $pastActivities = [];
+}
 ?>
 
 <!DOCTYPE html>

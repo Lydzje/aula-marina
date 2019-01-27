@@ -11,6 +11,10 @@ include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
 getSpecies($species);
+
+if (!$species) {
+  $species = [];
+}
 ?>
 
 <!DOCTYPE html>

@@ -12,7 +12,7 @@ include '../php-functions/functions.php';
 
 $transactionDone = false;
 if (isset($_POST['submit'])) { 
-    updateProject($_GET['id'], $_POST['name'], $_POST['description'], $_POST['img-link'], $_POST['bg-link']);
+    updateProject($_GET['id'], $_POST['name'], $_POST['en_name'], $_POST['description'], $_POST['en_description'], $_POST['img-link'], $_POST['bg-link']);
     $transactionDone = true;
 }
 
@@ -82,8 +82,18 @@ $id = $info->id;
                 </div>
 
                 <div class="field2">
+                  <span>Título en inglés</span>
+                  <input name="en_name" type="text" placeholder="Nombre del proyecto en inglés" value="<?php echo $info->en_name ?>" />
+                </div>
+
+                <div class="field2">
                     <span>Descripción</span>
                     <textarea name="description" type="text" placeholder="Descripción del proyecto"><?php echo $info->description ?></textarea>
+                </div>
+
+                <div class="field2">
+                    <span>Descripción en inglés</span>
+                    <textarea name="en_description" type="text" placeholder="Descripción del proyecto en inglés"><?php echo $info->en_description ?></textarea>
                 </div>
 
                 <div class="img-cola" style="margin-top:0;width:100%;">

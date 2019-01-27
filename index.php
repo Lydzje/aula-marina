@@ -4,6 +4,12 @@ include "php-functions/functions.php";
 
 getFeatureds($featureds);
 
+$titleText = "Inicio";
+if (isset($_GET['lan'])) {
+  if ( $_GET['lan'] == 'en') {
+    $titleText = "Home";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +18,7 @@ getFeatureds($featureds);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aula Marina | Inicio</title>
+    <title>Aula Marina | <?php echo $titleText ?></title>
 
     <link rel="stylesheet" href="./css/style.css">
 
@@ -44,8 +50,15 @@ getFeatureds($featureds);
         for ($i=0; $i < count($featureds); $i++) { 
             $id   = $featureds[$i]->id;
             $text = $featureds[$i]->text;
-            $link = $featureds[$i]->link;
+            $link = $featureds[$i]->link.$lanVar;
             $img  = $featureds[$i]->img;
+
+            if (isset($_GET['lan'])) {
+              if ( $_GET['lan'] == 'en') {
+                $text = $featureds[$i]->en_text;
+              }
+            }
+            
             if ($i==0) {
               echo "
             <div class=\"text slider-content\" style=\"cursor:pointer;\" onclick=\"window.location='$link'\">

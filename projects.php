@@ -4,6 +4,14 @@ include "php-functions/functions.php";
 
 getProjects($info);
 
+$titleText = "Proyectos";
+
+if (isset($_GET['lan'])) {
+  if ( $_GET['lan'] == 'en') {
+    $titleText = "Projects";
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +20,7 @@ getProjects($info);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina | Proyectos</title>
+  <title>Aula Marina | <?php echo $titleText ?></title>
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -27,7 +35,7 @@ getProjects($info);
     <?php include "nav.php"?>
     <div class="content">
     <div class="title">
-      <span>PROYECTOS</span>
+      <span><?php echo $titleText ?></span>
     </div>
 
     <div class="content-projects">
@@ -39,8 +47,15 @@ getProjects($info);
         $img         = $info[$i]->img;
         $bg          = $info[$i]->bg;
       
+        if (isset($_GET['lan'])) {
+          if ( $_GET['lan'] == 'en') {
+            $name        = $info[$i]->en_name;
+            $description = $info[$i]->en_description;
+          }
+        }
+        
         echo"
-        <a class=\"project-x\" href=\"project.php?id=$id\">
+        <a class=\"project-x\" href=\"project.php$lanVar&id=$id\">
           <div class=\"project-x-img\">
             <img src=\"$img\">
           </div>

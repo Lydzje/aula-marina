@@ -484,7 +484,7 @@ body {
 }
 
 .side-image-form textarea {
-    height: 130px;
+    height: 65px !important;
 }
 
 .multimedia {

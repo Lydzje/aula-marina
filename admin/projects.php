@@ -11,6 +11,10 @@ include_once '../db/connection.php';
 include '../php-functions/functions.php';
 
 getProjects($projects);
+
+if (!$projects) {
+  $projects = [];
+}
 ?>
 
 <!DOCTYPE html>

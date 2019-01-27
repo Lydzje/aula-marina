@@ -4,6 +4,14 @@ include "php-functions/functions.php";
 
 getOneSpecies($_GET["id"], $info);
 
+$comm_name   = $info->comm_name;
+$description = $info->description;
+if (isset($_GET['lan'])) {
+  if ( $_GET['lan'] == 'en') {
+    $comm_name   = $info->en_comm_name;
+    $description = $info->en_description;
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +21,7 @@ getOneSpecies($_GET["id"], $info);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aula Marina | <?php echo $info->comm_name ?></title>
+    <title>Aula Marina | <?php echo $comm_name ?></title>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -28,7 +36,7 @@ getOneSpecies($_GET["id"], $info);
     <?php include "nav.php"?>
     <div class="content">
       <div class="title">
-        <span><?php echo $info->comm_name?></span>
+        <span><?php echo $comm_name ?></span>
       </div>
       <div class="ind-species-box">
 	<div class="ind-species-img">
@@ -36,9 +44,9 @@ getOneSpecies($_GET["id"], $info);
 	</div>
 	<div class="ind-species-text">
           <h1>
-          <?php echo $info->comm_name ?> <br> (<?php echo $info->sci_name ?>)
+          <?php echo $comm_name ?> <br> (<?php echo $info->sci_name ?>)
           </h1>
-          <p style="white-space:pre-wrap;text-align:justify;"><?php echo $info->description ?></p>
+          <p style="white-space:pre-wrap;text-align:justify;"><?php echo $description ?></p>
 	</div>
 
       </div>

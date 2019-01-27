@@ -3,7 +3,19 @@ include "db/connection.php";
 include "php-functions/functions.php";
 
 getSpeciesYears($years);
+getLastSpecies($last);
 getSpecies($species);
+
+$titleText  = "Especie del mes";
+$month0     = $last->month;
+$comm_name0 = $last->comm_name;
+if (isset($_GET['lan'])) {
+  if ( $_GET['lan'] == 'en') {
+    $titleText  = "Species of the month";
+    $month0     = $last->en_month;
+    $comm_name0 = $last->en_comm_name;
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +25,7 @@ getSpecies($species);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aula Marina | Especie del mes</title>
+  <title>Aula Marina | <?php echo $titleText ?></title>
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -27,18 +39,18 @@ getSpecies($species);
   <div class="wrapper">
   <?php include "nav.php"?>
   <div class="content">
-    <div class="title">ESPECIE DEL MES</div>
+    <div class="title"><?php echo $titleText ?></div>
     <div class="species-box">
-      <div class="recent-species" onclick="window.location='species.php?id=<?php echo $species[0]->id; ?>'">
+      <div class="recent-species" onclick="window.location='species.php?id=<?php echo $last->id; ?>'">
         <div class="recent-month">
-          <?php echo $species[0]->month?>
+          <?php echo $month0 ?>
         </div>
-        <a class="recent-species-img" href="species.php?id=<?php echo $species[0]->id ?>">
-          <img src="<?php echo $species[0]->img?>">
+        <a class="recent-species-img" href="species.php<?php echo $lanVar.'&id='.$last->id ?>">
+          <img src="<?php echo $last->img?>">
         </a>
         <div class="description-img">
           <h1>
-           <a href="species.php?id=<?php echo $species[0]->id ?>"><?php echo $species[0]->comm_name ?></a> 
+           <a href="species.php?id=<?php echo $last->id ?>"><?php echo $comm_name0 ?></a> 
           </h1>
         </div>
       </div>
@@ -52,7 +64,7 @@ getSpecies($species);
             $year = $_GET['year'];
           }
           ?>
-          <select id="year-selector" class="button" onchange="goToYear()">
+          <select id="year-selector" class="button" onchange="goToYear('<?php echo $lanVar; ?>')">
               <option selected="selected" style="display:none" value="<?php echo $year; ?>"><?php echo $year; ?></option>
               <?php
               for ($i=0; $i < count($years); $i++) { 
@@ -71,8 +83,17 @@ getSpecies($species);
             $month     = $species[$i]->month;
             $comm_name = $species[$i]->comm_name;
             $img       = $species[$i]->img;
+            $link      = "?id=$id";
+
+            if (isset($_GET['lan'])) {
+              if ( $_GET['lan'] == 'en') {
+                $month     = $species[$i]->en_month;
+                $comm_name = $species[$i]->en_comm_name;
+                $link      = "$lanVar&id=$id";
+              }
+            }
             echo "
-            <a class=\"lasted-species-box\" href=\"species.php?id=$id\">
+            <a class=\"lasted-species-box\" href=\"species.php$link\">
           $month
           <img src=\"$img\">
            $comm_name
