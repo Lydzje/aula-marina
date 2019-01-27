@@ -2,13 +2,14 @@
 
 var body = document.getElementsByTagName("body")[0];
 
-var navResp = document.getElementsByClassName("nav-resp")[0];
+var lang           = document.getElementsByClassName("lang-resp")[0];
+var navResp        = document.getElementsByClassName("nav-resp")[0];
 var buttonNavResps = document.getElementsByClassName("button-nav-resp");
 
-var sliders = document.getElementsByClassName("slider");
-var sliderContents = document.getElementsByClassName("slider-content");
-var sliderButtons  = document.getElementsByClassName("slider-button");
-var sliderCounter = [0];
+var sliders         = document.getElementsByClassName("slider");
+var sliderContents  = document.getElementsByClassName("slider-content");
+var sliderButtons   = document.getElementsByClassName("slider-button");
+var sliderCounter   = [0];
 var sliderIntervals = [];
 
 if (sliders != null) {
@@ -115,11 +116,13 @@ function toggleNavResp(){
 	if (display == '' || display == 'none') {
 		body.style.overflowY = "hidden";
 		navResp.style.display = 'block';
+		lang.style.display = 'block';
 		buttonNavResps[0].style.display = 'none';
 		buttonNavResps[1].style.display = 'inline-block';
 	} else {
 		body.style.overflowY = "auto";
 		navResp.style.display = 'none';
+		lang.style.display = 'none';
 		buttonNavResps[0].style.display = 'inline-block';
 		buttonNavResps[1].style.display = 'none';
 	}

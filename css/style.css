@@ -1071,9 +1071,15 @@ footer {
         color: #2a4b7a;
     }
 
+    .lang {
+        display: none;
+        text-align: center;
+        padding: 0 0 10px 0;
+    }
+    
     .nav-resp{
         position: fixed;
-        top: 53.75px;
+        top: 84px;
         bottom: 0px;
         background-color: #001534;
         width: 100%;
@@ -1162,6 +1168,7 @@ footer {
 
     .aula-marina-links {
         flex-direction: column;
+        height: auto;
     }
 
     .people-left, .people-right {
@@ -1190,12 +1197,13 @@ footer {
     }
 
     .section-left1, .section-right1 {
-        width: 72%;
+        width: 100%;
     }
     
     .class2 {
         flex-direction: column;
-        width: 90%;
+        width: 100%;
+        margin: 10px auto 0 auto;
     }
 
     .class2 img {
@@ -1205,7 +1213,7 @@ footer {
     }
 
     .title-act-gen {
-        margin: 64px auto 32px auto;
+        margin: 32px auto 0 auto;
         justify-content: space-around;
     }
     
@@ -1226,6 +1234,7 @@ footer {
         width: 78%;
         flex-direction: column;
         padding: 20px;
+        margin: 10px auto;
     }
 
     .project-x-img {
@@ -1271,13 +1280,13 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 32px 0;
     }
 
     .location-box, .contact-box {
-        width: 100%;
+        width: 80%;
         display: block;
-        margin: 0;
-        margin-bottom: 32px;
+        margin: 0 auto 32px auto;
         padding: 16px;
     }
 

@@ -137,7 +137,7 @@ if (isset($_GET['lan'])) {
                   $title
                 </span>
               </div>
-              <p style=\"white-space:pre-wrap;text-align:justify;\">$description</p>
+              <p>$description</p>
             </div>
           </div>
         </div>

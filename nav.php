@@ -74,6 +74,11 @@ if (isset($_GET['lan'])) {
             <i class="fas fa-times button-nav-resp" style="display:none"></i>
         </div>
     </div>
+    <div class="lang lang-resp">
+        <a href="<?php echo $esLink ?>"><?php echo $esLan ?></a>
+        <span style="padding:0 15px;">/</span>
+        <a href="<?php echo $enLink ?>"><?php echo $enLan ?></a>
+    </div>
     <div class="nav-resp">
         <a href="index.php<?php echo $lanVar ?>"><?php echo $homeText ?></a>
         <a href="species-of-the-month.php<?php echo $lanVar ?>"><?php echo $speciesText ?></a>
