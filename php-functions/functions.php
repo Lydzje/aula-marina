@@ -83,13 +83,42 @@ function getOneSpecies($id, &$result)
 }
 
 function getLastSpecies(&$result)
-{
+{ 
     global $conn;
-    $sql = "SELECT * FROM species ORDER BY id DESC LIMIT 1";
+    $sql = "SELECT * FROM species ORDER BY year DESC, month_number DESC LIMIT 1";
     $rec = $conn->query($sql);
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
     }
+}
+
+function monthToNumber($month)
+{
+    if ($month == "Enero") {
+        return 1;
+    } elseif ($month == "Febrero") {
+        return 2;
+    } elseif ($month == "Marzo") {
+        return 3;
+    } elseif ($month == "Abril") {
+        return 4;
+    } elseif ($month == "Mayo") {
+        return 5;
+    } elseif ($month == "Junio") {
+        return 6;
+    } elseif ($month == "Julio") {
+        return 7;
+    } elseif ($month == "Agosto") {
+        return 8;
+    } elseif ($month == "Septiembre") {
+        return 9;
+    } elseif ($month == "Octubre") {
+        return 10;
+    } elseif ($month == "Noviembre") {
+        return 11;
+    } elseif ($month == "Diciembre") {
+        return 12;
+    } else return -1;
 }
 
 function translateMonthToEn($month)
@@ -127,10 +156,11 @@ function translateMonthToEn($month)
 function insertSpecies($sci_name, $comm_name, $en_comm_name, $description, $en_description, $month, $year, $img)
 {
     $en_month = translateMonthToEn($month);
+    $month_number = monthToNumber($month);
     global $conn;
     $sql =
-        "INSERT INTO species (sci_name, comm_name, en_comm_name, description, en_description, month, en_month, year, img)
-            VALUES ('$sci_name', '$comm_name', '$en_comm_name', '$description', '$en_description', '$month', '$en_month', '$year', '$img') 
+        "INSERT INTO species (sci_name, comm_name, en_comm_name, description, en_description, month, en_month, month_number, year, img)
+            VALUES ('$sci_name', '$comm_name', '$en_comm_name', '$description', '$en_description', '$month', '$en_month', '$month_number', '$year', '$img') 
         ";
     $rec = $conn->query($sql);
 }
@@ -138,10 +168,11 @@ function insertSpecies($sci_name, $comm_name, $en_comm_name, $description, $en_d
 function updateSpecies($id, $sci_name, $comm_name, $en_comm_name, $description, $en_description, $month, $year, $img)
 {
     $en_month = translateMonthToEn($month);
+    $month_number = monthToNumber($month);
     global $conn;
     $sql =
         "UPDATE species
-            SET sci_name='$sci_name', comm_name='$comm_name', en_comm_name='$en_comm_name', description='$description', en_description='$en_description', month='$month', en_month='$en_month', year='$year', img='$img'
+            SET sci_name='$sci_name', comm_name='$comm_name', en_comm_name='$en_comm_name', description='$description', en_description='$en_description', month='$month', en_month='$en_month', month_number='$month_number', year='$year', img='$img'
             WHERE id='$id'
         ";
     $rec = $conn->query($sql);
