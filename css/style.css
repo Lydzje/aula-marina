@@ -1118,7 +1118,10 @@ footer {
         font-size: 42px;
     }
 
-
+    .index-content {
+	margin-top: 0;
+    }
+	
     .species-box {
         flex-direction: column;
         margin: 20px auto 20px auto;
