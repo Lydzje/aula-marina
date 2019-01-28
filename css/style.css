@@ -1162,6 +1162,7 @@ footer {
     .ind-species-box{
         flex-direction: column;
         width: 75%;
+	margin: 16px auto 0 auto;
     }
 
 
@@ -1256,6 +1257,7 @@ footer {
 
     .content-project {
         width: 90%;
+	margin: 10px auto 10px auto;
     }
 
     .section-project {
