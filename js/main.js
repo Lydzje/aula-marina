@@ -5,6 +5,8 @@ var body = document.getElementsByTagName("body")[0];
 var bg = document.getElementsByClassName("bg")[0];
 if (!bglink.startsWith("../res") && bglink != "") {
 	bg.style.background = "url('" + bglink + "')";
+	bg.style.backgroundRepeat = "no-repeat";
+	bg.style.backgroundSize = "cover";
 }
 
 var lang           = document.getElementsByClassName("lang-resp")[0];
