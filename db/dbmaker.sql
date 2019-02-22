@@ -1,8 +1,3 @@
-DROP schema IF EXISTS aulamarina;
-
-CREATE schema aulamarina;
-USE aulamarina;
-
 DROP TABLE IF EXISTS users;
 CREATE TABLE users(
 	id INT(11) PRIMARY KEY AUTO_INCREMENT,
@@ -158,7 +153,7 @@ CREATE TABLE bgs(
 INSERT INTO users VALUES (1, "admin", "admin");
 
 INSERT INTO featureds VALUES (1, "CONOCE EL MAR ALMERIENSE", "DISCOVER THE SEA OF ALMERIA", "projects.php", "https://i.imgur.com/YeUOTLz.png");
-INSERT INTO featureds VALUES (2, "CONOCE NUESTRA ESPECIE DEL MES", "DISCOVE OUR SPECIES OF THE MONTH", "species-of-the-month.php", "https://i.imgur.com/olw4ZIu.png");
+INSERT INTO featureds VALUES (2, "CONOCE NUESTRA ESPECIE DEL MES", "DISCOVER OUR SPECIES OF THE MONTH", "species-of-the-month.php", "https://i.imgur.com/olw4ZIu.png");
 INSERT INTO featureds VALUES (3, "APÚNTATE A NUESTRAS ACTIVIDADES", "SIGN UP TO OUR ACTIVITIES", "activities.php", "https://i.imgur.com/qtw1YpA.jpg");
 INSERT INTO featureds VALUES (4, "ECHA UN VISTAZO A NUESTRO LABORATORIO", "TAKE A LOOK TO OUR LABORATORY", "facilities.php", "https://i.imgur.com/rNNymSH.jpg");
 

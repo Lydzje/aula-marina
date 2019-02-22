@@ -45,7 +45,11 @@ if (isset($_GET['lan'])) {
           "logo": "https://aula-marina.000webhostapp.com/res/logoTransparente.png"
       }
     </script>
-    
+  <style>
+    footer {
+      margin-top: 0 !important;
+    }
+  </style>  
   </head>
 
   <body>
@@ -94,6 +98,8 @@ if (isset($_GET['lan'])) {
       </div>
     </div>
 		<?php include "footer.php"?>
+    
     <script src="js/main.js"></script>
   </body>
+  
 </html>
