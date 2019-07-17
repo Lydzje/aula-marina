@@ -35,12 +35,13 @@ function getFeatureds(&$result)
 function updateFeatureds($id, $text, $en_text, $link, $img)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE featureds
-            SET text='$text', en_text='$en_text', link='$link', img='$img'
-            WHERE id = '$id';
-        ";
-    $rec = $conn->query($sql);
+            SET text=?, en_text=?, link=?, img=?
+            WHERE id = ?;"
+    );
+    $sql->bind_param('sssss', $text, $en_text, $link, $img, $id);
+    $sql->execute();
 }
 
 
@@ -75,8 +76,11 @@ function getSpeciesYears(&$result)
 function getOneSpecies($id, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM species WHERE id='$id'";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM species WHERE id=?");
+    $sql->bind_param('i', $id);
+    $sql->execute();
+
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
     }
@@ -158,11 +162,12 @@ function insertSpecies($sci_name, $comm_name, $en_comm_name, $description, $en_d
     $en_month = translateMonthToEn($month);
     $month_number = monthToNumber($month);
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "INSERT INTO species (sci_name, comm_name, en_comm_name, description, en_description, month, en_month, month_number, year, img)
-            VALUES ('$sci_name', '$comm_name', '$en_comm_name', '$description', '$en_description', '$month', '$en_month', '$month_number', '$year', '$img') 
-        ";
-    $rec = $conn->query($sql);
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+    );
+    $sql->bind_param('ssssssssss', $sci_name, $comm_name, $en_comm_name, $description, $en_description, $month, $en_month, $month_number, $year, $img);
+    $sql->execute();
 }
 
 function updateSpecies($id, $sci_name, $comm_name, $en_comm_name, $description, $en_description, $month, $year, $img)
@@ -170,20 +175,24 @@ function updateSpecies($id, $sci_name, $comm_name, $en_comm_name, $description, 
     $en_month = translateMonthToEn($month);
     $month_number = monthToNumber($month);
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE species
-            SET sci_name='$sci_name', comm_name='$comm_name', en_comm_name='$en_comm_name', description='$description', en_description='$en_description', month='$month', en_month='$en_month', month_number='$month_number', year='$year', img='$img'
-            WHERE id='$id'
-        ";
-    $rec = $conn->query($sql);
+            SET sci_name=?, comm_name=?, en_comm_name=?, description=?, en_description=?, month=?, en_month=?, month_number=?, year=?, img=?
+            WHERE id=?"
+    );
+    $sql->bind_param('sssssssssss', $sci_name, $comm_name, $en_comm_name, $description, $en_description, $month, $en_month, $month_number, $year, $img, $id);
+    $sql->execute();
 }
 
 
 function getActivities($past, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM activities WHERE past='$past' ORDER BY date DESC";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM activities WHERE past=? ORDER BY date DESC");
+    $sql->bind_param('s', $past);
+    $sql->execute();
+
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $index = 0;
         while ($fila = $rec -> fetch_object()) {
@@ -196,8 +205,11 @@ function getActivities($past, &$result)
 function getActivity($id, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM activities WHERE id='$id'";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM activities WHERE id=?");
+    $sql->bind_param('i', $id);
+    $sql->execute();
+
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
     }
@@ -216,24 +228,25 @@ function getFeaturedActivity(&$result)
 function updateActivity($id, $past, $title, $en_title, $date, $ubication, $en_ubication, $description, $en_description, $img1, $img2, $img3, $img4)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE activities
-            SET title='$title', en_title='$en_title', date='$date', ubication='$ubication', en_ubication='$en_ubication', description='$description', en_description='$en_description', img1='$img1', img2='$img2', img3='$img3', img4='$img4'
-            WHERE id='$id'
-        ";
-    $rec = $conn->query($sql);
+            SET title=?, en_title=?, date=?, ubication=?, en_ubication=?, description=?, en_description=?, img1=?, img2=?, img3=?, img4=?
+            WHERE id=?"
+    );
+    $sql->bind_param('sssssssssssi', $title, $en_title, $date, $ubication, $en_ubication, $description, $en_description, $img1, $img2, $img3, $img4, $id);
+    $sql->execute();
 }
 
 function insertActivity($past, $title, $en_title, $date, $ubication, $en_ubication, $description, $en_description, $img1, $img2, $img3, $img4)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "INSERT INTO activities (past, title, en_title, date, ubication, en_ubication, description, en_description, img1, img2, img3, img4)
-            VALUES ('$past', '$title', '$en_title', '$date', '$ubication', '$en_ubication', '$description', '$en_description', '$img1', '$img2', '$img3', '$img4') 
-        ";
-    $rec = $conn->query($sql);
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+    );
+    $sql->bind_param('ssssssssssss', $past, $title, $en_title, $date, $ubication, $en_ubication, $description, $en_description, $img1, $img2, $img3, $img4);
+    $sql->execute();
 }
-
 
 function getProjects(&$result)
 {
@@ -252,8 +265,11 @@ function getProjects(&$result)
 function getProject($id, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM projects WHERE id='$id'";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM projects WHERE id=?");
+    $sql->bind_param('i', $id);
+    $sql->execute();
+
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
     }
@@ -262,30 +278,37 @@ function getProject($id, &$result)
 function updateProject($id, $name, $en_name, $description, $en_description, $img, $bg)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE projects
-            SET name='$name', en_name='$en_name', description='$description', en_description='$en_description', img='$img', bg='$bg'
-            WHERE id='$id'
-        ";
-    $rec = $conn->query($sql);
+            SET name=?, en_name=?, description=?, en_description=?, img=?, bg=?
+            WHERE id=?
+        "
+    );
+    $sql->bind_param('ssssssi', $name, $en_name, $description, $en_description, $img, $bg, $id);
+    $sql->execute();
 }
 
 function insertProject($name, $en_name, $description, $en_description, $img, $bg)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "INSERT INTO projects (name, en_name, description, en_description, img, bg)
-            VALUES ('$name', '$en_name', '$description', '$en_description', '$img', '$bg') 
-        ";
-    $rec = $conn->query($sql);
+            VALUES (?, ?, ?, ?, ?, ?) 
+        "
+    );
+    $sql->bind_param('ssssss', $name, $en_name, $description, $en_description, $img, $bg);
+    $sql->execute();
 }
 
 
 function getSectionsOfProject($idProj, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM sections WHERE id_proj='$idProj'";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM sections WHERE id_proj=?");
+    $sql->bind_param('i', $idProj);
+    $sql->execute();
+
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $index = 0;
         while ($fila = $rec -> fetch_object()) {
@@ -298,8 +321,11 @@ function getSectionsOfProject($idProj, &$result)
 function getSection($id, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM sections WHERE id='$id'";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM sections WHERE id=?");
+    $sql->bind_param('i', $id);
+    $sql->execute();
+
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
     }
@@ -308,33 +334,40 @@ function getSection($id, &$result)
 function updateSection($id, $title, $en_title, $description, $en_description, $img1, $img2, $img3, $img4)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE sections
-            SET title='$title', en_title='$en_title', description='$description', en_description='$en_description', img1='$img1', img2='$img2', img3='$img3', img4='$img4'
-            WHERE id='$id'
-        ";
-    $rec = $conn->query($sql);
+            SET title=?, en_title=?, description=?, en_description=?, img1=?, img2=?, img3=?, img4=?
+            WHERE id=?
+        "
+    );
+    $sql->bind_param('ssssssssi', $title, $en_title, $description, $en_description, $img1, $img2, $img3, $img4, $id);
+    $sql->execute();    
 }
 
 function insertSection($projID, $title, $en_title, $description, $en_description, $img1, $img2, $img3, $img4)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "INSERT INTO sections (id_proj, title, en_title, description, en_description, img1, img2, img3, img4)
-            VALUES ('$projID', '$title', '$en_title', '$description', '$en_description', '$img1', '$img2', '$img3', '$img4') 
-        ";
-    $rec = $conn->query($sql);
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) 
+        "
+    );
+    $sql->bind_param('issssssss', $projID, $title, $en_title, $description, $en_description, $img1, $img2, $img3, $img4);
+    $sql->execute();
 }
 
 
 function getPeople($main, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM people WHERE main='$main'";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM people WHERE main=?");
+    $sql->bind_param('s', $main);
+    $sql->execute();
+
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $index = 0;
-        while ($fila = $rec -> fetch_object()) {
+        while ($fila = $rec->fetch_object()) {
             $result[$index] = $fila;
             $index++;
         }
@@ -344,8 +377,11 @@ function getPeople($main, &$result)
 function getPerson($id, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM people WHERE id='$id'";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM people WHERE id=?");
+    $sql->bind_param('i', $id);
+    $sql->execute();
+    
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
     }
@@ -354,22 +390,26 @@ function getPerson($id, &$result)
 function updatePerson($id, $main, $name, $charge, $en_charge, $description, $en_description, $img)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE people
-            SET main='$main', name='$name', charge='$charge', en_charge='$en_charge', description='$description', en_description='$en_description', img='$img'
-            WHERE id='$id'
-        ";
-    $rec = $conn->query($sql);
+            SET main=?, name=?, charge=?, en_charge=?, description=?, en_description=?, img=?
+            WHERE id=?
+        "
+    );
+    $sql->bind_param('sssssssi', $main, $name, $charge, $en_charge, $description, $en_description, $img, $id);
+    $sql->execute();
 }
 
 function insertPerson($main, $name, $charge, $en_charge, $description, $en_description, $img)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "INSERT INTO people (main, name, charge, en_charge, description, en_description, img)
-            VALUES ('$main', '$name', '$charge', '$en_charge', '$description', '$en_description', '$img') 
-        ";
-    $rec = $conn->query($sql);
+            VALUES (?, ?, ?, ?, ?, ?, ?) 
+        "
+    );
+    $sql->bind_param('sssssss', $main, $name, $charge, $en_charge, $description, $en_description, $img);
+    $sql->execute();
 }
 
 function getColabsPhoto(&$result)
@@ -385,12 +425,14 @@ function getColabsPhoto(&$result)
 function updateColabsPhoto($img)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE colabsPhoto
-            SET img='$img'
+            SET img=?
             WHERE id = 1;
-        ";
-    $rec = $conn->query($sql);
+        "
+    );
+    $sql->bind_param('s', $img);
+    $sql->execute();
 }
 
 
@@ -407,12 +449,14 @@ function getFacilitiesInfo(&$result)
 function updateFacilities($img1, $img2, $img3, $img4, $description, $en_description)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE facilities
-            SET img1='$img1', img2='$img2', img3='$img3', img4='$img4', description='$description', en_description='$en_description' 
+            SET img1=?, img2=?, img3=?, img4=?, description=?, en_description=?
             WHERE id = 1;
-        ";
-    $rec = $conn->query($sql);
+        "
+    );
+    $sql->bind_param('ssssss', $img1, $img2, $img3, $img4, $description, $en_description);
+    $sql->execute();
 }
 
 
@@ -429,12 +473,14 @@ function getAboutUsInfo(&$result)
 function updateAboutUs($img1, $img2, $img3, $img4, $description, $en_description)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE aboutUs
-            SET img1='$img1', img2='$img2', img3='$img3', img4='$img4', description='$description', en_description='$en_description' 
+            SET img1=?, img2=?, img3=?, img4=?, description=?, en_description=? 
             WHERE id = 1;
-        ";
-    $rec = $conn->query($sql);
+        "
+    );
+    $sql->bind_param('ssssss', $img1, $img2, $img3, $img4, $description, $en_description);
+    $sql->execute();
 }
 
 
@@ -455,8 +501,11 @@ function getNews(&$result)
 function getNew($id, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM news WHERE id='$id'";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM news WHERE id=?");
+    $sql->bind_param('i', $id);
+    $sql->execute();
+
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
     }
@@ -475,22 +524,26 @@ function getFeaturedNew(&$result)
 function updateNew($id, $title, $date, $link, $description, $img)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE news
-            SET title='$title', date='$date', link='$link', description='$description', img='$img'
-            WHERE id='$id'
-        ";
-    $rec = $conn->query($sql);
+            SET title=?, date=?, link=?, description=?, img=?
+            WHERE id=?
+        "
+    );
+    $sql->bind_param('sssssi', $title, $date, $link, $description, $img, $id);
+    $sql->execute();
 }
 
 function insertNew($title, $date, $link, $description, $img)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "INSERT INTO news (title, date, link, description, img)
-            VALUES ('$title', '$date', '$link', '$description', '$img') 
-        ";
-    $rec = $conn->query($sql);
+            VALUES (?, ?, ?, ?, ?) 
+        "
+    );
+    $sql->bind_param('sssss', $title, $date, $link, $description, $img);
+    $sql->execute();
 }
 
 
@@ -507,12 +560,14 @@ function getContactInfo(&$result)
 function updateContact($phone, $email, $hour, $address, $description, $en_description)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE contact
-            SET phone='$phone', email='$email', hour='$hour', address='$address', description='$description', en_description='$en_description'  
+            SET phone=?, email=?, hour=?, address=?, description=?, en_description=?  
             WHERE id = 1;
-        ";
-    $rec = $conn->query($sql);
+        "
+    );
+    $sql->bind_param('ssssss', $phone, $email, $hour, $address, $description, $en_description);
+    $sql->execute();
 }
 
 
@@ -529,12 +584,14 @@ function getAccountInfo(&$result)
 function updateAccount($username, $password)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE users
-            SET username='$username', password='$password' 
+            SET username=?, password=? 
             WHERE id = 1;
-        ";
-    $rec = $conn->query($sql);
+        "
+    );
+    $sql->bind_param('ss', $username, $password);
+    $sql->execute();
 }
 
 
@@ -555,20 +612,25 @@ function getRRSS(&$result)
 function updateRS($id, $link)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE rrss
-            SET link='$link' 
-            WHERE id = $id;
-        ";
-    $rec = $conn->query($sql);
+            SET link=? 
+            WHERE id = ?;
+        "
+    );
+    $sql->bind_param('si', $link, $id);
+    $sql->execute();
 }
 
 
 function getBg($id, &$result)
 {
     global $conn;
-    $sql = "SELECT * FROM bgs WHERE id='$id'";
-    $rec = $conn->query($sql);
+    $sql = $conn->prepare("SELECT * FROM bgs WHERE id=?");
+    $sql->bind_param('i', $id);
+    $sql->execute();
+
+    $rec = $sql->get_result();
     if ($rec->num_rows > 0) {
         $result = mysqli_fetch_object($rec);
     }
@@ -591,10 +653,12 @@ function getBgs(&$result)
 function updateBg($id, $link)
 {
     global $conn;
-    $sql =
+    $sql = $conn->prepare(
         "UPDATE bgs
-            SET link='$link' 
-            WHERE id = $id;
-        ";
-    $rec = $conn->query($sql);
+            SET link=? 
+            WHERE id = ?;
+        "
+    );
+    $sql->bind_param('si', $link, $id);
+    $sql->execute();
 }
